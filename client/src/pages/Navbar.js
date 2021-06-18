@@ -14,9 +14,11 @@ const Navbar = () => {
            
          (<Link to='/login'  onClick={() => dispatch(logout(history))}>LOGOUT</Link> )
           :
-         ( <Link to='/login'>Login</Link>) 
+         ( <Link to='/login'>Login</Link>)
           }
           <Link to='/Profile'> {user ? <span> {user.fullname} </span> : <></>}
+          <Link to='/card'>card</Link> 
+
 </Link> 
 
         </div>

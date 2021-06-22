@@ -15,6 +15,8 @@ const Register = () => {
         password: '',
       });
     const errors = useSelector((state) => state.authReducer.errors);
+    const errors1 = useSelector((state) => state.authReducer.errors);
+
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -40,13 +42,15 @@ const Register = () => {
             <form className="bg-white  rounded-5 shadow-5-strong p-5">
               {/* Email input */}
               <div className="form-outline mb-4">
+              <label className="form-label" htmlFor="form1Example1">Email address</label>
+
                 <input type="email" id="form1Example1" name="email"className="form-control" onChange={handleChange} />
-                <label className="form-label" htmlFor="form1Example1">Email address</label>
               </div>
               {/* Password input */}
               <div className="form-outline mb-4">
+              <label className="form-label" htmlFor="form1Example2">Password</label>
+
                 <input type="password" id="form1Example2"  name="password" className="form-control" onChange={handleChange}/>
-                <label className="form-label" htmlFor="form1Example2">Password</label>
               </div>
               {/* 2 column grid layout for inline styling */}
               <div className="row mb-4">
@@ -72,29 +76,26 @@ const Register = () => {
             <form className="bg-white  rounded-5 shadow-5-strong p-5">
                  {/* Email fullname */}
               <div className="form-outline mb-4">
+              <label className="form-label" htmlFor="form1Example1">Full name</label>
+
                 <input type="text" id="form1Example1" name="fullname" className="form-control" onChange={handleChange1}/>
-                <label className="form-label" htmlFor="form1Example1">Full name</label>
               </div>
               {/* Email input */}
               <div className="form-outline mb-4">
+              <label className="form-label" htmlFor="form1Example1">Email address</label>
+
                 <input type="email" id="form1Example1" name="email"className="form-control" onChange={handleChange1}/>
-                <label className="form-label" htmlFor="form1Example1">Email address</label>
               </div>
               {/* Password input */}
               <div className="form-outline mb-4">
+              <label className="form-label" htmlFor="form1Example2">Password</label>
+
                 <input type="password" id="form1Example2" name="password" className="form-control" onChange={handleChange1}/>
-                <label className="form-label" htmlFor="form1Example2">Password</label>
               </div>
               {/* 2 column grid layout for inline styling */}
               <div className="row mb-4">
                 <div className="col d-flex justify-content-center">
-                  {/* Checkbox */}
-                  <div className="form-check">
-                    <input className="form-check-input" type="checkbox" defaultValue id="form1Example3" defaultChecked />
-                    <label className="form-check-label" htmlFor="form1Example3">
-                      Remember me
-                    </label>
-                  </div>
+
                 </div>
                
               </div>

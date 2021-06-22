@@ -13,12 +13,12 @@ try {
     }
  const {fullname,password,email}=req.body;
  const existUser= await User.findOne({email:email}) ; 
- if(existUser) res.status(400).json({error:'you already have an account'})
+ if(existUser) return res.status(400).json({error:'you already have an account'})
  const cryptPassword= await bcrypt.hash(password,12)
  const newUser= new User({fullname,password:cryptPassword,email})
  const user= await newUser.save();
  const token = await jwt.sign({email,id:user._id},process.env.sercetkey)
- res.status(200).json({user:user,token})
+ return res.status(200).json({user:user,token})
 } catch (error) {
     res.status(500).json({error:`something went wrong:${error}`}) 
 }
@@ -26,12 +26,12 @@ try {
 exports.login=async(req,res)=>{
     try {
     const {email,password}=req.body;
-    const existUser= await User.findOne({email:email}) ; 
-    if(!existUser) res.status(400).json({error:'this email does not exist'})
+    const existUser= await User.findOne({email:email}) ;
+    if(!existUser) return res.status(400).json({error:'this email does not exist'})
     const validatePassword= await bcrypt.compare(password,existUser.password) 
-    if(!validatePassword) res.status(400).json({error:'wrong password !'})
+    if(!validatePassword) return res.status(400).json({error:'wrong password !'})
     const token = await jwt.sign({email,id:existUser._id},process.env.sercetkey)
-    res.status(200).json({user:existUser,token})
+    return res.status(200).json({user:existUser,token})
 
     
     } catch (error) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const PrivateRouteUser = ({ component: Component, ...rest }) => {
   const isAuth = useSelector((state) => state.authReducer.isAuth);
   const role = useSelector((state) => state.authReducer.user.role);
 
@@ -9,11 +9,11 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        isAuth && role ===1 ?<Component/>
+        isAuth && role===0 ? <Component/>
          : <Redirect to='login' />
       }
     />
   );
 };
 
-export default PrivateRoute;
+export default PrivateRouteUser;

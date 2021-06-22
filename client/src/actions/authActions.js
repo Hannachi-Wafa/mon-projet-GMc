@@ -18,7 +18,11 @@ export const loginUser=(data,history)=>async(dispatch)=>{
         const res=await axios.post('/user/login',data)
         console.log(res)
         dispatch({type:LOGIN_USER,payload:res.data})
-        history.push('/profile')
+        console.log(res.data.user.role)
+        if(res.data.user.role===0){ 
+          history.push('/profile')}
+       else{history.push('/profileAdmin')}
+
 
     } catch (error) {
         dispatch({type:LOGIN_FAIL,payload:error?.response?.data?.error})

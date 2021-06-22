@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+app.use(cors())
 app.use(express.json())
 require('dotenv').config()
 
@@ -12,8 +14,9 @@ app.use('/theme', require('./routes/theme'))
 app.use('/lignecommande', require('./routes/lignecommande'))
 app.use('/commande', require('./routes/commande'))
 app.use('/reservation', require('./routes/reservation'))
+app.use('/img', require('./routes/uploade'))
 
-
+app.use('/uploads',express.static(__dirname+"/uploads"))
 
 const PORT= process.env.PORT||5000;
 

@@ -47,10 +47,8 @@ function App() {
       <Route exact path='/products' component={Products}></Route>
 
       <Route exact path='/Detailsproduct' component={Detailsproduct}></Route>
-
-      <PrivateRoute exact path='/profileAdmin' component={ProfileAdmin}></PrivateRoute>◘
+      <PrivateRoute exact path='/profileAdmin' component={ProfileAdmin}></PrivateRoute>
       <PrivateRouteUser exact path='/profile' component={Profile}></PrivateRouteUser>
-
       </Switch>
 
       

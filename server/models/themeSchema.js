@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 const themeSchema = new mongoose.Schema({
-   
+
     title:{
         type: String,
         trim: true,
@@ -16,7 +16,7 @@ const themeSchema = new mongoose.Schema({
         type:mongoose.Types.ObjectId,
         ref:'Category'
     },
- 
+
 })
 
 

@@ -36,7 +36,7 @@ exports.createCategory= async (req, res) =>{
             await Category.findByIdAndDelete(req.params.id)
             res.json({error: "Deleted a Category"})
         } catch (err) {
-            return res.status(500).json({error: err.message})
+            return res.status(500).json({error:`something went wrong:${error}`})
         }
     }
     exports.updateCategory= async(req, res) =>{
@@ -46,6 +46,6 @@ exports.createCategory= async (req, res) =>{
 
             res.json({error: "Updated a category"})
         } catch (err) {
-            return res.status(500).json({error: err.message})
+            return res.status(500).json({error:`something went wrong:${error}`})
         }
     }

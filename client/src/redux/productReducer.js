@@ -6,6 +6,7 @@ const productReducer = (state = initState, { type, payload }) => {
     switch (type) {
     case  GET_PRODUCT_SUCCESS:
     return{...state,Products:payload,errors:null}
+    case POST_PRODUCT_FAIL:
     case GET_PRODUCT_FAIL:
     return{...state,errors:payload}
 

@@ -11,7 +11,9 @@ import Detailsproduct from './pages/Detailsproduct';
 import Products from './pages/Products';
 import ProfileAdmin from './components/admin/ProfileAdmin';
 import PrivateRoute from './components/PrivateRoute'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Addproduct from './components/admin/Addproduct'
 
 function App() {
   return (

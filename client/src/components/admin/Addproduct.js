@@ -6,7 +6,6 @@ import FormControl from "react-bootstrap/FormControl";
 import { MDBContainer, MDBBtn, MDBInput } from "mdbreact";
 import  { getCategory } from "../../actions/CategoryAction"
 import  {addproduct } from "../../actions/ProductAction"
-import categoryReducer from '../../redux/categoryReducer';
 import axios from 'axios';
 const Addproduct = () => {
   const category = useSelector((state) => state.categoryReducer.category);

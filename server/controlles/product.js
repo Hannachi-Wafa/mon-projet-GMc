@@ -17,12 +17,10 @@ exports.createProduct = async (req,res) => {
 
     try {
 
-        const {title, price, description,qteStock, category_id,etat,images} = myBody;
-        if (!images) return res.status(400).json({ error: "No image upload" })
+        const {title, price, description,qteStock, category_id,etat} = myBody;
         let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
 
         const newProduct = new Products({...myBody,images:path})
-        console.log(path)
         const productt=await newProduct.save();
 
         res.status(200).json({productt})

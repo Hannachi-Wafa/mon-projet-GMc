@@ -3,6 +3,7 @@ const {createProduct,deleteProduct,updateProduct,getProduct} = require('../contr
 const {userAuth} = require('../middleware/userAuth')
 const {AdminAuth}= require('../middleware/AdminAuth')
 const router= express.Router();
+const Products = require('../models/productSchema')
 
 const multer = require('multer')
 
@@ -17,8 +18,8 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 
+router.post('/newproducts', userAuth,AdminAuth,upload.single('images'), createProduct)
 router.get('/products',getProduct)
-router.post('/newproducts', userAuth,AdminAuth,upload.single('images'),createProduct)
 
 router.delete('/products/:id',userAuth, AdminAuth, deleteProduct)
 router.put('/products/:id', userAuth, AdminAuth,updateProduct)

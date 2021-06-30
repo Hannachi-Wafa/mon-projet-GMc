@@ -32,6 +32,7 @@ exports.deleteProduct = async (req, res) => {
     try {
         await Products.findByIdAndDelete({ _id: req.params.id })
          res.json({ error: "Deleted a Product" })
+         
     } catch (err) {
         return res.status(500).json({ error: err.message })
     }
@@ -40,11 +41,11 @@ exports.updateProduct = async (req, res) => {
     let myBody=JSON.parse(req.body.data)
 
     try {
-        
+
         const {title, price, description,qteStock, category_id,images}= myBody;
         let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
 
-        await Products.findOneAndUpdate({ _id: req.params.id },{...myBody,images:path})
+        await Products.findOneAndUpdate({ _id: req.params.id }, {...myBody})
 
         res.json({ error: "Updated a Product" })
     } catch (err) {

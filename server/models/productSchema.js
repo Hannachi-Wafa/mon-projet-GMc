@@ -30,6 +30,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
     
     },
+  
     etat: {
         type: String,
         enum: ["en stock", "hors stock"],

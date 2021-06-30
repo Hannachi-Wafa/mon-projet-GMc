@@ -21,7 +21,7 @@ import Slide from './pages/Slide';
 import SideTopBar from './pages/SideTopBar';
 
 import Navbar1 from './components/Navbar1';
-
+import VenteMariage from './pages/VenteMariage';
 
 
 
@@ -33,22 +33,37 @@ function App() {
 
 {/* <SideTopBar></SideTopBar>
     <Navbar></Navbar> */}
-    <Switch>
+
+
+          
       <Navbar1></Navbar1>
+    <Switch>
       <Route exact path='/' component={Home}></Route>
       <Route exact path='/login' component={Login}></Route>
       <Route exact path='/card' component={Card}></Route>
       <Route exact path='/product' component={Product}></Route>
       <Route exact path='/products' component={Products}></Route>
+      <Route exact path='/pages/ImagesBTN' component={ImagesBTN}></Route>
 
       <Route exact path='/Detailsproduct' component={Detailsproduct}></Route>
+      <Route exact path='/pages/ThemeMariage' component={ThemeMariage}></Route>
+      <Route exact path='/pages/ThemeAnniv' component={ThemeAnniv}></Route>
+      <Route exact path='/pages/ThemeBaby' component={ThemeBaby}></Route>
 
-      <PrivateRoute exact path='/profileAdmin' component={ProfileAdmin}></PrivateRoute>◘
+      <PrivateRoute exact path='/profileAdmin' component={ProfileAdmin}></PrivateRoute>
       <PrivateRouteUser exact path='/profile' component={Profile}></PrivateRouteUser>
 
       </Switch>
 
-      
+
+      <br></br>
+          <br></br>
+          <br></br>
+
+          <VenteMariage></VenteMariage>
+          {/* <ImagesBTN></ImagesBTN>  */}
+          
+      {/* <ThemeModel></ThemeModel> */}
       
       {/* <SideTopBar></SideTopBar>
 

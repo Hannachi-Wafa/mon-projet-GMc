@@ -1,7 +1,30 @@
-import React from 'react'
-import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
+import React, { useState } from 'react'
+
+
+import {Form,Col,Row, Button, Modal, Card  } from 'react-bootstrap';
+
+
+
+
+import {MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
+
+
+
+
+
+
 
 const ThemeModel = () => {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [startDate, setStartDate] = useState(new Date());
+
+    
+
     return (
         <div>
                 <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px" }}>
@@ -25,9 +48,53 @@ const ThemeModel = () => {
                 <MDBCardText>
                 Pour 60 personnes
                 </MDBCardText>
-                <MDBBtn rounded className='mx-2' color='info'>
-                    Réserver
-                </MDBBtn>
+                
+
+
+
+                                <Button variant="primary" onClick={handleShow}>
+                                Réserver
+                    </Button>
+
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                        <Modal.Title>Choisir votre date</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <div>
+                            <Form>
+  <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+    <Form.Label style={{color:"MediumBlue"}} column sm="2">
+      Date
+    </Form.Label>
+    <Col sm="10">
+    <Form.Control type="text" placeholder="jj/mm/aaaa"/>
+    </Col>
+  </Form.Group>
+
+  <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+    <Form.Label style={{color:"MediumBlue"}} column sm="2">
+      Heure
+    </Form.Label>
+    <Col sm="10">
+      <Form.Control type="text" placeholder="Heure de votre événement (exp: 18h)" />
+    </Col>
+  </Form.Group>
+</Form>
+                                </div>              
+                        </Modal.Body>
+                        
+                        <Modal.Footer>
+                        <Button variant="light" onClick={handleClose}>
+                            Fermer
+                        </Button>
+                        <Button  variant="success" onClick={handleClose}>
+                        Sauvegarder
+                        </Button>
+                        </Modal.Footer>
+                    </Modal>
+                
+
             </MDBCardBody>
             </MDBCol>
         </MDBRow>
@@ -37,30 +104,7 @@ const ThemeModel = () => {
         <br></br>
         <br></br>
 
-        <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px" }}>
-        <MDBRow className='g-0'>
-            
-            <MDBCol md='6' >
-            <MDBCardImage style={{ height:"350px", maxWidth: '450px' }}  src='https://archzine.fr/wp-content/uploads/2016/12/mariage-retro-chic-rubans-roses-d%C3%A9coration-simple-et-douce-e1482146183748.jpg' alt='...' fluid />
-            </MDBCol>
-            
-            <MDBCol md='6'>
-            <MDBCardBody>
-                <MDBCardTitle>Théme chic en rose</MDBCardTitle>
-                <MDBCardText>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This
-                content is a little bit longer.
-                </MDBCardText>
-                <MDBCardText>
-                <small className='text-muted'>Last updated 3 mins ago</small>
-                </MDBCardText>
-                <MDBBtn rounded className='mx-2' color='info'>
-                    Réserver
-                </MDBBtn>
-            </MDBCardBody>
-            </MDBCol>
-        </MDBRow>
-        </MDBCard>
+        
 
         <br></br>
         <br></br>

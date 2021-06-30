@@ -28,7 +28,7 @@ const Productcard = ({product}) => {
                 <h6 className="mb-3">{product.price}TND</h6>
                 {
                         product.qteStock > 0
-                        ? <h6 className="text-success">{product.etat}</h6>
+                        ? <h6 className="text-success">en stock</h6>
                         : <h6 className="text-danger">hors stock</h6>
                     }
                   </div>

@@ -26,7 +26,6 @@ import VenteMariage from './pages/VenteMariage';
 
 
 
-import Addproduct from './components/admin/Addproduct'
 import DetailsProduct from './pages/DetailsProduct';
 
 function App() {

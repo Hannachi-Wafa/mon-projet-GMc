@@ -30,18 +30,21 @@ exports.createProduct = async (req,res) => {
 }
 exports.deleteProduct = async (req, res) => {
     try {
-        await Products.findByIdAndDelete(req.params.id)
-        res.json({ error: "Deleted a Product" })
+        await Products.findByIdAndDelete({ _id: req.params.id })
+         res.json({ error: "Deleted a Product" })
     } catch (err) {
         return res.status(500).json({ error: err.message })
     }
 }
 exports.updateProduct = async (req, res) => {
-    try {
-        const { title, price, description, images, qteStock, category_id,etat } = req.body;
-        if (!images) return res.status(400).json({ error: "No image upload" })
+    let myBody=JSON.parse(req.body.data)
 
-        await Products.findOneAndUpdate({ _id: req.params.id },  { title: title.toLowerCase(), price, description, images, qteStock, category_id,etat })
+    try {
+        
+        const {title, price, description,qteStock, category_id,images}= myBody;
+        let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
+
+        await Products.findOneAndUpdate({ _id: req.params.id },{...myBody,images:path})
 
         res.json({ error: "Updated a Product" })
     } catch (err) {

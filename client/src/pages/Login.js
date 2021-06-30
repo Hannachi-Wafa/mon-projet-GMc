@@ -15,7 +15,6 @@ const Register = () => {
         password: '',
       });
     const errors = useSelector((state) => state.authReducer.errors);
-    const errors1 = useSelector((state) => state.authReducer.errors);
 
 
     const dispatch = useDispatch();

@@ -34,7 +34,9 @@ const Addproduct = () => {
  
 };
 const handleSubmit = () => {
- dispatch(addproduct(input,file));
+ dispatch(addproduct(input,file))
+ handleClose();
+ ;
 };
 const [selectedItem, setSelectedItem] = useState("Choose category");
 const handleSelectCategory = (e) => {
@@ -111,19 +113,13 @@ const handleSelectCategory = (e) => {
 
 <Form.Label>quantité</Form.Label>
            <FormControl
-            name="qtestock"
+            name="qteStock"
             type="number"
             onChange={handleChange}
 
           ></FormControl>
 
-<Form.Label>etat</Form.Label>
-           <FormControl
-            name="etat"
-            type="text"
-            onChange={handleChange}
 
-          ></FormControl>
           </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

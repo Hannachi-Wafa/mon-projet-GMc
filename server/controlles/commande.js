@@ -43,3 +43,16 @@ exports.updatecommande = async (req, res) => {
         return res.status(500).json({ error: err.message })
     }
 }
+exports.validateCommande= async (req, res) => {
+    try {
+    const { id } = req.body;
+    await CommandeVente.findByIdAndUpdate(id, { isValidate: true })
+        .findById(id)
+        .populate("user")
+        res.status(200).json(commande)
+          
+    } catch(err) {
+        return res.status(500).json({ error: err.message })
+      }
+    }
+  

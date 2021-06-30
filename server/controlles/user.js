@@ -47,3 +47,4 @@ exports.getUser=async (req, res) =>{
         res.status(500).json({error:`something went wrong:${error}`}) 
     }
 }
+

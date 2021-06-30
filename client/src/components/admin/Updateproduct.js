@@ -5,9 +5,9 @@ import { Button ,Form,Dropdown,DropdownButton} from 'react-bootstrap';
 import FormControl from "react-bootstrap/FormControl";
 import { MDBContainer, MDBBtn, MDBInput } from "mdbreact";
 import  { getCategory } from "../../actions/CategoryAction"
-import  {addproduct } from "../../actions/ProductAction"
+import  {updateproduct } from "../../actions/ProductAction"
 import axios from 'axios';
-const Addproduct = () => {
+const Updateproduct = ({product}) => {
   const category = useSelector((state) => state.categoryReducer.category);
 
   const dispatch = useDispatch()
@@ -15,32 +15,25 @@ const Addproduct = () => {
     dispatch(getCategory());
   }, [dispatch]);
   const [categorieFilter, setCategorieFilter] = useState("");
-  const [input, setInput] = useState({
-    title:"",
-    description:"",
-    price:0,
-    images:"",
-    category_id:"",
-    qtestock:0,
-    etat:"en stock"
-
-  });
+  const [input, setInput] = useState(product);
   const handleChange = (e) => {
+    e.preventDefault();
     setInput({ ...input, [e.target.name]: e.target.value });
   };
-  const [file, setfile] = useState(null)
+  
+  const [file, setfile] = useState()
   const handleUpload= (e) => {
     setfile(e.target.files[0]);
  
 };
 const handleSubmit = () => {
- dispatch(addproduct(input,file))
+ dispatch(updateproduct(input,file,input._id));
  handleClose();
- ;
+
 };
 const [selectedItem, setSelectedItem] = useState("Choose category");
 const handleSelectCategory = (e) => {
-  setInput({ ...input, category_id: e.target.id });
+  setInput({ ...input, category_id: e.target.id});
   setSelectedItem(e.target.text);
 };
   const [show, setShow] = useState(false);
@@ -50,11 +43,11 @@ const handleSelectCategory = (e) => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-      ajouter produit </Button >
+      modifie</Button >
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>ajouter produit</Modal.Title>
+          <Modal.Title>modifier</Modal.Title>
         </Modal.Header>
         <Modal.Body> 
         <Form.Label>titre</Form.Label>
@@ -62,6 +55,7 @@ const handleSelectCategory = (e) => {
             name="title"
             type="text"
             onChange={handleChange}
+            value={input.title}
 
           ></FormControl>
 
@@ -70,6 +64,8 @@ const handleSelectCategory = (e) => {
             name="price"
             type="number"
             onChange={handleChange}
+            value={input.price}
+
 
           ></FormControl>
 
@@ -78,6 +74,7 @@ const handleSelectCategory = (e) => {
             name="description"
             type="text"
             onChange={handleChange}
+            value={input.description}
 
           ></FormControl>
 
@@ -87,7 +84,7 @@ const handleSelectCategory = (e) => {
             id='images'
             type="file"
             onChange={handleUpload}
-          ></FormControl>
+></FormControl>
 
 <Form.Label>categorie</Form.Label>
 <Form.Group>
@@ -102,12 +99,16 @@ const handleSelectCategory = (e) => {
                       <Dropdown.Item
                         id={el._id}
                         name="category_id"
+                        value={el.category_id}
                         onClick={handleSelectCategory}
                       >
                         {el.name}
+                
+
                       </Dropdown.Item>
                     )
                 )}
+
               </DropdownButton>
             </Form.Group>
 
@@ -116,6 +117,7 @@ const handleSelectCategory = (e) => {
             name="qteStock"
             type="number"
             onChange={handleChange}
+            value={input.qteStock}
 
           ></FormControl>
 
@@ -136,4 +138,4 @@ const handleSelectCategory = (e) => {
 }
  
 
-export default Addproduct
+export default Updateproduct

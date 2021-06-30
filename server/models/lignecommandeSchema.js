@@ -15,9 +15,12 @@ const lignecommandeSchema = new mongoose.Schema({
         type:mongoose.Types.ObjectId,
         ref:'Products'
     },
+    numero: { 
+        type: Number },
+
     commande_id: { 
         type: mongoose.Types.ObjectId,
-         ref: "commande" },
+        ref: "commande" },
 
 })
 

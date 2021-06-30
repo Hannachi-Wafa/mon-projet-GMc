@@ -3,7 +3,6 @@ const {createProduct,deleteProduct,updateProduct,getProduct} = require('../contr
 const {userAuth} = require('../middleware/userAuth')
 const {AdminAuth}= require('../middleware/AdminAuth')
 const router= express.Router();
-const Products = require('../models/productSchema')
 
 const multer = require('multer')
 
@@ -22,7 +21,7 @@ router.post('/newproducts', userAuth,AdminAuth,upload.single('images'), createPr
 router.get('/products',getProduct)
 
 router.delete('/products/:id',userAuth, AdminAuth, deleteProduct)
-router.put('/products/:id', userAuth, AdminAuth,updateProduct)
+router.put('/products/:id', userAuth, AdminAuth,upload.single('images'),updateProduct)
 
 
 

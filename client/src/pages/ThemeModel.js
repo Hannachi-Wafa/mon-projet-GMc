@@ -9,11 +9,6 @@ import {Form,Col,Row, Button, Modal, Card  } from 'react-bootstrap';
 import {MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
 
 
-
-
-
-
-
 const ThemeModel = () => {
 
     const [show, setShow] = useState(false);

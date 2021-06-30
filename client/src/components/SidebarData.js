@@ -13,10 +13,12 @@ export const SidebarData = [
         },
         {
         title: 'Evénements',
+        path: '/pages/ImagesBTN',
         
-        path: '/ThemeModel',
         icon: <IoIcons.IoIosPaper />,
-        cName: 'nav-text'
+        cName: 'nav-text',
+        cNameList: 'nav-textList',
+        
         },
         {
         title: 'Produits',
@@ -28,13 +30,14 @@ export const SidebarData = [
         {
         title: 'Messages',
         path: '/messages',
-        icon: <FaIcons.FaEnvelopeOpenText />,
+        icon: <FaIcons.FaEnvelopeOpenText/>,
         cName: 'nav-text'
         },
         {
-        title: 'Contact',
-        path: '/support',
-        icon: <IoIcons.IoMdHelpCircle />,
+        titleCon: 'Contact',
+        pathCon: '/support',
+        iconCon: <IoIcons.IoMdHelpCircle />,
         cName: 'nav-text'
         }
+        
     ];

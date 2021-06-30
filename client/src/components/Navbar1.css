@@ -36,6 +36,16 @@
     padding: 8px 0px 8px 16px;
     list-style: none;
     height: 60px;
+  
+  }
+
+  .nav-textList {
+    
+    margin-left: -120px;
+    margin-bottom: 90px;
+    margin-top: 140px;
+    justify-content: start;
+    width: 500px;
   }
   
   .nav-text a {

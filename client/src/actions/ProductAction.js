@@ -36,19 +36,18 @@ export const addproduct = (data,file) => async (dispatch) => {
 export const deleteproduct = (id) => async (dispatch) => {
     tokenSet();
     try {
-        const res = await axios.delete(`/product/products/${id}`)
-        dispatch({type: DELETE_PRODUCT_SUCCESS,
-            payload: res.data})
+        const res = await axios.delete(`/product/products/${id}`,{headers: {"auth-token":localStorage.getItem('auth-token')}})
+        dispatch(getproduct())
     } catch (error) {
         dispatch({ type: DELETE_PRODUCT_FAIL, payload: error?.response?.data?.error 
         })
     }
     
 }
-export const updateproduct = (data,file, id) => async (dispatch) => {
+export const updateproduct = (data, file,id) => async (dispatch) => {
     tokenSet();
     let formData=new FormData()
-    formData.append("images",file)
+   formData.append("images",file)
     formData.append("data",JSON.stringify(data))
     try {
         const res = await axios.put(`/product/products/${id}`, formData,{headers: {"auth-token":localStorage.getItem('auth-token')}})
@@ -58,6 +57,7 @@ export const updateproduct = (data,file, id) => async (dispatch) => {
         })
     }
 }
+
 export const getDetails = id => dispatch => {
     dispatch({type: GET_ITEM, payload: id})
 }

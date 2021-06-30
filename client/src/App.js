@@ -6,11 +6,12 @@ import Profile from './pages/Profile';
 import Navbar from './pages/Navbar';
 import PrivateRouteUser from './components/PrivateRouteUser'
 import Card from './pages/Card';
-import Product from './pages/Product';
-import Detailsproduct from './pages/Detailsproduct';
 import Products from './pages/Products';
 import ProfileAdmin from './components/admin/ProfileAdmin';
 import PrivateRoute from './components/PrivateRoute'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import ImagesBTN from './pages/ImagesBTN';
 import ThemeMariage from './pages/ThemeMariage';
 import ThemeAnniv from './pages/ThemeAnniv';
@@ -25,6 +26,9 @@ import VenteMariage from './pages/VenteMariage';
 
 
 
+import Addproduct from './components/admin/Addproduct'
+import DetailsProduct from './pages/DetailsProduct';
+
 function App() {
   return (
     <>
@@ -33,16 +37,21 @@ function App() {
 
 {/* <SideTopBar></SideTopBar>
     <Navbar></Navbar> */}
+<<<<<<< HEAD
 
 
           
       <Navbar1></Navbar1>
+=======
+          <Navbar1></Navbar1>
+
+>>>>>>> main
     <Switch>
       <Route exact path='/' component={Home}></Route>
       <Route exact path='/login' component={Login}></Route>
       <Route exact path='/card' component={Card}></Route>
-      <Route exact path='/product' component={Product}></Route>
       <Route exact path='/products' component={Products}></Route>
+<<<<<<< HEAD
       <Route exact path='/pages/ImagesBTN' component={ImagesBTN}></Route>
 
       <Route exact path='/Detailsproduct' component={Detailsproduct}></Route>
@@ -50,9 +59,12 @@ function App() {
       <Route exact path='/pages/ThemeAnniv' component={ThemeAnniv}></Route>
       <Route exact path='/pages/ThemeBaby' component={ThemeBaby}></Route>
 
+=======
+      <Route exact path="/products/:prodId" component={DetailsProduct}/>
+
+>>>>>>> main
       <PrivateRoute exact path='/profileAdmin' component={ProfileAdmin}></PrivateRoute>
       <PrivateRouteUser exact path='/profile' component={Profile}></PrivateRouteUser>
-
       </Switch>
 
 

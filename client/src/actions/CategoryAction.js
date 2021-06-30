@@ -6,7 +6,7 @@ import axios from "axios"
 
 export const getCategory=(data,history)=>async(dispatch)=>{
 try {
-    const res=await axios.get('/category//category',data)
+    const res=await axios.get('/category/category',data)
     console.log(res)
     dispatch({type:GET_CATEGORY_SUCCESS,payload:res.data})
 } catch (error) {

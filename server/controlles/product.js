@@ -1,5 +1,6 @@
 const Products = require('../models/productSchema')
 
+
 exports.getProduct=async(req,res)=>{
     try {
         const products= await Products.find().populate('category_id')
@@ -10,13 +11,16 @@ exports.getProduct=async(req,res)=>{
         }   
 }
 
-exports.createProduct = async (req, res) => {
+
+exports.createProduct = async (req,res) => {
+    let myBody=JSON.parse(req.body.data)
+
     try {
-        const {title, price, description, images, qteStock, category_id,etat} = req.body;
-        if (!images) return res.status(400).json({ error: "No image upload" })
-    
-        const newProduct = new Products({
-        title: title.toLowerCase(), price, description, images, qteStock, category_id,etat})
+
+        const {title, price, description,qteStock, category_id,etat} = myBody;
+        let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
+
+        const newProduct = new Products({...myBody,images:path})
         const productt=await newProduct.save();
 
         res.status(200).json({productt})

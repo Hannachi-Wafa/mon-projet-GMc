@@ -8,7 +8,7 @@ const categoryReducer = (state = initState, { type, payload }) => {
     return{...state,category:payload,errors:null}
     case GET_CATEGORY_FAIL:
     return{...state,errors:payload}
-
+    
         default:
             return state;
     }

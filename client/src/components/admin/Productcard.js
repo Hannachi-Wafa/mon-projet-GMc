@@ -35,8 +35,8 @@ const Productcard = ({product}) => {
                   </div>
                   <div style={{display:"flex" , justifyContent:"space-around"}}>
                {/*<button  onClick={()=> dispatch(updateproduct(product._id))}  type="button" className="btn btn-primary btn-sm mr-1 mb-3"><i className="fas pr-2" /><Link to={{pathname:`/products/${product._id}`}}>modifier</Link></button>*/}
-<Updateproduct product={product} />
-            <button onClick={() => dispatch(deleteproduct(product._id))} type="button" className="btn btn-light btn-sm mr-1 mb-3"><i className="fas fa-info-circle pr-2" /> suprimer  </button>
+<Updateproduct product={product}  className="btn btn-primary btn-sm mr-1 mb-3"/><i className="fas pr-2" />
+            <button onClick={() => dispatch(deleteproduct(product._id))} type="button" className="text-danger btn btn-light btn-sm mr-2 mb-2"><i className="fas fa-info-circle pr-2" /> suprimer  </button>
                 </div>
               </div>
             </div>

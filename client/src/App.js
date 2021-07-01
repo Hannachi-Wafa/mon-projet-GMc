@@ -40,7 +40,7 @@
 
 
             
-        <Navbar1></Navbar1>
+
 
             <Navbar1></Navbar1>
 
@@ -53,7 +53,6 @@
 
         <Route exact path='/pages/ImagesBTN' component={ImagesBTN}></Route>
 
-        <Route exact path='/Detailsproduct' component={Detailsproduct}></Route>
         <Route exact path='/pages/ThemeMariage' component={ThemeMariage}></Route>
         <Route exact path='/pages/ThemeAnniv' component={ThemeAnniv}></Route>
         <Route exact path='/pages/ThemeBaby' component={ThemeBaby}></Route>

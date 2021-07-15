@@ -26,7 +26,7 @@
 
 
 
-    import DetailsProduct from './pages/DetailsProduct';
+    import DetailsProduct from './pages/Detailsproduct';
 
     function App() {
     return (
@@ -69,8 +69,13 @@
         <br></br>
             <br></br>
             <br></br>
+            <Navbar></Navbar>
 
-            <VenteMariage></VenteMariage>
+
+
+            {/* <ThemeModel></ThemeModel> */}
+
+            {/* <VenteMariage></VenteMariage> */}
             {/* <ImagesBTN></ImagesBTN>  */}
             
         {/* <ThemeModel></ThemeModel> */}

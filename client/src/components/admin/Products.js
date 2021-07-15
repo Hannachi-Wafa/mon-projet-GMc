@@ -43,7 +43,7 @@ const Products = () => {
                     </a>
                   </li>
                   {category && category.map(category=>
-                 <li className="nav-item">
+                <li className="nav-item">
                 
                     <a className="nav-link" href="#" onChange={(e) => setFilter(e.target.value)}
                         >{category.name}</a>

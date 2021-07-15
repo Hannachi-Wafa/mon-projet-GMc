@@ -9,7 +9,7 @@ const Productcard = ({product}) => {
     return (
         
               <div className="col-lg-3 col-md-4 mb-5">
-                 <div className>
+                <div className>
               <div className="view zoom overlay z-depth-2 rounded">
                 <img className="img-fluid w-100" src={product.images} alt="Sample" />
                 <a href="#!">
@@ -38,7 +38,7 @@ const Productcard = ({product}) => {
                 </div>
               </div>
             </div>
-           
+          
                   {/*Card*/}
                   {/*<div className="card" >
                     <div className="view overlay">

@@ -8,13 +8,11 @@ import {Form,Col,Row, Button, Modal, Card  } from 'react-bootstrap';
 
 import {MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
 
-import { getDetails } from '../actions/ThemeAction'
+import { getDetails } from '../../actions/ThemeAction'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
-
-const ThemeModel = ({Theme}) => {
-
+const ThemeCard = ({Theme}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -23,10 +21,9 @@ const ThemeModel = ({Theme}) => {
     const [startDate, setStartDate] = useState(new Date());
 
     const dispatch = useDispatch()
-
     return (
         <div>
-                <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px" }}>
+            <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px" }}>
         <MDBRow className='g-0'>
             
             <MDBCol md='6' >
@@ -37,14 +34,14 @@ const ThemeModel = ({Theme}) => {
             <MDBCardBody>
                 <MDBCardTitle >{Theme.title}</MDBCardTitle>
                 <MDBCardText>
-                  {Theme.useDispatch}
+                {Theme.desc}
                 
                 </MDBCardText>
                 <MDBCardText>
-                  {Theme.prix}
+                {Theme.prix}
                 </MDBCardText>
                 <MDBCardText>
-                  {Theme.nbrPersonne}
+                {Theme.nbrPersonne}
                 </MDBCardText>
                 
 
@@ -61,24 +58,24 @@ const ThemeModel = ({Theme}) => {
                         <Modal.Body>
                             <div>
                             <Form>
-  <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-    <Form.Label style={{color:"MediumBlue"}} column sm="2">
-      Date
-    </Form.Label>
-    <Col sm="10">
-    <Form.Control type="text" placeholder="jj/mm/aaaa"/>
-    </Col>
-  </Form.Group>
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                <Form.Label style={{color:"MediumBlue"}} column sm="2">
+                Date
+                </Form.Label>
+                <Col sm="10">
+                <Form.Control type="text" placeholder="jj/mm/aaaa"/>
+                </Col>
+            </Form.Group>
 
-  <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-    <Form.Label style={{color:"MediumBlue"}} column sm="2">
-      Heure
-    </Form.Label>
-    <Col sm="10">
-      <Form.Control type="text" placeholder="Heure de votre événement (exp: 18h)" />
-    </Col>
-  </Form.Group>
-</Form>
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                <Form.Label style={{color:"MediumBlue"}} column sm="2">
+                Heure
+                </Form.Label>
+                <Col sm="10">
+                <Form.Control type="text" placeholder="Heure de votre événement (exp: 18h)" />
+                </Col>
+            </Form.Group>
+            </Form>
                                 </div>              
                         </Modal.Body>
                         
@@ -107,10 +104,8 @@ const ThemeModel = ({Theme}) => {
         <br></br>
         <br></br>
         <br></br>
-
-
         </div>
     )
 }
 
-export default ThemeModel
+export default ThemeCard

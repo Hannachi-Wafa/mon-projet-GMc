@@ -1,9 +1,10 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import Products from './Products'
 const Home=()=> {
+  
     return (
-        <div>
-            <p>home</p>
+        <div className ="container container-fluid">
+            <Products></Products>
         </div>
     )
 }

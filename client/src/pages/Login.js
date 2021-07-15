@@ -34,6 +34,8 @@ const Register = () => {
        dispatch(registerUser(input1, history));
       };
     return (
+      <div className="container dark-grey-text mt-5" >
+
         <div className="row">
                <div className="container col-xs-12 col-sm-6">
         <div className="row justify-content-center">
@@ -104,6 +106,7 @@ const Register = () => {
           </div>
         </div>
       </div>  
+        </div>
         </div>
     )
 }

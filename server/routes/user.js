@@ -1,5 +1,5 @@
 const express=require('express');
-const { register, login,getUser,addCart } = require('../controlles/user');
+const { addCart,register, login,getUser } = require('../controlles/user');
 const validateUser = require('../controlles/validateUser');
 const {userAuth} = require('../middleware/userAuth')
 

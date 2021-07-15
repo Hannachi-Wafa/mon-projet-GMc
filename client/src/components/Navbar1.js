@@ -23,9 +23,9 @@ const showSidebar = () => setSidebar(!sidebar);
     return (
         <div>
                 <IconContext.Provider value={{ color: 'black' }} >
+         
                 
-                
-            <div className='navbar'>
+            <div className='navbar  fixed-top'>
             
             
             <Link to='#' className='menu-bars'>
@@ -93,10 +93,10 @@ const showSidebar = () => setSidebar(!sidebar);
         
             {/* <SideTopBar></SideTopBar> */}
             </div>
-            
-            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-            <ul className='nav-menu-items' onClick={showSidebar}>
-                <li className='navbar-toggle'>
+<div className="fas fa-arrow-left  ">
+            <nav className={sidebar ? 'nav-menu active' : 'nav-menu' }>
+            <ul className='nav-menu-items list-unstyled'  onClick={showSidebar}>
+                <li className='navbar-toggle '>
                 <Link to='#' className='menu-bars'>
                     <AiIcons.AiOutlineClose />
                 </Link>
@@ -116,6 +116,7 @@ const showSidebar = () => setSidebar(!sidebar);
                 })}
             </ul>
             </nav>
+            </div>
         </IconContext.Provider>
         </div>
     )

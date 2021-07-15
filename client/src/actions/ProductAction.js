@@ -7,10 +7,10 @@ import {
 import axios from "axios"
 import { tokenSet } from "../helpers/tokenSet"
 
-export const getproduct = (data, history) => async (dispatch) => {
+export const getproduct = (data, history,) => async (dispatch) => {
    
     try {
-        const res = await axios.get('/product/products', data)
+        const res = await axios.get(`/product/products/`, data)
         console.log(res)
         dispatch({ type: GET_PRODUCT_SUCCESS, payload: res.data })
     } catch (error) {
@@ -61,3 +61,4 @@ export const updateproduct = (data, file,id) => async (dispatch) => {
 export const getDetails = id => dispatch => {
     dispatch({type: GET_ITEM, payload: id})
 }
+

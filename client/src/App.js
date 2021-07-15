@@ -48,7 +48,7 @@
         <Switch>
         <Route exact path='/' component={Home}></Route>
         <Route exact path='/login' component={Login}></Route>
-        <Route exact path='/card' component={Card}></Route>
+        <Route exact path='/card/:prodId?' component={Card}></Route>
         <Route exact path='/products' component={Products}></Route>
 
         <Route exact path='/pages/ImagesBTN' component={ImagesBTN}></Route>

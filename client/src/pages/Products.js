@@ -4,24 +4,24 @@ import { useSelector } from 'react-redux'
 import Productcard from './Productcard'
 import { useDispatch } from 'react-redux'
 import {getproduct} from '../actions/ProductAction'
-import  { getCategory } from "../actions/CategoryAction"
+import {getCategory} from '../actions/CategoryAction'
 
 const Products = () => {
+//const Categories=["mariage","anniversaire", "baby showrs"]
     const dispatch = useDispatch()
     useEffect(() => {
-       dispatch(getproduct())
-       dispatch(getCategory());
-
+      dispatch(getproduct())
+      dispatch(getCategory())
+   ;
         }
     , [])
+  
     const category = useSelector((state) => state.categoryReducer.category);
-
     const products = useSelector(state => state.productReducer.Products)
-    const [filter, setFilter] = useState("");
+    
 
     return (
         <div>
-      
         <main>
           <div className="container">
             {/*Navbar*/}
@@ -42,13 +42,17 @@ const Products = () => {
                       <span className="sr-only">(current)</span>
                     </a>
                   </li>
-                  {category && category.map(category=>
-                 <li className="nav-item">
+               {category && category.map(category=> 
+                 <li className="nav-item" >
                 
-                    <a className="nav-link" href="#" onChange={(e) => setFilter(e.target.value)}
-                        >{category.name}</a>
+                    <a className="nav-link" 
+                                    >{category.name} 
+
+                       </a>
+                      
                   </li>
-                  )}
+             )}
+      
                 </ul>
           
                 {/* Links */}

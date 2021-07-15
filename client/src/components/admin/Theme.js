@@ -1,29 +1,29 @@
-
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import Productcard from './Productcard'
+import ThemeCard from './ThemeCard'
 import { useDispatch } from 'react-redux'
-import {getproduct} from '../actions/ProductAction'
-import {getCategory} from '../actions/CategoryAction'
+import {getTheme} from '../../actions/ThemeAction'
+import  { getCategory } from "../../actions/CategoryAction"
+import Productcard from './Productcard'
 
-const Products = () => {
-//const Categories=["mariage","anniversaire", "baby showrs"]
+const Theme = () => {
+
     const dispatch = useDispatch()
-    useEffect(() => {
-      dispatch(getproduct())
-      dispatch(getCategory());
 
+    useEffect(() => {
+        dispatch(getTheme())
+        dispatch(getCategory());
 
         }
     , [])
-  
     const category = useSelector((state) => state.categoryReducer.category);
-    const products = useSelector(state => state.productReducer.Products)
-    
+
+    const themes = useSelector(state => state.ThemeReducer.Theme)
+    const [filter, setFilter] = useState("");
 
     return (
         <div>
-        <main>
+            <main>
           <div className="container">
             {/*Navbar*/}
             <nav className="navbar navbar-expand-lg navbar-dark bg-secondary lighten-3 mt-3 mb-5">
@@ -43,17 +43,13 @@ const Products = () => {
                       <span className="sr-only">(current)</span>
                     </a>
                   </li>
-               {category && category.map(category=> 
-                 <li className="nav-item" >
+                  {category && category.map(category=>
+                <li className="nav-item">
                 
-                    <a className="nav-link" 
-                                    >{category.name} 
-
-                       </a>
-                      
+                    <a className="nav-link" href="#" onChange={(e) => setFilter(e.target.value)}
+                        >{category.name}</a>
                   </li>
-             )}
-      
+                  )}
                 </ul>
           
                 {/* Links */}
@@ -66,7 +62,8 @@ const Products = () => {
            
         
             <div className="d-flex row mb-4 " >
-            {products && products.map(product=><Productcard key={product._id} product={product}/>)}
+            {themes && themes.map(Theme=><Productcard key={Theme._id} Theme={Theme}/>
+            )}
             
             </div>
                
@@ -117,9 +114,8 @@ const Products = () => {
         </main>
         {/*Main layout*/}
         {/*Footer*/}
-        
-      </div>
+        </div>
     )
 }
 
-export default Products
+export default Theme

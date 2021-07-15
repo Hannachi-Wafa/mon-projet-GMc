@@ -8,6 +8,21 @@ const themeSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
+    desc:{
+        type: String,
+        trim: true,
+        required: true
+    },
+    prix:{
+        type: String,
+        trim: true,
+        required: true
+    },
+    nbrPersonne:{
+        type: String,
+        trim: true,
+        required: true
+    },
     images:{
         type: Object,
         required: true

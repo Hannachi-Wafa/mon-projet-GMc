@@ -40,7 +40,7 @@ const ThemeBaby = () => {
             <Card style={{ width: '400px' }}>
             <Card.Img style={{ height: '250px' }} variant="top" src="http://www.axianephotographe.fr/wp-content/uploads/2020/07/photographe-babyshower-paris-23.jpg" />
             <Card.Body>
-            <Card.Title>Tropicale</Card.Title>
+            <Card.Title>Garcon</Card.Title>
             <Card.Text>
             4 models sur la plage disponible
             </Card.Text>

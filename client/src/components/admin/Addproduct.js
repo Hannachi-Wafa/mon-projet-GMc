@@ -31,12 +31,12 @@ const Addproduct = () => {
   const [file, setfile] = useState(null)
   const handleUpload= (e) => {
     setfile(e.target.files[0]);
- 
+
 };
 const handleSubmit = () => {
- dispatch(addproduct(input,file))
- handleClose();
- ;
+dispatch(addproduct(input,file))
+handleClose();
+;
 };
 const [selectedItem, setSelectedItem] = useState("Choose category");
 const handleSelectCategory = (e) => {
@@ -82,7 +82,7 @@ const handleSelectCategory = (e) => {
           ></FormControl>
 
 <Form.Label>image</Form.Label>
-           <FormControl
+          <FormControl
             name="images"
             id='images'
             type="file"
@@ -92,7 +92,7 @@ const handleSelectCategory = (e) => {
 <Form.Label>categorie</Form.Label>
 <Form.Group>
               <DropdownButton id="dropdown-basic-button" title={selectedItem}>
-             
+            
                 {category.map(
                   (el) =>
                     el.name
@@ -112,7 +112,7 @@ const handleSelectCategory = (e) => {
             </Form.Group>
 
 <Form.Label>quantité</Form.Label>
-           <FormControl
+          <FormControl
             name="qteStock"
             type="number"
             onChange={handleChange}
@@ -134,6 +134,6 @@ const handleSelectCategory = (e) => {
     </>
   );
 }
- 
+
 
 export default Addproduct

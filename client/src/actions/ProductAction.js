@@ -7,6 +7,7 @@ import {
 import axios from "axios"
 import { tokenSet } from "../helpers/tokenSet"
 
+
 export const getproduct = (data, history,) => async (dispatch) => {
    
     try {
@@ -24,7 +25,7 @@ export const addproduct = (data,file) => async (dispatch) => {
     formData.append("data",JSON.stringify(data))
     try {
         const res = await axios.post('/product/newproducts',formData,{headers: {"auth-token":localStorage.getItem('auth-token')}}
-          )
+        )
         dispatch( {type: POST_PRODUCT_SUCCESS,
             payload: res.data})
             console.log(res.data)
@@ -47,7 +48,7 @@ export const deleteproduct = (id) => async (dispatch) => {
 export const updateproduct = (data, file,id) => async (dispatch) => {
     tokenSet();
     let formData=new FormData()
-   formData.append("images",file)
+    formData.append("images",file)
     formData.append("data",JSON.stringify(data))
     try {
         const res = await axios.put(`/product/products/${id}`, formData,{headers: {"auth-token":localStorage.getItem('auth-token')}})

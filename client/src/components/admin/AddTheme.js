@@ -85,7 +85,7 @@ const handleShow = () => setShow(true);
 
     <Form.Label>prix</Form.Label>
             <FormControl
-                name="price"
+                name="prix"
                 type="text"
                 onChange={handleChange}
 
@@ -93,7 +93,7 @@ const handleShow = () => setShow(true);
 
     <Form.Label>description</Form.Label>
             <FormControl
-                name="description"
+                name="desc"
                 type="text"
                 onChange={handleChange}
 
@@ -131,7 +131,7 @@ const handleShow = () => setShow(true);
 
     <Form.Label>Nombre de personne</Form.Label>
             <FormControl
-                name="qteStock"
+                name="nbrPersonne"
                 type="number"
                 onChange={handleChange}
 

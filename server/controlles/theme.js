@@ -11,7 +11,7 @@ exports.gettheme= async(req, res) =>{
             return res.status(500).json({error: err.message})
         }
     }
-exports.createtheme= async (req, res) =>{
+/*exports.createtheme= async (req, res) =>{
         try {
             // if user have role = 1 ---> admin
             // only admin can create , delete and update category
@@ -24,6 +24,22 @@ exports.createtheme= async (req, res) =>{
             res.json({error: "Created a theme"})
         } catch (err) {
             return res.status(500).json({error: err.message})
+        }
+    }*/
+    exports.createtheme = async (req,res) => {
+        let myBody=JSON.parse(req.body.data)
+    
+        try {
+    
+            const {title,desc,prix,nbrPersonne,category_id} = myBody;
+            let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
+    
+            const newtheme = new theme({...myBody,images:path})
+            const themee=await newtheme.save();
+    
+            res.status(200).json({themee})
+        } catch (err) {
+            return res.status(500).json({ error: err.message })
         }
     }
     exports.deletetheme = async (req, res) => {

@@ -44,7 +44,7 @@ const ProfileAdmin = () => {
 
     <div style={{display:'flex'}}>
         <div> <AddTheme></AddTheme></div>
-            {/* <Theme></Theme>  */}
+            <Theme></Theme>  
           
         
 

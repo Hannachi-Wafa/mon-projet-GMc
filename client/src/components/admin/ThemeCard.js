@@ -1,20 +1,26 @@
 import React, { useState } from 'react'
 
+/* import ReactNotification from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+import { store } from 'react-notifications-component'
 
-import {Form,Col,Row, Button, Modal, Card  } from 'react-bootstrap';
+import Animate from 'animate.css-react'
+ 
+import 'animate.css/animate.css' */
 
-
-
+import {Form,Col,Row, Button, Modal, Card ,Alert } from 'react-bootstrap';
 
 import {MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
 
-import { getDetails } from '../../actions/ThemeAction'
+import { getDetails,deleteTheme } from '../../actions/ThemeAction'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import UpdateTheme from './UpdateTheme'
 
 const ThemeCard = ({Theme}) => {
+    
     const [show, setShow] = useState(false);
-
+/*     const [shows, setShows] = useState(true); */
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -23,71 +29,47 @@ const ThemeCard = ({Theme}) => {
     const dispatch = useDispatch()
     return (
         <div>
-            <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px" }}>
-        <MDBRow className='g-0'>
+            <MDBCard style={{ width: '1400px', marginLeft:"3%", height:"350px", marginRight:'-10%' }}>
+        <MDBRow className='g-0' style={{ width: '1400px', height:"350px", marginRight:'-20%' }}>
             
             <MDBCol md='6' >
             <MDBCardImage style={{ height:"350px", maxWidth: '450px' }}  src={Theme.images} alt='...' fluid />
             </MDBCol>
             
-            <MDBCol md='6'>
-            <MDBCardBody>
-                <MDBCardTitle >{Theme.title}</MDBCardTitle>
-                <MDBCardText>
+            <MDBCol md='5'>
+            <MDBCardBody style={{ width: '1000px', marginLeft:"-40%", height:"350px" }}>
+                <MDBCardTitle > <span style={{color:"blue"}}>Théme :</span>
+                    {Theme.title}</MDBCardTitle>
+                <MDBCardText> <span style={{color:"blue"}}>Description :</span>
                 {Theme.desc}
                 
                 </MDBCardText>
-                <MDBCardText>
+                <MDBCardText> <span style={{color:"blue"}}>Prix :</span> 
                 {Theme.prix}
                 </MDBCardText>
-                <MDBCardText>
+                <MDBCardText> <span style={{color:"blue"}}>Nombre de personne :</span> 
                 {Theme.nbrPersonne}
                 </MDBCardText>
                 
 
 
 
-                                <Button variant="primary" onClick={handleShow}>
-                                Réserver
-                    </Button>
+                                <div style={{display:"flex", flexDirection:"row"}}>
+                    {/* <Button variant="info">Modifier</Button> */}
+                    <UpdateTheme Theme={Theme}  className="btn btn-primary btn-sm mr-1 mb-3"/><i className="fas pr-2" />
 
-                    <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                        <Modal.Title>Choisir votre date</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <div>
-                            <Form>
-            <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                <Form.Label style={{color:"MediumBlue"}} column sm="2">
-                Date
-                </Form.Label>
-                <Col sm="10">
-                <Form.Control type="text" placeholder="jj/mm/aaaa"/>
-                </Col>
-            </Form.Group>
+                    <Button  onClick={() => dispatch(deleteTheme(Theme._id))}
+                    variant="danger" >Supprimer</Button> 
 
-            <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-                <Form.Label style={{color:"MediumBlue"}} column sm="2">
-                Heure
-                </Form.Label>
-                <Col sm="10">
-                <Form.Control type="text" placeholder="Heure de votre événement (exp: 18h)" />
-                </Col>
-            </Form.Group>
-            </Form>
-                                </div>              
-                        </Modal.Body>
-                        
-                        <Modal.Footer>
-                        <Button variant="light" onClick={handleClose}>
-                            Fermer
-                        </Button>
-                        <Button  variant="success" onClick={handleClose}>
-                        Sauvegarder
-                        </Button>
-                        </Modal.Footer>
-                    </Modal>
+{/* <Alert variant="danger" onClose={() => setShows(false)} dismissible>
+        <Alert.Heading>Oh oups! You supp!</Alert.Heading>
+        <p>
+          supp 
+        </p>
+      </Alert> */}
+                    </div>
+
+                    
                 
 
             </MDBCardBody>

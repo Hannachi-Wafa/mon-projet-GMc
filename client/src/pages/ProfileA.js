@@ -2,9 +2,8 @@ import React,{Fragment} from 'react'
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import './profile.css';
-import Updateprofile from '../components/Updateprofile';
 
-const Profile=()=> {
+const ProfileA=()=> {
     const isAuth = useSelector((state) => state.authReducer.isAuth);
 
     const user = useSelector((state) => state.authReducer.user);
@@ -26,7 +25,7 @@ const Profile=()=> {
                   <img src="https://i.pinimg.com/474x/76/4d/59/764d59d32f61f0f91dec8c442ab052c5.jpg" alt="profile-image" className="profile"/>
                 
                   <div>
-                  <Updateprofile user={user}></Updateprofile>
+                  <a href="#" className="btn btn-primary">modifier mon profile</a>
                   </div>
                 </div>
                 <div    className="card-body col-xs-12 col-sm-6">
@@ -63,4 +62,4 @@ const Profile=()=> {
     )
 }
 
-export default Profile
+export default ProfileA

@@ -1,4 +1,4 @@
-import { REGISTER_USER, REGISTER_FAIL, LOGIN_FAIL, LOGIN_USER, LOGOUT } from "../actions/types";
+import { UPDATE_USER,REGISTER_USER, REGISTER_FAIL, LOGIN_FAIL, LOGIN_USER, LOGOUT, UPDATE_FAIL } from "../actions/types";
 const initState = {
     user: JSON.parse(localStorage.getItem('user')),
     token: localStorage.getItem('auth-token'),
@@ -29,6 +29,20 @@ const authReducer = (state = initState, { type, payload }) => {
                   isAuth: false,
                   errors: null,
                 };
+                case UPDATE_USER:
+                    return {
+                      ...state,
+                      user: payload.user,
+
+                    };
+
+                 
+                    case UPDATE_FAIL:
+                        return {
+                          ...state,
+
+                          errors:payload,
+                        };
         case LOGIN_FAIL:
         case REGISTER_FAIL:
             localStorage.clear();

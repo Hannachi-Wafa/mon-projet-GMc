@@ -1,6 +1,7 @@
 export const REGISTER_USER = 'REGISTER_USER'
 export const REGISTER_FAIL = 'REGISTER_FAIL'
-
+export const UPDATE_USER='UPDATE_USER'
+export const UPDATE_FAIL='UPDATE_FAIL'
 export const LOGIN_USER = 'LOGIN_USER'
 export const LOGIN_FAIL = 'LOGIN_FAIL'
 
@@ -62,5 +63,6 @@ export const GET_USER_FAIL="GET_USER_FAIL"
 
 export const CART_ADD_ITEM="CART_ADD_ITEM"
 export const CART_REMOVE_ITEM="CART_REMOVE_ITEM"
+export const CART_ADD_ITEM_FAIL="CART_ADD_ITEM_FAIL"
 
 export const CATEGORY_GET_ITEM="CATEGORY_GET_ITEM"

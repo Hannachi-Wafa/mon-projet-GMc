@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { logout } from '../actions/authActions';
 const Navbar = () => {
   const isAuth = useSelector((state) => state.authReducer.isAuth);
-  const isAdmin = useSelector((state) => state.authReducer.isdmin);
+  const isAdmin = useSelector((state) => state.authReducer.isAdmin);
 
   const user = useSelector((state) => state.authReducer.user);
   const dispatch = useDispatch();

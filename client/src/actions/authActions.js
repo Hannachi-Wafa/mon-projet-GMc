@@ -1,4 +1,4 @@
-import { ADD_TO_CART_USER, ADD_TO_CART_USER_FAIL, GET_USER_FAIL, GET_USER_SUCCESS, LOGIN_FAIL, LOGIN_USER, LOGOUT, REGISTER_FAIL, REGISTER_USER } from "./types"
+import {UPDATE_USER,UPDATE_FAIL, ADD_TO_CART_USER, ADD_TO_CART_USER_FAIL, GET_USER_FAIL, GET_USER_SUCCESS, LOGIN_FAIL, LOGIN_USER, LOGOUT, REGISTER_FAIL, REGISTER_USER } from "./types"
 
 import axios from "axios"
 import { tokenSet } from "../helpers/tokenSet"
@@ -59,7 +59,18 @@ export const loginUser=(data,history)=>async(dispatch)=>{
       };
   
 
+      export const updateUser=(data,id)=>async(dispatch)=>{
+        tokenSet();
 
+        try {
+            const res=await axios.put(`/user/user/${id}`,data,{headers: {"auth-token":localStorage.getItem('auth-token')}})
+            dispatch({type:UPDATE_USER,payload:res.data})
+
+        } catch (error) {
+            dispatch({type:UPDATE_FAIL,payload:error?.response?.data?.error})
+        }
+        }
+     
    
   {/*} export  const addCart = async (product) => {
 

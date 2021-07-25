@@ -1,9 +1,10 @@
 .navbar {
     background-color: white;
-    height: 70px;
+    height: 80px;
     display: flex;
     justify-content: start;
     align-items: center;
+    margin-top: -20px;
   }
   
   .menu-bars {
@@ -22,6 +23,9 @@
     top: 0;
     left: -100%;
     transition: 850ms;
+    margin-top: 30px;
+    
+
   }
   
   .nav-menu.active {
@@ -76,7 +80,26 @@
     justify-content: start;
     align-items: center;
   }
-  
+  svg{
+    width:"16";
+     height:"16";
+
+  }
   span {
     margin-left: 16px;
   }
+
+
+  @media screen and (max-width: 800px) {
+    
+    .search {
+     width: "200px"; /* The width is 100%, when the viewport is 800px or smaller */
+   }
+ 
+   span {
+     margin-left: 0px;
+   }
+ svg{
+   position: relative;
+ }
+ }

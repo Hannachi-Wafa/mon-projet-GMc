@@ -27,6 +27,7 @@
 
 
     import DetailsProduct from './pages/Detailsproduct';
+import ProfileA from './pages/ProfileA';
 
     function App() {
     return (
@@ -60,6 +61,7 @@
 
         <Route exact path="/products/:prodId" component={DetailsProduct}/>
 
+        <PrivateRoute exact path='/profileA' component={ProfileA}></PrivateRoute>
 
         <PrivateRoute exact path='/profileAdmin' component={ProfileAdmin}></PrivateRoute>
         <PrivateRouteUser exact path='/profile' component={Profile}></PrivateRouteUser>
@@ -69,7 +71,6 @@
         <br></br>
             <br></br>
             <br></br>
-            <Navbar></Navbar>
 
 
 

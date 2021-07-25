@@ -9,7 +9,6 @@ const Card = ({match, location, history}) => {
  const qty= location.search ? Number(location.search.split('=')[1] ):1
 const dispatch = useDispatch()
 const cart = useSelector(state=>state.cartReducer)
-//const cartItemsFromStorage=localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')):[]
 
 const {cartItems}=cart
 useEffect(() => {
@@ -25,10 +24,7 @@ const checkoutHandler=()=>{
 //history.push('/login?redirect:shipping')
 }
 
-{/* const commande = useSelector(state => state.cardReducer.commande)
-  const products = useSelector(state => state.productReducer.Products.find(el=> el._id === match.params.prodId))
 
- const lignecommande = useSelector(state => state.cardReducer.lignecommande)*/}
     return (
         <div className="container dark-grey-text mt-5">
         {/*Grid row*/}

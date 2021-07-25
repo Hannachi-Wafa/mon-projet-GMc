@@ -47,4 +47,16 @@ exports.getUser=async (req, res) =>{
         res.status(500).json({error:`something went wrong:${error}`}) 
     }
 }
+exports.updateuser = async (req, res) => {
+    try {
 
+        const {fullname,password,email}=req.body;
+
+        await User.findByIdAndUpdate({_id: req.params.id}, {fullname,password,email})
+
+        res.json({ error: "Updated a user" })
+        
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+}

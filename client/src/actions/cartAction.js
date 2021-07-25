@@ -3,6 +3,7 @@ import { tokenSet } from '../helpers/tokenSet';
 import{CART_ADD_ITEM , CART_REMOVE_ITEM} from './types'
 
 export const addToCart=(id,qty)=>async (dispatch,getState)=>{
+
 const {data} = await axios.get(`/product/products/${id}`)
 
 dispatch({
@@ -14,16 +15,16 @@ dispatch({
         price:data.price,
         qteStock:data.qteStock,
         qty
-    }
-})
-//localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
+    },
+});
+//localStorage.setItem("cartItems",(getState().cartItems));
 }
 
 export const removeFromCart =(id)=>(dispatch,getState)=>{
  dispatch({
      type: CART_REMOVE_ITEM,
      payload: id,
- })  
+ });  
  //localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
  
 } 

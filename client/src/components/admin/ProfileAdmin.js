@@ -9,15 +9,10 @@ import { Tab,Tabs, Sonnet} from 'react-bootstrap';
 
 const ProfileAdmin = () => {
     return (
-        <div>
+      <main>
+          <div className="container">
             <h1>ADMIN</h1>
-        {/* <div style={{display:'flex'}}>
-        <div> <Addproduct></Addproduct></div>
-            
-        <Products></Products>
-
-        </div> */}
-
+      
 
     <Tabs defaultActiveKey="Accueil" transition={false} id="noanim-tab-example">
     <Tab eventKey="Accueil" title="Accueil">
@@ -58,6 +53,7 @@ const ProfileAdmin = () => {
 
 
         </div>
+        </main>
     )
 }
 

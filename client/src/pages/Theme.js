@@ -1,73 +1,60 @@
-
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import Productcard from './Productcard'
+import ThemeCard from './ThemeCard'
 import { useDispatch } from 'react-redux'
-import {getproduct} from '../actions/ProductAction'
-import {getCategory} from '../actions/CategoryAction'
+import {getTheme} from '../actions/ThemeAction'
+import  { getCategory } from "../actions/CategoryAction"
 
+const Theme = () => {
 
-const Products = () => {
-//const Categories=["mariage","anniversaire", "baby showrs"]
     const dispatch = useDispatch()
+
     useEffect(() => {
-      dispatch(getproduct())
-      dispatch(getCategory());
-
-
+        dispatch(getTheme())
+        dispatch(getCategory());
         }
     , [])
-  
     const category = useSelector((state) => state.categoryReducer.category);
-    const products = useSelector(state => state.productReducer.Products)
-    
+    const Theme = useSelector(state => state.ThemeReducer.Theme);
+    const [filter, setFilter] = useState("");
 
     return (
         <div>
-        <main>
+            <main>
           <div className="container">
             {/*Navbar*/}
-            <nav className="navbar navbar-expand-lg navbar-dark bg-secondary lighten-3 mt-3 mb-5">
-              {/* Navbar brand */}
+            {/*<nav className="navbar navbar-expand-lg navbar-dark bg-secondary lighten-3 mt-3 mb-5">
               <span className="navbar-brand">Categories:</span>
-              {/* Collapse button */}
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" />
 
               </button>
-              {/* Collapsible content */}
               <div className="collapse navbar-collapse" id="basicExampleNav">
-                {/* Links */}
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item active">
                     <a className="nav-link" href="#">All
                       <span className="sr-only">(current)</span>
                     </a>
                   </li>
-               {category && category.map(category=> 
-                 <li className="nav-item" >
+                  {category && category.map(category=>
+                <li className="nav-item">
                 
-                    <a className="nav-link" 
-                                    >{category.name} 
-
-                       </a>
-                      
+                    <a className="nav-link" href="#" onChange={(e) => setFilter(e.target.value)}
+                        >{category.name}</a>
                   </li>
-             )}
-      
+                  )}
                 </ul>
           
-                {/* Links */}
               
               </div>
-              {/* Collapsible content */}
-            </nav>
+                  </nav>*/}
             {/*/.Navbar*/}
             {/*Section: Products v.3*/}
            
         
             <div className="d-flex row mb-4 " >
-            {products && products.map(product=><Productcard key={product._id} product={product}/>)}
+            {Theme && Theme.map(Theme=><ThemeCard key={Theme._id} Theme={Theme}/>
+            )}
             
             </div>
                
@@ -118,9 +105,8 @@ const Products = () => {
         </main>
         {/*Main layout*/}
         {/*Footer*/}
-        
-      </div>
+        </div>
     )
 }
 
-export default Products
+export default Theme

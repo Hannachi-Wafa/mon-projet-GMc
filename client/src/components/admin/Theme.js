@@ -23,13 +23,17 @@ const Theme = () => {
             <main>
           <div className="container">
             {/*Navbar*/}
-            {/*<nav className="navbar navbar-expand-lg navbar-dark bg-secondary lighten-3 mt-3 mb-5">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-secondary lighten-3 mt-3 mb-5">
+              {/* Navbar brand */}
               <span className="navbar-brand">Categories:</span>
+              {/* Collapse button */}
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" />
 
               </button>
+              {/* Collapsible content */}
               <div className="collapse navbar-collapse" id="basicExampleNav">
+                {/* Links */}
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item active">
                     <a className="nav-link" href="#">All
@@ -47,10 +51,10 @@ const Theme = () => {
           
               
               </div>
-                  </nav>*/}
+                  </nav>
             {/*/.Navbar*/}
             {/*Section: Products v.3*/}
-           
+          
         
             <div className="d-flex row mb-4 " >
             {Theme && Theme.map(Theme=><ThemeCard key={Theme._id} Theme={Theme}/>

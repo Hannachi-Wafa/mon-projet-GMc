@@ -3,10 +3,12 @@
     import Login from './pages/Login';
     import Home from './pages/Home';
     import Profile from './pages/Profile';
+
     import Navbar from './pages/Navbar';
     import PrivateRouteUser from './components/PrivateRouteUser'
     import Card from './pages/Card';
     import Products from './pages/Products';
+    import Theme from './pages/Theme'; 
     import ProfileAdmin from './components/admin/ProfileAdmin';
     import PrivateRoute from './components/PrivateRoute'
 
@@ -27,6 +29,7 @@
 
 
     import DetailsProduct from './pages/Detailsproduct';
+
 import ProfileA from './pages/ProfileA';
 
     function App() {
@@ -51,8 +54,9 @@ import ProfileA from './pages/ProfileA';
         <Route exact path='/login' component={Login}></Route>
         <Route exact path='/card/:prodId?' component={Card}></Route>
         <Route exact path='/products' component={Products}></Route>
+        {/* <Route exact path='/theme' component={Theme}></Route> */}
 
-        <Route exact path='/pages/ImagesBTN' component={ImagesBTN}></Route>
+        <Route exact path='/pages/ImagesBTN' component={Theme}></Route>
 
         <Route exact path='/pages/ThemeMariage' component={ThemeMariage}></Route>
         <Route exact path='/pages/ThemeAnniv' component={ThemeAnniv}></Route>
@@ -123,7 +127,7 @@ import ProfileA from './pages/ProfileA';
             <br></br>
             <br></br> */}
 
-
+{/* <ThemeCard></ThemeCard> */}
 
 
         </>

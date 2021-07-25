@@ -67,9 +67,15 @@ const handleShow = () => setShow(true);
 
     return (
         <div>
+            <div style={{display:"flex", flexDirection:"column"}}>
             <Button variant="primary" onClick={handleShow}>
         ajouter Theme EVENEMENT </Button >
-
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
             <Modal.Title>ajouter Theme EVENEMENT</Modal.Title>
@@ -149,6 +155,12 @@ const handleShow = () => setShow(true);
             </Button>
             </Modal.Footer>
         </Modal>
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
         </div>
     )
 }

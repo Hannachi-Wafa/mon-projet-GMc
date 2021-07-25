@@ -13,6 +13,8 @@ import { getDetails } from '../actions/ThemeAction'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
+import Swal from 'sweetalert2'
+
 const ThemeCard = ({Theme}) => {
     const [show, setShow] = useState(false);
 
@@ -22,9 +24,21 @@ const ThemeCard = ({Theme}) => {
     const [startDate, setStartDate] = useState(new Date());
 
     const dispatch = useDispatch()
+
+    const opensweetalert=()=>
+        {
+            Swal.fire({
+            title: 'Merci !',
+            text: "on va confermer votre reservation trés bientot",
+            type: 'success',
+            
+            })
+        }
+    
     return (
         <div>
-            <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px" }}>
+            
+            <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px", marginTop:"10%" }}>
         <MDBRow className='g-0'>
             
             <MDBCol md='6' >
@@ -84,9 +98,11 @@ const ThemeCard = ({Theme}) => {
                         <Button variant="light" onClick={handleClose}>
                             Fermer
                         </Button>
-                        <Button  variant="success" onClick={handleClose}>
-                        Sauvegarder
+                        <Button  variant="success" onClick={handleClose} onClick={opensweetalert} >
+                        Réserver
                         </Button>
+                        
+                        
                         </Modal.Footer>
                     </Modal>
                 

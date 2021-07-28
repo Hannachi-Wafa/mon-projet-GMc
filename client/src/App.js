@@ -31,6 +31,12 @@
     import DetailsProduct from './pages/Detailsproduct';
 
 import ProfileA from './pages/ProfileA';
+import ReservationUser from './pages/ReservationUser';
+import Footer from './pages/Footer';
+import AboutUs from './pages/AboutUs';
+import NousTrouver from './pages/NousTrouver';
+import Services from './pages/Services'
+import SuivezNous from './pages/SuivezNous';
 
     function App() {
     return (
@@ -53,6 +59,7 @@ import ProfileA from './pages/ProfileA';
         <Route exact path='/' component={Home}></Route>
         <Route exact path='/login' component={Login}></Route>
         <Route exact path='/card/:prodId?' component={Card}></Route>
+        <Route exact path='/resrervationUser' component={ReservationUser}></Route>
         <Route exact path='/products' component={Products}></Route>
         {/* <Route exact path='/theme' component={Theme}></Route> */}
 
@@ -73,10 +80,34 @@ import ProfileA from './pages/ProfileA';
 
 
         <br></br>
+        <Slide></Slide> 
+        <br></br>
+        <br></br>
+        
+        <br></br>
+        {/* <Services></Services> */}
+        <hr></hr>
+        
+    <br></br>
+        <AboutUs></AboutUs>
             <br></br>
             <br></br>
-
-
+            <hr></hr>
+            
+            <NousTrouver></NousTrouver>
+            <br></br>
+            <br></br>
+            <hr></hr>
+            
+            <Services></Services>
+            <br></br>
+            <br></br>
+            <hr></hr>
+            <SuivezNous></SuivezNous>
+            <br></br>
+            <br></br>
+            
+            <Footer></Footer>
 
             {/* <ThemeModel></ThemeModel> */}
 

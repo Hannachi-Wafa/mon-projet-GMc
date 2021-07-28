@@ -4,16 +4,14 @@ import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import './Navbar1.css';
 import { IconContext } from 'react-icons';
-import SideTopBar from '../pages/SideTopBar';
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/authActions';
-import { Button, FormControl, Form, Nav, Navbar } from 'react-bootstrap';
+import { FormControl, Form, Nav } from 'react-bootstrap';
 
 
 const Navbar1 = () => {
     const cart = useSelector(state=>state.cartReducer)
-//const cartItemsFromStorage=localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')):[]
 
 const {cartItems}=cart
     const isAuth = useSelector((state) => state.authReducer.isAuth);
@@ -54,10 +52,11 @@ const {cartItems}=cart
 
 
 
-                    <Nav.Link href="/card" style={{ color: "rgb(235, 100, 171)", display: "flex", flexDirection: "row", marginLeft: "-95px", marginTop: "20px" }}>
-                {cartItems.length > 0 && (
-                <span class="badge rounded-pill badge-notification bg-danger">  {cartItems.length}</span>
-                )}
+                    <Nav.Link href="card/" style={{ color: "rgb(235, 100, 171)", display: "flex", flexDirection: "row", marginLeft: "-95px", marginTop: "20px" }}>
+                 {cartItems.length > 0 && (
+                       <span class="badge rounded-pill badge-notification bg-danger">  {cartItems.length}</span>
+              )}
+
 
                         <svg style={{ marginTop: "4px" }} xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                             <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
@@ -66,7 +65,7 @@ const {cartItems}=cart
 
                         <p style={{ color: "white" }}>.</p>
                         <p>Panier</p>
-
+                 
                     </Nav.Link>
 
 
@@ -167,5 +166,6 @@ const {cartItems}=cart
         </div>
     )
 }
+
 
 export default Navbar1

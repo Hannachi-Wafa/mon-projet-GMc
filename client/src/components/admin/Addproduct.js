@@ -3,10 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-bootstrap/Modal'
 import { Button ,Form,Dropdown,DropdownButton} from 'react-bootstrap';
 import FormControl from "react-bootstrap/FormControl";
-import { MDBContainer, MDBBtn, MDBInput } from "mdbreact";
 import  { getCategory } from "../../actions/CategoryAction"
 import  {addproduct } from "../../actions/ProductAction"
-import axios from 'axios';
 const Addproduct = () => {
   const category = useSelector((state) => state.categoryReducer.category);
 

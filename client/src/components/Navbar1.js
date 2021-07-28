@@ -4,16 +4,14 @@ import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import './Navbar1.css';
 import { IconContext } from 'react-icons';
-import SideTopBar from '../pages/SideTopBar';
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/authActions';
-import { Button, FormControl, Form, Nav, Navbar } from 'react-bootstrap';
+import { FormControl, Form, Nav } from 'react-bootstrap';
 
 
 const Navbar1 = () => {
     const cart = useSelector(state=>state.cartReducer)
-//const cartItemsFromStorage=localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')):[]
 
 const {cartItems}=cart
     const isAuth = useSelector((state) => state.authReducer.isAuth);
@@ -53,7 +51,7 @@ const {cartItems}=cart
 
 
 
-                    <Nav.Link href="/card" style={{ color: "rgb(235, 100, 171)", display: "flex", flexDirection: "row", marginLeft: "-95px", marginTop: "20px" }}>
+                    <Nav.Link href="card/" style={{ color: "rgb(235, 100, 171)", display: "flex", flexDirection: "row", marginLeft: "-95px", marginTop: "20px" }}>
                  {cartItems.length > 0 && (
                        <span class="badge rounded-pill badge-notification bg-danger">  {cartItems.length}</span>
               )}
@@ -65,7 +63,7 @@ const {cartItems}=cart
 
                         <p style={{ color: "white" }}>.</p>
                         <p>Panier</p>
-
+                 
                     </Nav.Link>
 
 
@@ -159,5 +157,6 @@ const {cartItems}=cart
         </div>
     )
 }
+
 
 export default Navbar1

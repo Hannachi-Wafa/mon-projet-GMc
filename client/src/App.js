@@ -24,13 +24,13 @@
     import SideTopBar from './pages/SideTopBar';
 
     import Navbar1 from './components/Navbar1';
-    import VenteMariage from './pages/VenteMariage';
 
 
 
     import DetailsProduct from './pages/Detailsproduct';
 
 import ProfileA from './pages/ProfileA';
+import Checkout from './pages/Checkout';
 
     function App() {
     return (
@@ -61,7 +61,9 @@ import ProfileA from './pages/ProfileA';
         <Route exact path='/pages/ThemeMariage' component={ThemeMariage}></Route>
         <Route exact path='/pages/ThemeAnniv' component={ThemeAnniv}></Route>
         <Route exact path='/pages/ThemeBaby' component={ThemeBaby}></Route>
+        <Route exact path='/Checkout' component={Checkout}></Route>
 
+       {/* <Route path="/shipping" component={ShippingAddressScreen}></Route>*/}
 
         <Route exact path="/products/:prodId" component={DetailsProduct}/>
 

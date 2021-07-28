@@ -4,7 +4,9 @@ import Products from './Products'
 
 import AddTheme from './AddTheme'
 import Theme from './Theme'
+import order from './Order'
 import { Tab,Tabs, Sonnet} from 'react-bootstrap';
+import Orders from './Order'
 
 
 const ProfileAdmin = () => {
@@ -26,6 +28,10 @@ const ProfileAdmin = () => {
         <div> <Addproduct></Addproduct></div>
             
         <Products></Products>
+
+        </div>
+        <div>
+        {/*<Orders />*/}
 
         </div>
     </Tab>

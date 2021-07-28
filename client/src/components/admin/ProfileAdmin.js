@@ -5,12 +5,16 @@ import Products from './Products'
 import AddTheme from './AddTheme'
 import Theme from './Theme'
 import { Tab,Tabs, Sonnet} from 'react-bootstrap';
+import Reservation from './Reservation'
 
 
 const ProfileAdmin = () => {
     return (
       <main>
           <div className="container">
+            <br></br>
+            <br></br>
+            
             <h1>ADMIN</h1>
       
 
@@ -47,7 +51,17 @@ const ProfileAdmin = () => {
     </Tab>
     <Tab eventKey="Reservation" title="Reservation" >
       {/* <Sonnet /> */}
-        ukjhgfhjkjhghjklkjhghiuy
+      <h3>
+        Les réservations</h3>
+        <br></br>
+        <br></br>
+        <div style={{display:'flex'}}>
+        <div> <Reservation></Reservation></div>
+            <Theme></Theme>  
+          
+        
+
+        </div>
     </Tab>
     </Tabs>
 

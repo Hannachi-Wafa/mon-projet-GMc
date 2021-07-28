@@ -89,7 +89,7 @@ export const validationCommande = (id) => async (dispatch) => {
     try {
         const res = await axios.put(`/commande/`, {id},{headers: {"auth-token":localStorage.getItem('auth-token')}})
         dispatch({ type: VALIDATE_COMMANDE_SUCCESS,
-             payload: res.data })
+            payload: res.data })
 
     } catch (errors) {
         dispatch({

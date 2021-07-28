@@ -3,6 +3,12 @@ const schema = mongoose.Schema;
 
 const reservationSchema = new schema({
   dateReservation: { type: Date, required: true, default: Date.now },
+  heure: {
+    type: String,
+    required: true,
+    trim: true,
+    unique: true
+},
   prix_theme:{
     type: Number,
     required: true    

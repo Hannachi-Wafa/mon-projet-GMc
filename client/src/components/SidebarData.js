@@ -9,7 +9,8 @@ export const SidebarData = [
         title: 'Accueil',
         path: '/',
         icon: <AiIcons.AiFillHome />,
-        cName: 'nav-text'
+        cName: 'nav-text',
+        
         },
         {
         title: 'Evénements',
@@ -18,6 +19,7 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
         cName: 'nav-text',
         cNameList: 'nav-textList',
+        
         
         },
         {

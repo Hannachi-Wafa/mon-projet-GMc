@@ -8,16 +8,18 @@ import Animate from 'animate.css-react'
 
 import 'animate.css/animate.css' */
 
-import {Form,Col,Row, Button, Modal, Card ,Alert } from 'react-bootstrap';
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
-import {MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
+import {Form,Col,Row, Button, Modal, Card , Alert, Select } from 'react-bootstrap';
+
+import {MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol, MDBBtn, MDBContainer, MDBInput, MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
 
 import { getDetails,deleteTheme } from '../../actions/ThemeAction'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import UpdateTheme from './UpdateTheme'
 
-const ThemeCard = ({Theme}) => {
+const Reservation = () => {
     
     const [show, setShow] = useState(false);
 /*     const [shows, setShows] = useState(true); */
@@ -27,28 +29,41 @@ const ThemeCard = ({Theme}) => {
     const [startDate, setStartDate] = useState(new Date());
 
     const dispatch = useDispatch()
+
+
+        
+        
     return (
         <div>
             <MDBCard style={{ width: '1400px', marginLeft:"3%", height:"350px", marginRight:'-10%' }}>
         <MDBRow className='g-0' style={{ width: '1400px', height:"350px", marginRight:'-20%' }}>
             
             <MDBCol md='6' >
-            <MDBCardImage style={{ height:"350px", maxWidth: '450px' }}  src={Theme.images} alt='...' fluid />
+            <MDBCardImage style={{ height:"350px", maxWidth: '450px' }} src='https://previews.123rf.com/images/iancucristi/iancucristi1508/iancucristi150800100/44340105-d%C3%A9coration-de-mariage-sur-la-table-arrangements-et-d%C3%A9coration-florale-arrangement-de-fleurs-roses-et-bla.jpg'  alt='...' fluid />
             </MDBCol>
             
             <MDBCol md='5'>
             <MDBCardBody style={{ width: '1000px', marginLeft:"-40%", height:"350px" }}>
                 <MDBCardTitle > <span style={{color:"blue"}}>Théme :</span>
-                    {Theme.title}</MDBCardTitle>
+                    </MDBCardTitle>
                 <MDBCardText> <span style={{color:"blue"}}>Description :</span>
-                {Theme.desc}
+                
                 
                 </MDBCardText>
                 <MDBCardText> <span style={{color:"blue"}}>Prix :</span> 
-                {Theme.prix}
+                
                 </MDBCardText>
                 <MDBCardText> <span style={{color:"blue"}}>Nombre de personne :</span> 
-                {Theme.nbrPersonne}
+                
+                </MDBCardText>
+                <MDBCardText> <span style={{color:"blue"}}>User :</span> 
+                
+                </MDBCardText>
+                <MDBCardText> <span style={{color:"blue"}}>Date  :</span> 
+                
+                </MDBCardText>
+                <MDBCardText> <span style={{color:"blue"}}>Heure :</span> 
+                
                 </MDBCardText>
                 
 
@@ -56,15 +71,46 @@ const ThemeCard = ({Theme}) => {
 
                                 <div style={{display:"flex", flexDirection:"row"}}>
                     {/* <Button variant="info">Modifier</Button> */}
-                    <UpdateTheme Theme={Theme}  className="btn btn-primary btn-sm mr-1 mb-3"/><i className="fas pr-2" />
+                    
 
-                    <Button  onClick={() => dispatch(deleteTheme(Theme._id))}
-                    variant="danger" >Supprimer</Button> 
+                    
+                    <h4 style={{marginTop:'10px', colr:'black'}}>Etat</h4>
+
+                            <MDBDropdown>
+                <MDBDropdownToggle>En attente</MDBDropdownToggle>
+                <MDBDropdownMenu>
+                
+                <MDBDropdownItem>
+                    <MDBDropdownLink tag='button' type='button'>
+                    Confirmer
+                    </MDBDropdownLink>
+                </MDBDropdownItem>
+                <MDBDropdownItem>
+                    <MDBDropdownLink tag='button' type='button'>
+                    Annuler
+                    </MDBDropdownLink>
+                </MDBDropdownItem>
+                </MDBDropdownMenu>
+            </MDBDropdown>
+                    
+
+            <Button  variant="danger" >Supprimer</Button> 
+
+<Button variant="info">Modifier</Button>
+                
+                
+                    
+<br>
+</br>
+<br>
+</br>
+                    
+                    
 
 {/* <Alert variant="danger" onClose={() => setShows(false)} dismissible>
         <Alert.Heading>Oh oups! You supp!</Alert.Heading>
         <p>
-          supp 
+        supp 
         </p>
       </Alert> */}
                     </div>
@@ -90,4 +136,10 @@ const ThemeCard = ({Theme}) => {
     )
 }
 
-export default ThemeCard
+export default Reservation
+
+
+
+
+
+    

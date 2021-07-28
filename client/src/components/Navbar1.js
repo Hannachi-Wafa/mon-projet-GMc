@@ -27,12 +27,13 @@ const {cartItems}=cart
             <IconContext.Provider value={{ color: "rgb(235, 100, 171)" }}  >
 
 
-                <div className='navbar  fixed-top'>
+                <div className='navbar  fixed-top' style={{zIndex: '1'}}>
                     <Link to='#' className='menu-bars'>
 
                         <FaIcons.FaBars onClick={showSidebar} />
 
                     </Link>
+                    <img alt='' src='./images/saveTHEdeco.PNG' style={{width:'200px', height:'65px'}}></img>
                     <Form style={{ display: "flex", flexDirection: "row" }}>
                         <FormControl type="text" placeholder="Search" />
                         <span style={{ textDecorationColor: "rgb(235, 100, 171)", width: "200px" }} className="input-group-text border-0 d-none d-lg-flex"
@@ -56,6 +57,7 @@ const {cartItems}=cart
                        <span class="badge rounded-pill badge-notification bg-danger">  {cartItems.length}</span>
               )}
 
+
                         <svg style={{ marginTop: "4px" }} xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
                             <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
                             <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
@@ -67,7 +69,8 @@ const {cartItems}=cart
                     </Nav.Link>
 
 
-                    <Nav.Link href="#link" style={{ color: "rgb(235, 100, 171)", display: "flex", flexDirection: "row", marginLeft: "-95px", marginTop: "20px" }}>
+                    <Nav.Link href="/reservrationUser" style={{ color: "rgb(235, 100, 171)", display: "flex", flexDirection: "row", marginLeft: "-95px", marginTop: "20px" }}>
+                        
                         <svg style={{ marginTop: "4px" }} xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar4-event" viewBox="0 0 16 16">
                             <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z" />
                             <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
@@ -129,10 +132,16 @@ const {cartItems}=cart
 
                     {/* <SideTopBar></SideTopBar> */}
                 </div>
-                <div className="fas fa-arrow-left  ">
-                    <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                        <ul className='nav-menu-items list-unstyled' onClick={showSidebar}>
-                            <li className='navbar-toggle '>
+                <br></br>
+                <br></br>
+                <br></br>
+                
+                <div >
+                    <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} style={{zIndex: '1',marginTop:'3%'}}>
+                        <ul className='nav-menu-items list-unstyled' onClick={showSidebar}  >
+                        <br></br>
+                        <br></br>
+                            <li className='navbar-toggle ' >
                                 <Link to='#' className='menu-bars'>
                                     <AiIcons.AiOutlineClose />
                                 </Link>

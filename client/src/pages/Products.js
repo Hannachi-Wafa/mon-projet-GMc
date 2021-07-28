@@ -76,14 +76,14 @@ const Products = () => {
                
                
                 
-             
+            
             {/*Section: Products v.3*/}
             {/*Pagination*/}
-            <nav className="d-flex justify-content-center wow fadeIn">
-              <ul className="pagination pg-blue">
+            <nav className="d-flex justify-content-center wow fadeIn" style={{zIndex: '0'}}>
+              <ul className="pagination pg-blue" style={{zIndex: '0'}}>
                 {/*Arrow left*/}
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" aria-label="Previous">
+                <li className="page-item disabled" style={{zIndex: '0'}}>
+                  <a className="page-link" href="#" aria-label="Previous" style={{zIndex: '0'}}>
                     <span aria-hidden="true">«</span>
                     <span className="sr-only">Previous</span>
                   </a>

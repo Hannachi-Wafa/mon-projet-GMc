@@ -30,10 +30,10 @@ const {cartItems}=cart
                 <div className='navbar  fixed-top' style={{zIndex: '1'}}>
                     <Link to='#' className='menu-bars'>
 
-                        <FaIcons.FaBars onClick={showSidebar} />
+                        <FaIcons.FaBars onClick={showSidebar}  />
 
                     </Link>
-                    <img alt='' src='./images/saveTHEdeco.PNG' style={{width:'200px', height:'65px'}}></img>
+                    <img alt='' src='./images/saveTHEdeco.PNG' style={{width:'150px', height:'50px'}}></img>
                     <Form style={{ display: "flex", flexDirection: "row" }}>
                         <FormControl type="text" placeholder="Search" />
                         <span style={{ textDecorationColor: "rgb(235, 100, 171)", width: "200px" }} className="input-group-text border-0 d-none d-lg-flex"
@@ -100,7 +100,7 @@ const {cartItems}=cart
 
                                 </p>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown " style={{marginLeft: "-60px"}}>
-                                {user && user.role!==1?(
+                                {user&& user.role!==1?(
                                     <li>
                      
                                         <a className="dropdown-item" href='/Profile'> {user.fullname}</a>

@@ -10,7 +10,7 @@ const AboutUs = () => {
             
             
             
-            <p style={{marginLeft:'10%'}}>
+            <p style={{marginLeft:'10%' , width:"500px"}}>
             <h1>QUI SOMMES NOUS ?</h1>
             <span style={{color:'DeepPink'}}>
             À CHAQUE FÊTE SA DÉCO
@@ -20,7 +20,8 @@ const AboutUs = () => {
             <br></br>
             Save the deco est là pour sauver votre déco de la morosité et de la banalité. 
             <br></br>
-            Pour tous vos évènements, anniversaire, baby shower et mariage, vous pouvez compter sur nous ! 
+            Pour tous vos évènements, anniversaire, baby shower et mariage, vous pouvez 
+            compter sur nous ! 
             <br></br>
             Nous avons sélectionné pour cela, à travers le monde,
             de la décoration au style bohème, champêtre,
@@ -34,7 +35,7 @@ const AboutUs = () => {
             </p>
             
             <div style={{marginLeft:'50px'}}>
-                <img style={{width:'480px',height:'400px'}} alt='' src='https://www.savethedeco.com/c/6-cover/decorations-de-mariage.jpg'></img>
+                <img style={{width:'500px',height:'400px'}} alt='' src='https://www.savethedeco.com/c/6-cover/decorations-de-mariage.jpg'></img>
             </div>
             
         </div>

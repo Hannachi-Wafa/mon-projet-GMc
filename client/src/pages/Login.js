@@ -35,12 +35,25 @@ const Register = () => {
       };
     return (
       <div className="container dark-grey-text mt-5" >
+        <hr></hr>
+        <br></br>
+        <br></br>
 
-        <div className="row">
-               <div className="container col-xs-12 col-sm-6">
+        <div className="row" style={{  backgroundRepeat: 'no-repeat',backgroundPosition: 'center',
+  backgroundSize: 'cover',
+      backgroundImage: `url("https://i.pinimg.com/originals/c7/5e/2c/c75e2cf2c5e8d54373cf73cc8ae00a38.jpg")` 
+    }}>
+              <div className="container col-xs-10 col-sm-5">
         <div className="row justify-content-center">
           <div className="col-xl-8 col-md-8">
-            <form className="bg-white  rounded-5 shadow-5-strong p-5">
+          <br></br>
+          <br></br>
+            <form className="bg-white  rounded-5 shadow-5-strong p-5" >
+            <div className="text-center">
+                <h3 className="dark-grey-text mb-5">
+                  <h4 style={{color:'DeepPink'}}>CONNECTEZ-VOUS À VOTRE COMPTE</h4>
+                </h3>
+              </div>
               {/* Email input */}
               <div className="form-outline mb-4">
               <label className="form-label" htmlFor="form1Example1">Email address</label>
@@ -64,6 +77,8 @@ const Register = () => {
                   <a href="#!">Forgot password?</a>
                 </div>
               </div>
+              <br></br>
+              <br></br>
         
               {/* Submit button */}
               <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>Sign in</button>
@@ -71,10 +86,17 @@ const Register = () => {
           </div>
         </div>
       </div>   
-      <div className="container col-xs-12 col-sm-6">
-        <div className="row ">
-          <div className="col-xl-8 col-md-8">
-            <form className="bg-white  rounded-5 shadow-5-strong p-5">
+      <div className="container col-xs-10 col-sm-5" style={{marginLeft:'10px'}} >
+        <div className="row " >
+          <div className="col-xl-8 col-md-8" >
+          <br></br>
+          <br></br>
+            <form className="bg-white  rounded-5 shadow-5-strong p-5" >
+            <div className="text-center"  >
+                <h3 className="dark-grey-text mb-5">
+                  <h4 style={{color:'DeepPink'}}>CONNECTEZ-VOUS À VOTRE COMPTE</h4>
+                </h3>
+              </div>
                  {/* Email fullname */}
               <div className="form-outline mb-4">
               <label className="form-label" htmlFor="form1Example1">Full name</label>
@@ -103,10 +125,18 @@ const Register = () => {
               {/* Submit button */}
               <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit1}> Register </button>
             </form>
+            <br></br>
+            <br></br>
+            <br></br>
           </div>
         </div>
       </div>  
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <hr></hr>
         </div>
     )
 }

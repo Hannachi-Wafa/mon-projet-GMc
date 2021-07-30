@@ -38,7 +38,7 @@ const ThemeCard = ({Theme}) => {
     return (
         <div>
             
-            <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px", marginTop:"10%" }}>
+            <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px", marginTop:"5%" }}>
         <MDBRow className='g-0'>
             
             <MDBCol md='6' >
@@ -47,17 +47,35 @@ const ThemeCard = ({Theme}) => {
             
             <MDBCol md='6'>
             <MDBCardBody>
-                <MDBCardTitle >{Theme.title}</MDBCardTitle>
-                <MDBCardText>
+                <MDBCardTitle >
+                <span style={{color:"blue"}}>Théme :</span>
+
+                    {Theme.title}
+                    </MDBCardTitle>
+                {/* <MDBCardText>
+                <span style={{color:"blue"}}>Description :</span>
                 {Theme.desc}
                 
                 </MDBCardText>
                 <MDBCardText>
+                <span style={{color:"blue"}}>Prix :</span> 
                 {Theme.prix}
                 </MDBCardText>
                 <MDBCardText>
+                <span style={{color:"blue"}}>Nombre de personne :</span>
                 {Theme.nbrPersonne}
-                </MDBCardText>
+                </MDBCardText> */}
+
+                <Button variant="info"
+                onClick={()=> dispatch(getDetails(Theme._id))}>
+                <Link to={{pathname:`/theme/${Theme._id}`}}> Détails </Link></Button>
+
+                {/* <button
+                onClick={()=> dispatch(getDetails(Theme._id))} 
+                type="button" className="btn btn-light btn-sm mr-1 mb-3">
+                <i className="fas fa-info-circle pr-2" />
+                <Link to={{pathname:`/themes/${Theme._id}`}}> details </Link>
+                </button> */}
                 
 
 
@@ -112,15 +130,8 @@ const ThemeCard = ({Theme}) => {
         </MDBRow>
         </MDBCard>
 
-        <br></br>
-        <br></br>
-        <br></br>
-
         
-
-        <br></br>
-        <br></br>
-        <br></br>
+        
         </div>
     )
 }

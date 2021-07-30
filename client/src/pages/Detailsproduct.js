@@ -5,12 +5,14 @@ import {Form} from "react-bootstrap"
 const DetailsProduct = ({match, history}) => {
 
     const details = useSelector(state => state.productReducer.Products.find(el=> el._id === match.params.prodId))
- const [qty, setQty] = useState(1)
- const addCartHendler=()=>{
-history.push(`/card/${match.params.prodId}?qty=${qty}`)
- }
+    const [qty, setQty] = useState(1)
+    const addCartHendler=()=>{
+    history.push(`/card/${match.params.prodId}?qty=${qty}`)
+    }
+
+    
     return (
-       <div>
+      <div>
 
         <main className="mt-5 pt-4">
         <div className="container dark-grey-text mt-5">
@@ -26,7 +28,7 @@ history.push(`/card/${match.params.prodId}?qty=${qty}`)
             <div className="col-md-6 mb-4">
               {/*Content*/}
               <div className="p-4" >
-               
+              
                 <h4 className="fas">{details.title}</h4>
 
                 <div>
@@ -37,7 +39,7 @@ history.push(`/card/${match.params.prodId}?qty=${qty}`)
                         : <h6 className="text-danger">hors stock</h6>
                     }
                   </div>               
-                   
+                  
                 <p className="lead font-weight-bold">Description</p>
 
                 <p>{details.description}</p>
@@ -64,11 +66,11 @@ history.push(`/card/${match.params.prodId}?qty=${qty}`)
           {/*Grid row*/}
           <hr />
           {/*Grid row*/}
-         </div>
+        </div>
       </main>
 
-       </div>
-       )
+      </div>
+      )
 }
 
 export default DetailsProduct

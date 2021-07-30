@@ -28,6 +28,7 @@
 
 
     import DetailsProduct from './pages/Detailsproduct';
+    import DetailsTheme from './pages/DetailsTheme'
 
 import ProfileA from './pages/ProfileA';
 
@@ -74,6 +75,7 @@ import SuivezNous from './pages/SuivezNous';
        {/* <Route path="/shipping" component={ShippingAddressScreen}></Route>*/}
 
         <Route exact path="/products/:prodId" component={DetailsProduct}/>
+        <Route exact path="/theme/:prodId" component={DetailsTheme}/>
 
         <PrivateRoute exact path='/profileA' component={ProfileA}></PrivateRoute>
 

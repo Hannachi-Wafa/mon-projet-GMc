@@ -34,8 +34,14 @@ const Productcard = ({product}) => {
                     }
                   </div>
                   <div style={{display:"flex" , justifyContent:"space-around"}}>
-                <button type="button" className="btn btn-primary btn-sm mr-1 mb-3"><i className="fas fa-shopping-cart pr-2" />ajouter au panier</button>
-                <button onClick={()=> dispatch(getDetails(product._id))} type="button" className="btn btn-light btn-sm mr-1 mb-3"><i className="fas fa-info-circle pr-2" /><Link to={{pathname:`/products/${product._id}`}}> details </Link> </button>
+                <button type="button" className="btn btn-primary btn-sm mr-1 mb-3">
+                  <i className="fas fa-shopping-cart pr-2" />ajouter au panier</button>
+                
+                
+                <button onClick={()=> dispatch(getDetails(product._id))}
+                type="button" className="btn btn-light btn-sm mr-1 mb-3">
+                  <i className="fas fa-info-circle pr-2" />
+                  <Link to={{pathname:`/products/${product._id}`}}> details </Link> </button>
                 </div>
               </div>
             </div>

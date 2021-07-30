@@ -11,7 +11,7 @@ const Slide = () => {
     return (
         <div>
                 <MDBCarousel showIndicators showControls style={{zIndex: '0'}}>
-        <MDBCarouselInner style={{width:"1400px",height:"600px",marginLeft:"80px",marginRight:"-80px"}}>
+        <MDBCarouselInner style={{width:"1200px",height:"600px",marginLeft:"80px",marginRight:"-80px", marginTop:"-20px"}}>
             <MDBCarouselItem itemId={1} style={{width:"1200px",maxHeight:"600px"}}>
             <MDBCarouselElement src="/images/widd.jpg" alt="" />
             </MDBCarouselItem>
@@ -27,10 +27,6 @@ const Slide = () => {
         </MDBCarouselInner>
         </MDBCarousel>
 
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
         </div>
     )
 }

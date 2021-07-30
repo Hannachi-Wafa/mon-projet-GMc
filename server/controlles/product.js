@@ -34,7 +34,7 @@ exports.createProduct = async (req,res) => {
 
     try {
 
-        const {title, price, description,qteStock, category_id,etat} = myBody;
+        const {title, price, description,qteStock, category_id} = myBody;
         let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
 
         const newProduct = new Products({...myBody,images:path})
@@ -59,10 +59,25 @@ exports.updateProduct = async (req, res) => {
 
     try {
 
-        const {title, price, description,qteStock, category_id,images}= myBody;
-        let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
+        const {title, price, description,qteStock, category_id}= myBody;
+       let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
 
-        await Products.findOneAndUpdate({ _id: req.params.id }, {...myBody})
+        await Products.findOneAndUpdate({ _id: req.params.id }, {...myBody,images:path})
+
+        res.json({ error: "Updated a Product" })
+    } catch (err) {
+        return res.status(500).json({ error: err.message })
+    }
+}
+exports.updateimage = async (req, res) => {
+    let myBody=JSON.parse(req.body.data)
+
+    try {
+
+        const {title, price, description,qteStock, category_id}= myBody;
+       let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
+
+        await Products.findOneAndUpdate({ _id: req.params.id }, {...myBody, images:path})
 
         res.json({ error: "Updated a Product" })
     } catch (err) {

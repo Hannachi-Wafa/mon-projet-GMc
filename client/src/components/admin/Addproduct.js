@@ -89,24 +89,24 @@ const handleSelectCategory = (e) => {
 
 <Form.Label>categorie</Form.Label>
 <Form.Group>
-              <DropdownButton id="dropdown-basic-button" title={selectedItem}>
-            
+<DropdownButton id="dropdown-basic-button" title={selectedItem}>
+                
                 {category.map(
-                  (el) =>
+                (el) =>
                     el.name
-                      .toUpperCase()
-                      .trim()
-                      .includes(categorieFilter.toUpperCase().trim()) && (
-                      <Dropdown.Item
+                    .toUpperCase()
+                    .trim()
+                    .includes(categorieFilter.toUpperCase().trim()) && (
+                    <Dropdown.Item
                         id={el._id}
                         name="category_id"
                         onClick={handleSelectCategory}
-                      >
+                    >
                         {el.name}
-                      </Dropdown.Item>
+                    </Dropdown.Item>
                     )
                 )}
-              </DropdownButton>
+            </DropdownButton>
             </Form.Group>
 
 <Form.Label>quantité</Form.Label>

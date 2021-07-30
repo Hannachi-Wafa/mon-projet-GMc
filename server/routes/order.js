@@ -5,7 +5,7 @@ const Order = require('../models/orderSchema')
 
 const router= express.Router();
 
-  router.post("/api/orders", async (req, res) => {
+  router.post("/orders", async (req, res) => {
     if (
       !req.body.name ||
       !req.body.email ||
@@ -18,7 +18,7 @@ const router= express.Router();
     const order = await Order(req.body).save();
     res.send(order);
   });
-  router.get("/api/orders", async (req, res) => {
+  router.get("/orders",AdminAUth, async (req, res) => {
     const orders = await Order.find({});
     res.send(orders);
   });

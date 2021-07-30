@@ -1,5 +1,5 @@
 const express= require('express')
-const {getProductbycategory,getProductbyid,createProduct,deleteProduct,updateProduct,getProduct} = require('../controlles/product')
+const {getProductbycategory,getProductbyid,createProduct,deleteProduct,updateProduct,getProduct,updateimage} = require('../controlles/product')
 const {userAuth} = require('../middleware/userAuth')
 const {AdminAuth}= require('../middleware/AdminAuth')
 const router= express.Router();
@@ -11,6 +11,7 @@ var storage = multer.diskStorage({
         cb(null, './uploads')
     },
     filename: function (req, file, cb) {
+        if(file)
         cb(null, file.fieldname + '-' + Date.now() + -'-' + file.originalname)
     }
 })
@@ -24,6 +25,7 @@ router.get('/products/:id',getProductbyid)
 
 router.delete('/products/:id',userAuth, AdminAuth, deleteProduct)
 router.put('/products/:id', userAuth, AdminAuth,upload.single('images'),updateProduct)
+//router.put('/products/image/:id', userAuth, AdminAuth,upload.single('images'), updateimage)
 
 
 

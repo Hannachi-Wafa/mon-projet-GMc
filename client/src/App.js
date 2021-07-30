@@ -82,33 +82,7 @@ import SuivezNous from './pages/SuivezNous';
         </Switch>
 
 
-        <br></br>
-        <Slide></Slide> 
-        <br></br>
-        <br></br>
-        
-        <br></br>
-        {/* <Services></Services> */}
-        <hr></hr>
-        
-    <br></br>
-        <AboutUs></AboutUs>
-            <br></br>
-            <br></br>
-            <hr></hr>
-            
-            <NousTrouver></NousTrouver>
-            <br></br>
-            <br></br>
-            <hr></hr>
-            
-            <Services></Services>
-            <br></br>
-            <br></br>
-            <hr></hr>
-            <SuivezNous></SuivezNous>
-            <br></br>
-            <br></br>
+     
             
             <Footer></Footer>
 

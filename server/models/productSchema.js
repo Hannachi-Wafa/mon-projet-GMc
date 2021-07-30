@@ -19,21 +19,12 @@ const productSchema = new mongoose.Schema({
     },
     images:{
         type: String,
-        required: true
     },
     category_id:{
         type:mongoose.Types.ObjectId,
         ref:'Category'
     },
-    category:{
-        type:String,
-        required: true,
-        enum:{
-            values:["anniversaire",
-           "mariage",
-            "baby showrs"]
-    }
-},
+   
 
     qteStock:{
         type: Number,

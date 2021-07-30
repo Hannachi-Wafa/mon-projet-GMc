@@ -11,8 +11,7 @@ app.use('/user', require('./routes/user'))
 app.use('/category', require('./routes/category'))
 app.use('/product', require('./routes/product'))
 app.use('/theme', require('./routes/theme'))
-app.use('/lignecommande', require('./routes/lignecommande'))
-app.use('/commande', require('./routes/commande'))
+
 app.use('/reservation', require('./routes/reservation'))
 app.use('/img', require('./routes/uploade'))
 

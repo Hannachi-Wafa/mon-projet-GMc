@@ -5,7 +5,7 @@ import { Button ,Form,Dropdown,DropdownButton} from 'react-bootstrap';
 import FormControl from "react-bootstrap/FormControl";
 import { MDBContainer, MDBBtn, MDBInput } from "mdbreact";
 import  { getCategory } from "../../actions/CategoryAction"
-import  {updateproduct } from "../../actions/ProductAction"
+import  {updateimage, updateproduct } from "../../actions/ProductAction"
 import axios from 'axios';
 const Updateproduct = ({product}) => {
   const category = useSelector((state) => state.categoryReducer.category);
@@ -28,9 +28,12 @@ const Updateproduct = ({product}) => {
 };
 const handleSubmit = () => {
  dispatch(updateproduct(input,file,input._id));
+ //dispatch(updateimage(file));
+
  handleClose();
 
 };
+
 const [selectedItem, setSelectedItem] = useState("Choose category");
 const handleSelectCategory = (e) => {
   setInput({ ...input, category_id: e.target.id});
@@ -131,6 +134,7 @@ const handleSelectCategory = (e) => {
             enregistré
             
           </Button>
+         
         </Modal.Footer>
       </Modal>
     </>

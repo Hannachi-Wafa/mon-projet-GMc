@@ -24,7 +24,6 @@
     import SideTopBar from './pages/SideTopBar';
 
     import Navbar1 from './components/Navbar1';
-    import VenteMariage from './pages/VenteMariage';
 
 
 
@@ -32,6 +31,8 @@
     import DetailsTheme from './pages/DetailsTheme'
 
 import ProfileA from './pages/ProfileA';
+
+import Checkout from './pages/Checkout';
 import ReservationUser from './pages/ReservationUser';
 import Footer from './pages/Footer';
 import AboutUs from './pages/AboutUs';
@@ -69,7 +70,9 @@ import SuivezNous from './pages/SuivezNous';
         <Route exact path='/pages/ThemeMariage' component={ThemeMariage}></Route>
         <Route exact path='/pages/ThemeAnniv' component={ThemeAnniv}></Route>
         <Route exact path='/pages/ThemeBaby' component={ThemeBaby}></Route>
+        <Route exact path='/Checkout' component={Checkout}></Route>
 
+       {/* <Route path="/shipping" component={ShippingAddressScreen}></Route>*/}
 
         <Route exact path="/products/:prodId" component={DetailsProduct}/>
         <Route exact path="/theme/:prodId" component={DetailsTheme}/>
@@ -81,33 +84,7 @@ import SuivezNous from './pages/SuivezNous';
         </Switch>
 
 
-        <br></br>
-        <Slide></Slide> 
-        <br></br>
-        <br></br>
-        
-        <br></br>
-        {/* <Services></Services> */}
-        <hr></hr>
-        
-    <br></br>
-        <AboutUs></AboutUs>
-            <br></br>
-            <br></br>
-            <hr></hr>
-            
-            <NousTrouver></NousTrouver>
-            <br></br>
-            <br></br>
-            <hr></hr>
-            
-            <Services></Services>
-            <br></br>
-            <br></br>
-            <hr></hr>
-            <SuivezNous></SuivezNous>
-            <br></br>
-            <br></br>
+     
             
             <Footer></Footer>
 

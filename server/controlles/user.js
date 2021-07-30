@@ -52,7 +52,7 @@ exports.updateuser = async (req, res) => {
 
         const {fullname,password,email}=req.body;
 
-        await User.findByIdAndUpdate({_id: req.params.id}, {fullname,password,email})
+        await User.findByIdAndUpdate({_id: req.params.id}, {...req.body})
 
         res.json({ error: "Updated a user" })
         

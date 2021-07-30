@@ -1,7 +1,7 @@
 import {
     GET_PRODUCT_SUCCESS, GET_PRODUCT_FAIL,
     UPDATE_PRODUCT_SUCCESS, UPDATE_PRODUCT_FAIL,
-    DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_FAIL, POST_PRODUCT_SUCCESS, POST_PRODUCT_FAIL, GET_ITEM
+    DELETE_PRODUCT_SUCCESS, UPDATE_PRODUCT_IMAGE_FAIL,DELETE_PRODUCT_FAIL, POST_PRODUCT_SUCCESS, POST_PRODUCT_FAIL, GET_ITEM
 } from "./types"
 
 import axios from "axios"
@@ -45,11 +45,17 @@ export const deleteproduct = (id) => async (dispatch) => {
     }
     
 }
-export const updateproduct = (data, file,id) => async (dispatch) => {
+export const updateproduct = (data,file,id) => async (dispatch) => {
     tokenSet();
     let formData=new FormData()
-    formData.append("images",file)
+    if(file===null){
+        formData.append("images",null)
+    }
+    else{
+        formData.append("images",file)
+    }
     formData.append("data",JSON.stringify(data))
+        
     try {
         const res = await axios.put(`/product/products/${id}`, formData,{headers: {"auth-token":localStorage.getItem('auth-token')}})
         dispatch( getproduct())
@@ -58,7 +64,21 @@ export const updateproduct = (data, file,id) => async (dispatch) => {
         })
     }
 }
+/*export const updateimage= (data,file,id) => async (dispatch) => {
+    tokenSet();
+    let formData=new FormData()
+    formData.append("images",file)
+    formData.append("data",JSON.stringify(data))
 
+    try {
+        const res = await axios.put(`/product/products/image/${id}`, formData,{headers: {"auth-token":localStorage.getItem('auth-token')}})
+        dispatch( getproduct())
+    } catch (error) {
+        dispatch({ type: UPDATE_PRODUCT_IMAGE_FAIL, payload: error?.response?.data?.error 
+        })
+    }
+}
+*/
 export const getDetails = id => dispatch => {
     dispatch({type: GET_ITEM, payload: id})
 }

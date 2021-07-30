@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addToCart } from '../actions/cartAction'
 import { Form } from "react-bootstrap"
+import { createOrder } from '../actions/orderAction'
 
 const Checkout = ({ match, location, history }) => {
     const productId = match.params.prodId
@@ -21,13 +22,20 @@ const Checkout = ({ match, location, history }) => {
     const [input, setInput] = useState({
         nom:"",
         prénom:"",
-        fullname:"0",
         email:"",
-        adress:""
+        adress:"",
+        telephone:"",
+        Total:cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2),
+        cartItems:cartItems
       });
       const handleChange = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value });
       };
+     const handleSubmit = () => {
+        dispatch(createOrder(input))
+        ///handleClose();
+      
+        };
     return (
 
         <div className="container">
@@ -51,7 +59,7 @@ const Checkout = ({ match, location, history }) => {
               </li>))}
               <li className="list-group-item d-flex justify-content-between">
                 <span>Total </span>
-                <strong>{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}TND </strong>
+                <strong  onChange={handleChange}>{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}TND </strong>
               </li>
             </ul>
           
@@ -61,52 +69,51 @@ const Checkout = ({ match, location, history }) => {
               <div className="row">
                 <div className="col-md-6 mb-3">
                   <label htmlFor="firstName">Nom</label>
-                  <input type="text" className="form-control" id="firstName" placeholder defaultValue required />
+                  <input             onChange={handleChange}
+ name="nom" type="text" className="form-control" id="firstName" required />
                   <div className="invalid-feedback">
                     Valid first name is required.
                   </div>
                 </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="lastName">Prénom</label>
-                  <input type="text" className="form-control" id="lastName" placeholder defaultValue required />
+                  <input             onChange={handleChange}
+ nme="prénom" type="text" className="form-control" id="lastName"  required />
                   <div className="invalid-feedback">
                     Valid last name is required.
                   </div>
                 </div>
               </div>
+          
               <div className="mb-3">
-                <label htmlFor="username">Username</label>
-                <div className="input-group">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text">@</span>
-                  </div>
-                  <input type="text" className="form-control" id="username" placeholder="Username" required />
-                  <div className="invalid-feedback" style={{width: '100%'}}>
-                    Your username is required.
-                  </div>
-                </div>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email">Email <span className="text-muted">(Optional)</span></label>
-                <input type="email" className="form-control" id="email" placeholder="you@example.com" />
+                <label htmlFor="email">Email </label>
+                <input  onChange={handleChange} name ="email" type="email" className="form-control" id="email"  />
                 <div className="invalid-feedback">
                   Please enter a valid email address for shipping updates.
                 </div>
               </div>
               <div className="mb-3">
                 <label htmlFor="address">Address</label>
-                <input type="text" className="form-control" id="address" placeholder="1234 Main St" required />
+                <input             onChange={handleChange}
+ type="text" className="form-control" name="address" id="address" required />
                 <div className="invalid-feedback">
                   Please enter your shipping address.
                 </div>
               </div>
-             
+              <div className="mb-3">
+                <label htmlFor="address">Telephone</label>
+                <input             onChange={handleChange}
+ type="number" className="form-control" name="telephone" id="address" required />
+                <div className="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
           
               <hr className="mb-4" />
-              <h4 className="mb-3">paiement à la livraison</h4>
+              <h4 className="mb-3" style={{textAlign:"center"}}>paiement à la livraison</h4>
               
               <hr className="mb-4" />
-              <button className="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+              <button className="btn btn-primary btn-lg btn-block" type="submit" onClick={handleSubmit}>Continue to checkout</button>
             </form>
           </div>
         </div>

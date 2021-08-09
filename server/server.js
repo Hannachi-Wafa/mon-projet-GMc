@@ -6,17 +6,38 @@ app.use(express.json())
 require('dotenv').config()
 
 const mongoose = require('mongoose');
+/************ */
+
+
+
+// ************************ middlewhere ************************
+
+
 //routes
 app.use('/user', require('./routes/user'))
 app.use('/category', require('./routes/category'))
 app.use('/product', require('./routes/product'))
 app.use('/theme', require('./routes/theme'))
-app.use('/lignecommande', require('./routes/lignecommande'))
-app.use('/commande', require('./routes/commande'))
+
 app.use('/reservation', require('./routes/reservation'))
 app.use('/img', require('./routes/uploade'))
 
 app.use('/uploads',express.static(__dirname+"/uploads"))
+//************* */ */
+
+
+app.get([
+    '/',
+    '/register',
+    '/login',
+    '/dashboard',
+    '/about',
+    '/appointment',
+    '/history'
+  ] , (req, res) => {
+    res.sendFile(path.resolve('dist', 'index.html'))
+  })
+
 
 const PORT= process.env.PORT||5000;
 

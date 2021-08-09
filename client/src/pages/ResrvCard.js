@@ -6,9 +6,9 @@ import {Form} from "react-bootstrap"
 
 
 const ResrvCard = ({match, location, history}) => {
-    const themetId=match.params.theme_Id
+    
     const dispatch = useDispatch()
-    const productId=match.params.prodId
+    const themetId=match.params.themeId
     const cart = useSelector(state=>state.cartResrveReducer)
 
     const {cartItems}=cart
@@ -17,7 +17,7 @@ if(themeId){
   dispatch(addToCartReservation(themeId))
 }
   
-}, [dispatch,productId,qty])
+}, [dispatch,themetId])
 
 const removeFromCartHandler=(id)=>{
     dispatch(removeFromCartReservation(id))}
@@ -58,7 +58,7 @@ const removeFromCartHandler=(id)=>{
                         <div>
                         <div className="d-flex justify-content-between">
                             <div>
-                            <Link to={`/product/products${item.theme}`}> <h5>{item.title}</h5></Link>
+                            <Link to={`/theme/theme${item.theme}`}> <h5>{item.title}</h5></Link>
                             
                             </div>
                             <div>
@@ -67,7 +67,7 @@ const removeFromCartHandler=(id)=>{
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
                             <div>
-                            <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={()=>removeFromCartHandler(item.product)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
+                            <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={()=>removeFromCartHandler(item.theme)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
                             </div>
                             <p className="mb-0"><span><strong>{item.prix_theme }TND</strong></span></p>
                         </div>

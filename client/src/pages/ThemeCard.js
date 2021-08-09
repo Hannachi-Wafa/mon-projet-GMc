@@ -36,100 +36,67 @@ const ThemeCard = ({Theme}) => {
         }
     
     return (
-        <div>
+        
             
-            <MDBCard style={{ maxWidth: '900px', marginLeft:"20%", height:"350px", marginTop:"5%" }}>
-        <MDBRow className='g-0'>
             
-            <MDBCol md='6' >
-            <MDBCardImage style={{ height:"350px", maxWidth: '450px' }}  src={Theme.images} alt='...' fluid />
-            </MDBCol>
-            
-            <MDBCol md='6'>
-            <MDBCardBody>
-                <MDBCardTitle >
-                <span style={{color:"blue"}}>Théme :</span>
 
-                    {Theme.title}
-                    </MDBCardTitle>
-                {/* <MDBCardText>
-                <span style={{color:"blue"}}>Description :</span>
-                {Theme.desc}
+
+
+
+<div className="col-lg-5 col-md-5 mb-6" style={{marginLeft:"5%"}} >
+
+    <br></br>
+    <br></br>
+
+                <div style={{marginLeft:"15%"}} >
+              <div className="view zoom overlay z-depth-2 rounded" style={{width:'550px', height:'350px'}}>
+                <img className="img-fluid w-100" src={Theme.images} alt="Sample" />
+                <a href="#!">
+                  <div className="mask"  >
+                    <img className="img-fluid w-100" src={Theme.images} />
+                    <div className="mask rgba-black-slight" />
+                  </div>
+                </a>
+              </div>
+              <div className="text-center pt-4" style={{marginLeft:"30%"}}>
+                <h3 style={{color:'rgb(233, 30, 99)'}}>{Theme.title}</h3>
+                <p className="mb-2 text-muted text-uppercase small">{Theme.category_id.name}</p>
+            
                 
-                </MDBCardText>
-                <MDBCardText>
-                <span style={{color:"blue"}}>Prix :</span> 
-                {Theme.prix}
-                </MDBCardText>
-                <MDBCardText>
-                <span style={{color:"blue"}}>Nombre de personne :</span>
-                {Theme.nbrPersonne}
-                </MDBCardText> */}
-
-                <Button variant="info"
+                <div style={{display:"flex" , justifyContent:"space-around"}}>
+                <h6 className="mb-3">{Theme.prix}TND</h6>
+                
+                  </div>
+                  <div style={{display:"flex" , justifyContent:"space-around"}}>
+                  <Button variant="info" style={{marginLeft:"7%"}}
                 onClick={()=> dispatch(getDetails(Theme._id))}>
-                <Link to={{pathname:`/theme/${Theme._id}`}}> Détails </Link></Button>
+                <Link to={{pathname:`/theme/${Theme._id}`}}> Détails
+                 </Link></Button>
+                 
+                 
 
-                {/* <button
-                onClick={()=> dispatch(getDetails(Theme._id))} 
+                    
+                
+
+                {/* <button type="button" className="btn btn-primary btn-sm mr-1 mb-3">
+                  <i className="fas fa-shopping-cart pr-2" />ajouter au panier</button>
+                
+                
+                <button onClick={()=> dispatch(getDetails(product._id))}
                 type="button" className="btn btn-light btn-sm mr-1 mb-3">
-                <i className="fas fa-info-circle pr-2" />
-                <Link to={{pathname:`/themes/${Theme._id}`}}> details </Link>
-                </button> */}
-                
+                  <i className="fas fa-info-circle pr-2" />
+                  <Link to={{pathname:`/products/${product._id}`}}> details </Link> </button> */}
+                </div>
+                <hr style={{marginLeft:"8%"}} ></hr>
+              </div>
+              
+            </div>
+            
 
 
 
-                                <Button variant="primary" onClick={handleShow}>
-                                Réserver
-                    </Button>
 
-                    <Modal show={show} onHide={handleClose}>
-                        <Modal.Header closeButton>
-                        <Modal.Title>Choisir votre date</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <div>
-                            <Form>
-            <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-                <Form.Label style={{color:"MediumBlue"}} column sm="2">
-                Date
-                </Form.Label>
-                <Col sm="10">
-                <Form.Control type="text" placeholder="jj/mm/aaaa"/>
-                </Col>
-            </Form.Group>
-
-            <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-                <Form.Label style={{color:"MediumBlue"}} column sm="2">
-                Heure
-                </Form.Label>
-                <Col sm="10">
-                <Form.Control type="text" placeholder="Heure de votre événement (exp: 18h)" />
-                </Col>
-            </Form.Group>
-            </Form>
-                                </div>              
-                        </Modal.Body>
                         
-                        <Modal.Footer>
-                        <Button variant="light" onClick={handleClose}>
-                            Fermer
-                        </Button>
-                        <Button  variant="success" onClick={handleClose} onClick={opensweetalert} >
-                        Réserver
-                        </Button>
-                        
-                        
-                        </Modal.Footer>
-                    </Modal>
-                
-
-            </MDBCardBody>
-            </MDBCol>
-        </MDBRow>
-        </MDBCard>
-
         
         
         </div>

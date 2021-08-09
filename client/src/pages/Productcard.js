@@ -2,7 +2,6 @@ import React from 'react'
 import { getDetails } from '../actions/ProductAction'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { addCommande, addLignecommande } from '../actions/cardAction'
 
 const Productcard = ({product}) => {
   const dispatch = useDispatch()

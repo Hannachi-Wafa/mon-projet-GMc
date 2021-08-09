@@ -3,7 +3,7 @@ import React from 'react'
 const NousTrouver = () => {
     return (
         <div style={{ display:'flex', flexDirection:'row'}}>
-            <p style={{marginLeft:'10%'}}>
+            <p style={{marginLeft:'10%', width:"500px"}}>
             <h1>OÙ NOUS TROUVER ?</h1>
             <span style={{color:'DeepPink'}}>
             BIENVENUE
@@ -29,7 +29,7 @@ Intéressés pour voir l'envers du décors ?
 A bientôt :)
             </p>
             <div style={{marginLeft:'50px'}}>
-                <img style={{width:'610px',height:'400px'}} alt='' src='https://www.savethedeco.com/blog/wp-content/uploads/2017/06/atelier.jpg'></img>
+                <img style={{width:'500px',height:'400px'}} alt='' src='https://www.savethedeco.com/blog/wp-content/uploads/2017/06/atelier.jpg'></img>
             </div>
         </div>
     )

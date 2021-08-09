@@ -12,7 +12,25 @@ const SuivezNous = () => {
                 Nous avons sélectionné sur SAVE the DECO tous les articles
                 que nous aimons pour tous les moments festifs de votre vie, alors profitez, amusez-vous et décorez !
             </p>
-            <img  style={{marginLeft:'10%'}} alt='' src='/images/socialMedia.PNG'></img>
+            {/* <img  style={{marginLeft:'10%'}} alt='' src='/images/socialMedia.PNG'></img> */}
+            <div style={{display:'flex', flexDirection:'row', marginLeft:'20%'}}>
+            <a href="https://www.facebook.com/">
+                    
+                    <img  src="/images/Facebook.PNG" alt=""/>
+            </a>
+            <a href="https://www.instagram.com/">
+                    
+                    <img  src="/images/Insta.PNG" alt=""/>
+            </a>
+            <a href="https://www.pinterest.fr/">
+                    
+                    <img  src="/images/Pintrest.PNG" alt=""/>
+            </a>
+            <a href="https://www.savethedeco.com/blog">
+                    
+                    <img  src="/images/Blog.PNG" alt=""/>
+            </a>
+            </div>
         </div>
     )
 }

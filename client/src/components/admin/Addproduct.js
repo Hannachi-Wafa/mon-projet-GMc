@@ -3,10 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-bootstrap/Modal'
 import { Button ,Form,Dropdown,DropdownButton} from 'react-bootstrap';
 import FormControl from "react-bootstrap/FormControl";
-import { MDBContainer, MDBBtn, MDBInput } from "mdbreact";
 import  { getCategory } from "../../actions/CategoryAction"
 import  {addproduct } from "../../actions/ProductAction"
-import axios from 'axios';
 const Addproduct = () => {
   const category = useSelector((state) => state.categoryReducer.category);
 
@@ -91,24 +89,24 @@ const handleSelectCategory = (e) => {
 
 <Form.Label>categorie</Form.Label>
 <Form.Group>
-              <DropdownButton id="dropdown-basic-button" title={selectedItem}>
-            
+<DropdownButton id="dropdown-basic-button" title={selectedItem}>
+                
                 {category.map(
-                  (el) =>
+                (el) =>
                     el.name
-                      .toUpperCase()
-                      .trim()
-                      .includes(categorieFilter.toUpperCase().trim()) && (
-                      <Dropdown.Item
+                    .toUpperCase()
+                    .trim()
+                    .includes(categorieFilter.toUpperCase().trim()) && (
+                    <Dropdown.Item
                         id={el._id}
                         name="category_id"
                         onClick={handleSelectCategory}
-                      >
+                    >
                         {el.name}
-                      </Dropdown.Item>
+                    </Dropdown.Item>
                     )
                 )}
-              </DropdownButton>
+            </DropdownButton>
             </Form.Group>
 
 <Form.Label>quantité</Form.Label>

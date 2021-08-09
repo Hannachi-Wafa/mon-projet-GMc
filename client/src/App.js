@@ -1,5 +1,5 @@
     import './App.css';
-    import {Route,Switch} from 'react-router-dom'
+    import {Route,Switch, useLocation} from 'react-router-dom'
     import Login from './pages/Login';
     import Home from './pages/Home';
     import Profile from './pages/Profile';
@@ -35,12 +35,14 @@ import ProfileA from './pages/ProfileA';
 import Checkout from './pages/Checkout';
 import ReservationUser from './pages/ReservationUser';
 import Footer from './pages/Footer';
-import AboutUs from './pages/AboutUs';
-import NousTrouver from './pages/NousTrouver';
-import Services from './pages/Services'
-import SuivezNous from './pages/SuivezNous';
+import ShippingScreen from './pages/ShippingScreen';
+import Order from './components/admin/Order';
+import { useState } from 'react';
 
     function App() {
+
+    
+      
     return (
         <>
 
@@ -63,7 +65,7 @@ import SuivezNous from './pages/SuivezNous';
         <Route exact path='/card/:prodId?' component={Card}></Route>
         <Route exact path='/resrervationUser' component={ReservationUser}></Route>
         <Route exact path='/products' component={Products}></Route>
-        {/* <Route exact path='/theme' component={Theme}></Route> */}
+         <Route exact path='/Order' component={Order}></Route> 
 
         <Route exact path='/pages/ImagesBTN' component={Theme}></Route>
 
@@ -72,7 +74,6 @@ import SuivezNous from './pages/SuivezNous';
         <Route exact path='/pages/ThemeBaby' component={ThemeBaby}></Route>
         <Route exact path='/Checkout' component={Checkout}></Route>
 
-       {/* <Route path="/shipping" component={ShippingAddressScreen}></Route>*/}
 
         <Route exact path="/products/:prodId" component={DetailsProduct}/>
         <Route exact path="/theme/:prodId" component={DetailsTheme}/>

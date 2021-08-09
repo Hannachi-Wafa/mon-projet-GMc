@@ -5,10 +5,12 @@ import Productcard from './Productcard'
 import { useDispatch } from 'react-redux'
 import {getproduct} from '../actions/ProductAction'
 import {getCategory} from '../actions/CategoryAction'
+import { useLocation } from 'react-router-dom'
 
 
-const Products = () => {
-//const Categories=["mariage","anniversaire", "baby showrs"]
+const Products = ({filter}) => {
+const location=useLocation()
+const textFilter = filter || (location.state && location.state.filter)|| null
     const dispatch = useDispatch()
     useEffect(() => {
       dispatch(getproduct())
@@ -18,9 +20,11 @@ const Products = () => {
         }
     , [])
   
-    const category = useSelector((state) => state.categoryReducer.category);
+    const category = useSelector((state) =>state.categoryReducer.category);
     const products = useSelector(state => state.productReducer.Products)
-    
+    const filteredList=()=>{
+    return !textFilter || textFilter==="Les produits" ?  products :products.filter(elm=>elm.category_id.name.includes(textFilter))
+    }
 
     return (
         <div>
@@ -60,7 +64,7 @@ const Products = () => {
            
         
             <div className="d-flex row mb-4 " >
-            {products && products.map(product=><Productcard key={product._id} product={product}/>)}
+            {products && filteredList().map(product=><Productcard key={product._id} product={product}/>)}
             
             </div>
                

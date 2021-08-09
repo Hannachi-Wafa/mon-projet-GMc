@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-modal": "^3.14.3",
+    "react-reveal": "^1.2.2"
+  }
+}

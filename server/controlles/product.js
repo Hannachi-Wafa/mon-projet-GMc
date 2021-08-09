@@ -69,7 +69,7 @@ exports.updateProduct = async (req, res) => {
         return res.status(500).json({ error: err.message })
     }
 }
-exports.updateimage = async (req, res) => {
+/*exports.updateimage = async (req, res) => {
     let myBody=JSON.parse(req.body.data)
 
     try {
@@ -83,4 +83,13 @@ exports.updateimage = async (req, res) => {
     } catch (err) {
         return res.status(500).json({ error: err.message })
     }
+}*/
+exports.filterproducts =async (req, res) => {
+    try {
+        await Products.find(category_id.name).populate("category_id")
+        res.json({ msg: "fiter a Product" })
+    }
+ catch (err) {
+    return res.status(500).json({ error: err.message })
 }
+    }

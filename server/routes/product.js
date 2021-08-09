@@ -1,5 +1,5 @@
 const express= require('express')
-const {getProductbycategory,getProductbyid,createProduct,deleteProduct,updateProduct,getProduct,updateimage} = require('../controlles/product')
+const {getProductbycategory,getProductbyid,createProduct,deleteProduct,updateProduct,getProduct,updateimage, filterproducts} = require('../controlles/product')
 const {userAuth} = require('../middleware/userAuth')
 const {AdminAuth}= require('../middleware/AdminAuth')
 const router= express.Router();
@@ -21,6 +21,7 @@ var upload = multer({ storage: storage })
 router.post('/newproducts', userAuth,AdminAuth,upload.single('images'), createProduct)
 router.get('/products/',getProduct)
 router.get('/products/:id',getProductbyid)
+router.get('/productsfilter',userAuth,filterproducts)
 
 
 router.delete('/products/:id',userAuth, AdminAuth, deleteProduct)

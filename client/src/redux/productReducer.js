@@ -20,7 +20,6 @@ const productReducer = (state = initState, { type, payload }) => {
               }),
             };
             case UPDATE_PRODUCT_FAIL:
-              case UPDATE_PRODUCT_IMAGE_FAIL:
                 return {
                   ...state,
                   Products: state.Products,

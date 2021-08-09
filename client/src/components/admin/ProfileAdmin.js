@@ -4,9 +4,8 @@ import Products from './Products'
 
 import AddTheme from './AddTheme'
 import Theme from './Theme'
-import order from './Order'
 import { Tab,Tabs, Sonnet} from 'react-bootstrap';
-import Orders from './Order'
+import Order from './Order'
 import Reservation from './Reservation'
 
 
@@ -41,8 +40,7 @@ const ProfileAdmin = () => {
     </Tab>
     
     <Tab eventKey="Les achats" title="Les achats" >
-      {/* <Sonnet /> */}
-        yuikljhggjkj
+    <Order></Order>
     </Tab>
     <Tab eventKey="Theme Evenement" title="Theme Evenement" >
       {/* <Sonnet /> */}

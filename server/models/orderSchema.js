@@ -1,14 +1,28 @@
-const Order = mongoose.model(
-    "order",
-    new mongoose.Schema(
-      {
-        email: String,
-        nom: String,
-        prénom: String,
-        adress: String,
-        telephone:Number,
+const mongoose = require('mongoose')
 
-        total: Number,
+const orderSchema = new mongoose.Schema({
+        email: {
+          type: String,
+         
+      },
+        nom: {
+          type: String,
+        
+      },
+        prénom: {
+          type: String,
+        
+      },
+        address: {
+          type: String,
+         
+      },
+        telephone:{
+          type: Number,
+      },
+        total:{
+          type: Number,
+      },
         cartItems: [
           {
             _id: String,
@@ -24,5 +38,5 @@ const Order = mongoose.model(
         timestamps: true,
       }
     )
-  );
+    module.exports = mongoose.model("Order", orderSchema)
   

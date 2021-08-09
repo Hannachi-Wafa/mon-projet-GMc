@@ -90,7 +90,7 @@
   }
 
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 850px) {
     
     .search {
      width: "200px"; /* The width is 100%, when the viewport is 800px or smaller */
@@ -99,7 +99,21 @@
    span {
      margin-left: 0px;
    }
- svg{
-   position: relative;
+ .disable{font-size: 0;}
+ .image{width: 0px !important}
+
  }
+ 
+ @media screen and (max-width: 500px) {
+    
+
+  .from-control{width: 50%;} 
+
+
+ span {
+   margin-left: 0px;
  }
+.disable{font-size: 0;}
+.image{width: 0px !important}
+
+}

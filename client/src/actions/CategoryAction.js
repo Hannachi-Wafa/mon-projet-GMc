@@ -31,10 +31,10 @@ try {
     }])
     //localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems))
     }*/
-    export const getbycategory=(category,data,res)=>async (dispatch)=>{
+    export const getbycategory=(data,res)=>async (dispatch)=>{
    
         try {
-            const {data} = await axios.get(`/product/products/${category}`)
+            const {data} = await axios.get(`/product/productsfilter`)
             console.log(res)
             dispatch({ type: CATEGORY_GET_ITEM, payload: res.data })
         } catch (error) {

@@ -1,39 +1,45 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchOrders } from "../../actions/orderAction";
-import formatCurrency from "../../util";
 
-class Orders extends Component {
-  componentDidMount() {
-    this.props.fetchOrders();
-  }
-  render() {
-    const { orders } = this.props;
-    return !orders ? (
-      <div>Orders</div>
-    ) : (
-      <div className="orders">
-        <h2>Orders</h2>
-        <table>
+import React, { Component, useEffect } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { getOrders } from "../../actions/orderAction";
+const Order = (props) => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+     dispatch(getOrders())
+      }
+  , [])
+
+  const orders = useSelector(state => state.orderReducer.orders)
+  return (
+       <div className="container" style={{marginLeft:"-50px"}}>
+        <h2>les commandes</h2>
+        <table className="table" style={{textAlign:"center"}}>
           <thead>
             <tr>
               <th>ID</th>
               <th>DATE</th>
               <th>TOTAL</th>
-              <th>NAME</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Telephone</th>
+
               <th>EMAIL</th>
               <th>ADDRESS</th>
               <th>ITEMS</th>
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
+            {orders && orders.map((order) => (
               <tr>
                 <td>{order._id}</td>
                 <td>{order.createdAt}</td>
-                <td> {formatCurrency(order.total)}</td>
-                <td>{order.name}</td>
+                <td> {order.total}</td>
+                <td>{order.nom}</td>
+                <td>{order.prénom}</td>
+                <td>{order.telephone}</td>
+
                 <td>{order.email}</td>
+
                 <td>{order.address}</td>
                 <td>
                   {order.cartItems.map((item) => (
@@ -46,15 +52,9 @@ class Orders extends Component {
             ))}
           </tbody>
         </table>
-      </div>
-    );
-  }
+     
+    </div>
+  )
 }
-export default connect(
-  (state) => ({
-    orders: state.order.orders,
-  }),
-  {
-    fetchOrders,
-  }
-)(Orders);
+
+export default Order

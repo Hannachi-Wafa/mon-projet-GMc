@@ -18,6 +18,8 @@ export const getproduct = (data, history,) => async (dispatch) => {
         dispatch({ type: GET_PRODUCT_FAIL, payload: error?.response?.data?.error })
     }
 }
+
+
 export const addproduct = (data,file) => async (dispatch) => {
     tokenSet();
     let formData=new FormData()

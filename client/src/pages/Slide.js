@@ -14,10 +14,7 @@ const Slide = () => {
 
         <MDBCarouselInner style={{width:"1200px",height:"600px",marginLeft:"80px",marginRight:"-80px", marginTop:"-20px"}}>
             <MDBCarouselItem itemId={1} style={{width:"1200px",maxHeight:"600px"}}>
-<<<<<<< HEAD
 
-=======
->>>>>>> a3b3f376fa0c78f2a845887a4d15ccde46383cca
             <MDBCarouselElement src="/images/widd.jpg" alt="" />
             </MDBCarouselItem>
             <MDBCarouselItem itemId={1} style={{width:"1200px",maxHeight:"600px"}}>

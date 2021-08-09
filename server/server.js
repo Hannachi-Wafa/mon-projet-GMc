@@ -6,11 +6,7 @@ app.use(express.json())
 require('dotenv').config()
 
 const mongoose = require('mongoose');
-/************ */
 
-
-
-// ************************ middlewhere ************************
 
 
 //routes
@@ -26,17 +22,7 @@ app.use('/uploads',express.static(__dirname+"/uploads"))
 //************* */ */
 
 
-app.get([
-    '/',
-    '/register',
-    '/login',
-    '/dashboard',
-    '/about',
-    '/appointment',
-    '/history'
-  ] , (req, res) => {
-    res.sendFile(path.resolve('dist', 'index.html'))
-  })
+
 
 
 const PORT= process.env.PORT||5000;

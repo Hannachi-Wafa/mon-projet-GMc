@@ -35,6 +35,14 @@ import ProfileA from './pages/ProfileA';
 import Checkout from './pages/Checkout';
 import ReservationUser from './pages/ReservationUser';
 import Footer from './pages/Footer';
+import AboutUs from './pages/AboutUs';
+import NousTrouver from './pages/NousTrouver';
+import Services from './pages/Services'
+import SuivezNous from './pages/SuivezNous';
+import CardReserve from './pages/CardReserve';
+
+
+
 import ShippingScreen from './pages/ShippingScreen';
 import Order from './components/admin/Order';
 import { useState } from 'react';
@@ -53,8 +61,6 @@ import { useState } from 'react';
 
 
 
-            
-
 
             <Navbar1></Navbar1>
 
@@ -63,6 +69,7 @@ import { useState } from 'react';
         <Route exact path='/' component={Home}></Route>
         <Route exact path='/login' component={Login}></Route>
         <Route exact path='/card/:prodId?' component={Card}></Route>
+        <Route exact path='/reservcard/:themeId?' component={CardReserve}></Route>
         <Route exact path='/resrervationUser' component={ReservationUser}></Route>
         <Route exact path='/products' component={Products}></Route>
          <Route exact path='/Order' component={Order}></Route> 
@@ -76,7 +83,7 @@ import { useState } from 'react';
 
 
         <Route exact path="/products/:prodId" component={DetailsProduct}/>
-        <Route exact path="/theme/:prodId" component={DetailsTheme}/>
+        <Route exact path="/theme/:themeId" component={DetailsTheme}/>
 
         <PrivateRoute exact path='/profileA' component={ProfileA}></PrivateRoute>
 
@@ -85,7 +92,7 @@ import { useState } from 'react';
         </Switch>
 
 
-     
+    
             
             <Footer></Footer>
 
@@ -139,6 +146,7 @@ import { useState } from 'react';
             <br></br> */}
 
 {/* <ThemeCard></ThemeCard> */}
+
 
 
         </>

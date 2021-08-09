@@ -8,6 +8,9 @@ app.use(express.json())
 require('dotenv').config()
 
 const mongoose = require('mongoose');
+
+
+
 //routes
 app.use('/user', require('./routes/user'))
 app.use('/category', require('./routes/category'))
@@ -19,6 +22,11 @@ app.use('/reservation', require('./routes/reservation'))
 app.use('/img', require('./routes/uploade'))
 
 app.use('/uploads',express.static(__dirname+"/uploads"))
+//************* */ */
+
+
+
+
 
 const PORT= process.env.PORT||5000;
 

@@ -1,4 +1,4 @@
-const reservation = require('../models/reservationSchema')
+/* const reservation = require('../models/reservationSchema') */
 
 exports.getreservation=async(req,res)=>{
     try {

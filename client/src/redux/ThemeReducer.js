@@ -61,7 +61,7 @@ const ThemeReducer = (state = initState, { type, payload }) => {
         case GET_ITEM:
             return{
                 ...state,
-                prodId: payload
+                themeId: payload
             }
         
             default:

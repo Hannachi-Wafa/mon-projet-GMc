@@ -7,6 +7,7 @@ import {orderReducer} from './orderReducer'
 
 
 import {cartReducer} from './cartReducer'
+import { ReservCardReducer } from './ReservCardReducer'
 
 
 export default combineReducers({authReducer,
@@ -15,6 +16,9 @@ export default combineReducers({authReducer,
     cartReducer,
     orderReducer,
 ThemeReducer,
+
+
+ReservCardReducer
 
 })
 

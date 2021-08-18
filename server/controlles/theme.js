@@ -11,6 +11,15 @@ exports.gettheme= async(req, res) =>{
             return res.status(500).json({error: err.message})
         }
     }
+    exports.getthemebyid=async(req,res)=>{
+        try {
+            const Theme= await theme.findById({_id:req.params.id}).populate('category_id')
+            res.status(200).json(Theme)
+            } catch (error) {
+            res.status(500).json({error:`something went wrong:${error}`}) 
+            
+            }   
+    }
 /*exports.createtheme= async (req, res) =>{
         try {
             // if user have role = 1 ---> admin

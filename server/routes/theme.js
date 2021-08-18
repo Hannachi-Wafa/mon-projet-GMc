@@ -1,5 +1,5 @@
 const express= require('express')
-const {createtheme,deletetheme,updatetheme,gettheme} = require('../controlles/theme')
+const {createtheme,deletetheme,updatetheme,gettheme,getthemebyid} = require('../controlles/theme')
 const {userAuth} = require('../middleware/userAuth')
 const {AdminAuth}= require('../middleware/AdminAuth')
 const router= express.Router();
@@ -14,8 +14,11 @@ var storage = multer.diskStorage({
     }
 })
 var upload = multer({ storage: storage })
+
+
 router.get('/theme',gettheme)
 router.post('/newtheme', userAuth,AdminAuth,upload.single('images'),createtheme)
+router.get('/theme/:id',getthemebyid)
 
 router.delete('/theme/:id',userAuth, AdminAuth, deletetheme)
 router.put('/theme/:id', userAuth, AdminAuth,updatetheme)

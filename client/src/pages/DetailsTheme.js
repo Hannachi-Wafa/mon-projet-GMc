@@ -5,9 +5,9 @@ import {Form, Modal} from "react-bootstrap"
 const DetailsTheme = ({match, history}) => {
 
     const details = useSelector(state => state.ThemeReducer.Theme.find(el=> el._id === match.params.themeId))
-    const [prx, setPrx] = useState(1)
+   // const [prx, setPrx] = useState(1)
 const addCartHendler=()=>{
-history.push(`/reservcard/${match.params.themeId}?prx=${prx}`)
+history.push(`/reservcard/${match.params.themeId}`)
 }
 const [show, setShow] = useState(false);
 
@@ -54,7 +54,7 @@ const [show, setShow] = useState(false);
     
                     <button  className="btn btn-primary btn-md my-0 p" 
                     type="submit"  onClick={() => setShow(true)}
-                    /* onClick={addCartHendler} */> Réserver
+                     onClick={addCartHendler}> Réserver
                         <i className="fas fa-shopping-cart ml-1" />
                     </button>
 

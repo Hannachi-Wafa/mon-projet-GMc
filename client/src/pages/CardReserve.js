@@ -5,8 +5,8 @@ import { addToCartReservation, removeFromCartReservation } from '../actions/Card
 import { Form } from "react-bootstrap"
 
 const CardReserve = ({match, location, history}) => {
-    const themeId = match.params.themeId
-    const prx = location.search ? Number(location.search.split('=')[1]) : 1
+    const themeIds = match.params.themeId
+   // const prx = location.search ? Number(location.search.split('=')[1]) : 1
     const dispatch = useDispatch()
     const cartReserve = useSelector(state => state.ReservCardReducer)
     const isAuth = useSelector((state) => state.authReducer.isAuth);
@@ -15,11 +15,11 @@ const CardReserve = ({match, location, history}) => {
     }
     const { cartrItems } = cartReserve
     useEffect(() => {
-        if (themeId) {
-        dispatch(addToCartReservation(themeId))
+        if(themeIds) {
+        dispatch(addToCartReservation(themeIds))
         }
 
-    }, [dispatch, themeId, prx])
+    }, [dispatch, themeIds])
 
     const removeFromCartHandler = (id) => {
         dispatch(removeFromCartReservation (id))
@@ -43,7 +43,7 @@ const CardReserve = ({match, location, history}) => {
                   <div>
                     {cartrItems.map(item => (
   
-                      <div className="row mb-4" key={item.Theme}>
+                      <div className="row mb-4" key={item.theme}>
   
                         <div className="col-md-5 col-lg-3 col-xl-3">
                           <div className="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
@@ -60,23 +60,14 @@ const CardReserve = ({match, location, history}) => {
                           <div>
                             <div className="d-flex justify-content-between">
                               <div>
-                                <Link to={`/product/products${item.Theme}`}> <h5>{item.title}</h5></Link>
+                                <Link to={`/theme/theme${item.theme}`}> <h5>{item.title}</h5></Link>
   
                               </div>
-                              <div>
-                                <div className="def-number-input number-input safari_only mb-0 w-100">
-                                  {/* <input className="quantity" value="0" type="number" />*/}
-                                  
-  
-                                    <Form.Control as='select'  style={{ width: '100px' }} onChange={(e) => dispatch(addToCartReservation(item.Theme, Number(e.target.value)))}>
-                                    </Form.Control>
-                                
-                                </div>
-                              </div>
+              
                             </div>
                             <div className="d-flex justify-content-between align-items-center">
                               <div>
-                                <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.product)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
+                                <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.theme)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
                               </div>
                               <p className="mb-0"><span><strong>{item.prix}TND</strong></span></p>
                             </div>
@@ -108,7 +99,7 @@ const CardReserve = ({match, location, history}) => {
                       <strong> total</strong>
   
                     </div>
-                    <span><strong>{cartrItems.reduce((acc, item) => acc +  item.prix, 0).toFixed(2)}TND </strong></span>
+                    <span><strong>{cartrItems.reduce((acc, item) => acc +  item.prix, 0)}TND </strong></span>
                   </li>
                 </ul>
                 <button type="button" className="btn btn-primary btn-block waves-effect waves-light" disaled={cartrItems.length === 0} onClick={checkoutHandler}>go to checkout</button>

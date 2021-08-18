@@ -34,22 +34,23 @@ const Footer = () => {
                 </ul>
             </MDBCol>
             <MDBCol md="4">
-                <h5 className="title">Evenements</h5>
+            <h5 className="title">Evenements</h5>
                 <ul>
                 <li className="list-unstyled">
-                    <a href="#!">Théme mariage</a>
+                    <Link to={{pathname:'/pages/ImagesBTN' ,state:{filter:'mariage'}}}>Théme mariage</Link>
                 </li>
                 <li className="list-unstyled">
-                    <a href="#!">Théme anniversaire</a>
+                <Link to={{pathname:'/pages/ImagesBTN',state:{filter:'anniversaire'}}}>Théme anniversaire</Link>
                 </li>
                 <li className="list-unstyled">
-                    <a href="#!">Théme baby shower</a>
+                <Link to={{pathname:'/pages/ImagesBTN',state:{filter:'baby shower'}}}>Théme baby shower</Link>
                 </li>
                 <li className="list-unstyled">
-                    <a href="#!">Réservation</a>
+                    <a href="/reservrationUser">Réservation</a>
                 </li>
                 </ul>
             </MDBCol>
+           
             </MDBRow>
         </MDBContainer>
         <div className="footer-copyright text-center py-3">

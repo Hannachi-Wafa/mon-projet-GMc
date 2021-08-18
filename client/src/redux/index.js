@@ -16,8 +16,6 @@ export default combineReducers({authReducer,
     cartReducer,
     orderReducer,
 ThemeReducer,
-
-
 ReservCardReducer
 
 })

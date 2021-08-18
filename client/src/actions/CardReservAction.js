@@ -4,7 +4,7 @@ import { ReservCardReducer } from '../redux/ReservCardReducer';
 
 import{RESERVATION_ADD_ITEM , RESERVATION_REMOVE_ITEM, CART_SAVE_PAYMENT_METHOD, CART_SAVE_SHIPPING_ADDRESS} from './types'
 
-export const addToCartReservation=(id,prx)=>async (dispatch,getState)=>{
+export const addToCartReservation=(id)=>async (dispatch,getState)=>{
 
     const {data} = await axios.get(`/theme/theme/${id}`)
     
@@ -12,10 +12,10 @@ export const addToCartReservation=(id,prx)=>async (dispatch,getState)=>{
         type:RESERVATION_ADD_ITEM,
         payload:{
             theme: data._id,
-            dateReservation: data.dateReservation,
+            //dateReservation: data.dateReservation,
             images:data.images,
             nbrPersonne: data.nbrPersonne,
-            prix: data.prix_theme,
+            prix: data.prix,
             title:data.title,
         },
     });
@@ -31,10 +31,4 @@ export const addToCartReservation=(id,prx)=>async (dispatch,getState)=>{
         
         }
 
-        export const saveShippingAddress = (data) => (dispatch) => {
-            dispatch({ type: CART_SAVE_SHIPPING_ADDRESS, payload: data });
-          //  localStorage.setItem('shippingAddress', JSON.stringify(data));
-        };
-        export const savePaymentMethod = (data) => (dispatch) => {
-        dispatch({ type: CART_SAVE_PAYMENT_METHOD, payload: data });
-        };
+  

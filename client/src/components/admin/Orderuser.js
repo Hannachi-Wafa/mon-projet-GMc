@@ -1,4 +1,5 @@
 
+
 import React, { Component, useEffect } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { getOrders } from "../../actions/orderAction";
@@ -11,7 +12,7 @@ const Order = (props) => {
 
   const orders = useSelector(state => state.orderReducer.orders)
   return (
-       <div className="container" style={{marginLeft:"10px"}}>
+       <div className="container" style={{marginLeft:"-50px"}}>
         <h2>les commandes</h2>
         <table className="table" style={{textAlign:"center"}}>
           <thead>

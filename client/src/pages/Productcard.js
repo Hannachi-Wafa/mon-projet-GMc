@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { getDetails } from '../actions/ProductAction'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { addToCart } from '../actions/cartAction'
 
-const Productcard = ({product}) => {
+const Productcard = ({product,history,match}) => {
+
   const dispatch = useDispatch()
-
+  const [qty, setQty] = useState(1)
+const handelcard=()=>{
+ dispatch(addToCart(product._id, qty))
+}
     return (
         
               <div className="col-lg-3 col-md-4 mb-5">
@@ -34,8 +39,9 @@ const Productcard = ({product}) => {
                     }
                   </div>
                   <div style={{display:"flex" , justifyContent:"space-around"}}>
-                <button type="button" className="btn btn-primary btn-sm mr-1 mb-3">
-                  <i className="fas fa-shopping-cart pr-2" />ajouter au panier</button>
+                <button type="button" className="btn btn-primary btn-sm mr-1 mb-3"  onClick={handelcard}>
+                  <i className="fas fa-shopping-cart pr-2"     
+ />ajouter au panier</button>
                 
                 
                 <button onClick={()=> dispatch(getDetails(product._id))}

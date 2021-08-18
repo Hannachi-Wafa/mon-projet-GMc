@@ -7,7 +7,7 @@ import  {GET_THEME_SUCCESS,
     DELETE_THEME_FAIL,
     POST_THEME_SUCCESS,
     POST_THEME_FAIL,
-    GET_ITEM} from "../actions/types";
+    GET_ITEMS} from "../actions/types";
 
 const initState = {Theme:[],
     errors: null,
@@ -58,7 +58,7 @@ const ThemeReducer = (state = initState, { type, payload }) => {
         case GET_THEME_FAIL:
 
         return{...state,errors:payload}
-        case GET_ITEM:
+        case GET_ITEMS:
             return{
                 ...state,
                 themeId: payload

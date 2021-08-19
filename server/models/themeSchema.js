@@ -31,6 +31,9 @@ const themeSchema = new mongoose.Schema({
         type:mongoose.Types.ObjectId,
         ref:'Category'
     },
+    createdAt: { type: Date, default: Date.now },
+    user: { type: mongoose.Types.ObjectId, ref: "user" },
+    bookings: [{ type: mongoose.Types.ObjectId, ref: "Booking" }]
 
 })
 

@@ -19,6 +19,8 @@ const userSchema=new Schema({
         default: 0
     },
     
+    themes: [{ type: mongoose.Types.ObjectId, ref: "theme" }],
+    bookings: [{ type: mongoose.Types.ObjectId, ref: "Booking" }] 
                 
             
 

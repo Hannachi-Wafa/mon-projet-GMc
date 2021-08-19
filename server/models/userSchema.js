@@ -18,9 +18,7 @@ const userSchema=new Schema({
         type: Number,
         default: 0
     },
-    
-    themes: [{ type: mongoose.Types.ObjectId, ref: "theme" }],
-    bookings: [{ type: mongoose.Types.ObjectId, ref: "Booking" }] 
+
                 
             
 

@@ -41,7 +41,7 @@ exports.createorder=async(req,res)=>{
   }
 } */
 exports.getorder=async(req,res)=>{
-    try {    const orders = await Order.find({});
+    try {    const orders = await Order.find({}).populate('user_id');
     res.send(orders);
   }
 
@@ -49,6 +49,7 @@ exports.getorder=async(req,res)=>{
     res.status(500).json({error:`something went wrong:${error}`}) 
     
     }  }
+    
     exports.deleteorder = async (req, res) => {
         try {
         const order = await Order.findByIdAndDelete(req.params.id);

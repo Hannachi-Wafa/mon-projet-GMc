@@ -6,7 +6,8 @@ import  {GET_THEME_SUCCESS,
     DELETE_THEME_FAIL,
     POST_THEME_SUCCESS,
     POST_THEME_FAIL,
-    GET_ITEM} from "./types";
+    GET_ITEM,
+    GET_ITEMS} from "./types";
 
 import axios from "axios"
 import { tokenSet } from "../helpers/tokenSet"
@@ -65,5 +66,5 @@ export const updateTheme = (data, file,id) => async (dispatch) => {
 }
 
 export const getDetails = id => dispatch => {
-    dispatch({type: GET_ITEM, payload: id})
+    dispatch({type: GET_ITEMS, payload: id})
 }

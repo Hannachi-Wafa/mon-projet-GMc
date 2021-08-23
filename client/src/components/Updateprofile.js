@@ -10,8 +10,10 @@ import axios from 'axios';
 const Updateprofile = ({user}) => {
 
   const dispatch = useDispatch()
-  
-  const [input, setInput] = useState(user);
+ 
+
+ const [input, setInput] = useState(user);
+
   const handleChange = (e) => {
     e.preventDefault();
     setInput({ ...input, [e.target.name]: e.target.value });

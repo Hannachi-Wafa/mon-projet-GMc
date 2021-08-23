@@ -1,13 +1,16 @@
-import React,{Fragment} from 'react'
+import React,{Fragment, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './profile.css';
 import Updateprofile from '../components/Updateprofile';
+import { getuser } from '../actions/authActions';
 
 const Profile=()=> {
     const isAuth = useSelector((state) => state.authReducer.isAuth);
 
     const user = useSelector((state) => state.authReducer.user);
+    const dispatch = useDispatch()
+  
     return (
       
         <div className="container dark-grey-text mt-5">

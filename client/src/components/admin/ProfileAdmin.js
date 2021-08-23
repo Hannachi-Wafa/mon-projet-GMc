@@ -4,29 +4,20 @@ import Products from './Products'
 
 import AddTheme from './AddTheme'
 import Theme from './Theme'
-import { Tab,Tabs, Sonnet} from 'react-bootstrap';
+import { Tab,Tabs} from 'react-bootstrap';
 import Order from './Order'
 import Reservation from './Reservation'
 
 
 const ProfileAdmin = () => {
     return (
-      <main>
-          <div className="container">
-            <br></br>
-            <br></br>
-            
-            <h1>ADMIN</h1>
+         
       
 
-    <Tabs defaultActiveKey="Accueil" transition={false} id="noanim-tab-example">
-    <Tab eventKey="Accueil" title="Accueil">
+    <Tabs defaultActiveKey="Produits" id="uncontrolled-tab-example" className="mb-4">
     
-      {/* <Sonnet /> */}
-    </Tab>
     <Tab eventKey="Produits" title="Produits">
     
-      {/* <Sonnet /> */}
         <div style={{display:'flex'}}>
         <div> <Addproduct></Addproduct></div>
             
@@ -39,8 +30,8 @@ const ProfileAdmin = () => {
         </div>
     </Tab>
     
-    <Tab eventKey="Les achats" title="Les achats" >
-    <Order></Order>
+    <Tab eventKey="Les commandes " title="Les commandes" >
+    <div><Order></Order></div>
     </Tab>
     <Tab eventKey="Theme Evenement" title="Theme Evenement" >
       {/* <Sonnet /> */}
@@ -61,8 +52,8 @@ const ProfileAdmin = () => {
         <br></br>
         <div style={{display:'flex'}}>
         <div> <Reservation></Reservation></div>
-            <Theme></Theme>  
-          
+            
+        
         
 
         </div>
@@ -70,8 +61,6 @@ const ProfileAdmin = () => {
     </Tabs>
 
 
-        </div>
-        </main>
     )
 }
 

@@ -8,6 +8,8 @@
     import PrivateRouteUser from './components/PrivateRouteUser'
     import Card from './pages/Card';
     import Products from './pages/Products';
+    import Products1 from './components/admin/Products';
+
     import Theme from './pages/Theme'; 
     import ProfileAdmin from './components/admin/ProfileAdmin';
     import PrivateRoute from './components/PrivateRoute'
@@ -72,6 +74,8 @@ import { useState } from 'react';
         <Route exact path='/reservcard/:themeId?' component={CardReserve}></Route>
         <Route exact path='/resrervationUser' component={ReservationUser}></Route>
         <Route exact path='/products' component={Products}></Route>
+        <Route exact path='/productsAdmin' component={Products1}></Route>
+
          <Route exact path='/Order' component={Order}></Route> 
 
         <Route exact path='/pages/ImagesBTN' component={Theme}></Route>

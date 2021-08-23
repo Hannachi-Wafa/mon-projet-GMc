@@ -4,7 +4,7 @@ import productReducer from './productReducer'
 import categoryReducer from './categoryReducer'
 import ThemeReducer from './ThemeReducer'
 import {orderReducer} from './orderReducer'
-import bookingReducer from './bookingReducer'
+
 
 
 import {cartReducer} from './cartReducer'
@@ -17,9 +17,6 @@ export default combineReducers({authReducer,
     cartReducer,
     orderReducer,
 ThemeReducer,
-bookingReducer,
-
-
 ReservCardReducer
 
 })

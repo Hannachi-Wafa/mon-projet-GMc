@@ -78,7 +78,11 @@ const CardReserve = ({match, location, history}) => {
 
                             <h5>Date</h5>
                             
-                            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                            <DatePicker selected={startDate} minDate={new Date()}
+                            isClearable
+                            placeholderText="Select a date"
+                            
+                            onChange={(date) => setStartDate(date)} />
                             <br></br>
                             <br></br>
                             <p className="mb-0"><span><strong>{item.prix}TND</strong></span></p>

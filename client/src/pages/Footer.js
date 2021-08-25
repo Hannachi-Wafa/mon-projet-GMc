@@ -46,7 +46,7 @@ const Footer = () => {
                 <Link to={{pathname:'/pages/ImagesBTN',state:{filter:'baby shower'}}}>Théme baby shower</Link>
                 </li>
                 <li className="list-unstyled">
-                    <a href="/reservrationUser">Réservation</a>
+                    <a href="/reservcard">Réservation</a>
                 </li>
                 </ul>
             </MDBCol>

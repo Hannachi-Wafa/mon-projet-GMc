@@ -30,11 +30,12 @@ const authReducer = (state = initState, { type, payload }) => {
                   errors: null,
                 };
                 case UPDATE_USER:
-                    return {
-                      ...state,
-                      user: payload.user,
 
-                    };
+                    return {
+                        ...state,
+                        user: payload.user,
+                        errors: null,
+                    }
 
                  
                     case UPDATE_FAIL:

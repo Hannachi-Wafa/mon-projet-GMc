@@ -1,5 +1,4 @@
 const theme = require('../models/themeSchema')
-const Products = require('../models/productSchema')
 
 
 exports.gettheme= async(req, res) =>{
@@ -59,7 +58,7 @@ exports.gettheme= async(req, res) =>{
             return res.status(500).json({ error: err.message })
         }
     }
-    exports.updatetheme= async(req, res) =>{
+ /*   exports.updatetheme= async(req, res) =>{
         try {
             const {title,desc,prix,nbrPersonne,images,category_id} = req.body;
             await theme.findOneAndUpdate({_id: req.params.id}, {title,desc,prix,nbrPersonne,images,category_id})
@@ -67,5 +66,20 @@ exports.gettheme= async(req, res) =>{
             res.json({error: "Updated a theme"})
         } catch (err) {
             return res.status(500).json({error: err.message})
+        }
+    }*/
+    exports.updatetheme = async (req, res) => {
+        let myBody=JSON.parse(req.body.data)
+    
+        try {
+    
+            const {title,desc,prix,nbrPersonne,category_id}= myBody;
+           let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
+    
+            await theme.findOneAndUpdate({ _id: req.params.id }, {...myBody,images:path})
+    
+            res.json({ error: "Updated a theme" })
+        } catch (err) {
+            return res.status(500).json({ error: err.message })
         }
     }

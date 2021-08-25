@@ -59,12 +59,13 @@ export const loginUser=(data,history)=>async(dispatch)=>{
       };
   
 
-      export const updateUser=(data,id)=>async(dispatch)=>{
+      export const updateUser=(data,id,history)=>async(dispatch)=>{
         tokenSet();
 
         try {
             const res=await axios.put(`/user/user/${id}`,data,{headers: {"auth-token":localStorage.getItem('auth-token')}})
             dispatch({type:UPDATE_USER,payload:res.data})
+            
 
         } catch (error) {
             dispatch({type:UPDATE_FAIL,payload:error?.response?.data?.error})

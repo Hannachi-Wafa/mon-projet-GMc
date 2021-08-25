@@ -4,13 +4,15 @@ import Modal from 'react-bootstrap/Modal'
 import { Button ,Form,Dropdown,DropdownButton} from 'react-bootstrap';
 import FormControl from "react-bootstrap/FormControl";
 import { MDBContainer, MDBBtn, MDBInput } from "mdbreact";
-import  {  updateUser } from "../actions/authActions"
+import  {  getuser, updateUser } from "../actions/authActions"
 import axios from 'axios';
 
-const Updateprofile = ({user}) => {
+const Updateprofile = ({user,history}) => {
 
   const dispatch = useDispatch()
- 
+  useEffect(() => {
+    dispatch(getuser());
+  }, [dispatch]);
 
  const [input, setInput] = useState(user);
 

@@ -21,7 +21,7 @@ router.post('/newtheme', userAuth,AdminAuth,upload.single('images'),createtheme)
 router.get('/theme/:id',getthemebyid)
 
 router.delete('/theme/:id',userAuth, AdminAuth, deletetheme)
-router.put('/theme/:id', userAuth, AdminAuth,updatetheme)
+router.put('/theme/:id', userAuth, AdminAuth,upload.single('images'),updatetheme)
 
 //creeat  date
 router.post("/dates", userAuth, async (req, res) => {

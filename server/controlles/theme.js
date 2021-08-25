@@ -19,21 +19,7 @@ exports.gettheme= async(req, res) =>{
             
             }   
     }
-/*exports.createtheme= async (req, res) =>{
-        try {
-            // if user have role = 1 ---> admin
-            // only admin can create , delete and update category
-            const {title,desc,prix,nbrPersonne,images,category_id} = req.body;
-            if (!images) return res.status(400).json({ error: "No image upload" })
 
-            const newtheme = new theme({title,desc,prix,nbrPersonne,images,category_id})
-
-            await newtheme.save()
-            res.json({error: "Created a theme"})
-        } catch (err) {
-            return res.status(500).json({error: err.message})
-        }
-    }*/
     exports.createtheme = async (req,res) => {
         let myBody=JSON.parse(req.body.data)
     
@@ -83,3 +69,4 @@ exports.gettheme= async(req, res) =>{
             return res.status(500).json({ error: err.message })
         }
     }
+    

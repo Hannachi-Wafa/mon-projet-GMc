@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const orderSchema = new mongoose.Schema({
         email: {
           type: String,
-         
+        
       },
       user_id:{
         type:mongoose.Types.ObjectId,
@@ -19,7 +19,7 @@ const orderSchema = new mongoose.Schema({
       },
         address: {
           type: String,
-         
+        
       },
         telephone:{
           type: Number,

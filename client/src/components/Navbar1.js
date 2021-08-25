@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
@@ -6,7 +6,7 @@ import './Navbar1.css';
 import { IconContext } from 'react-icons';
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { logout } from '../actions/authActions';
+import { logout, updateUser } from '../actions/authActions';
 import { FormControl, Form, Nav } from 'react-bootstrap';
 
 
@@ -20,6 +20,7 @@ const {cartItems}=cart
 
     const user = useSelector((state) => state.authReducer.user);
     const dispatch = useDispatch();
+    
     const history = useHistory();
     const [sidebar, setSidebar] = useState(false);
 
@@ -39,13 +40,13 @@ const {cartItems}=cart
 
                     <img alt='' src='./images/saveTHEdeco.PNG' style={{width:'150px', height:'50px'}} className="image"></img>
                    </Nav.Link>
-                    <Form   className="form-inline active-pink-4" >
+              { /*     <Form   className="form-inline active-pink-4" >
                         <FormControl type="text" placeholder="rechercher" />
                         <span  style={{ textDecorationColor: "rgb(235, 100, 171)"}} className="search input-group-text border-0 d-none d-lg-flex active-pink "
                         ><i className="fas fa-search" ></i
                         ></span>
                         
-                    </Form>
+    </Form>*/}
                   { /* <Nav.Link href="/" inline style={{ color: "rgb(235, 100, 171)", display: "flex", flexDirection: "row",  marginTop: "20px" }}>
                         <svg style={{ marginTop: "4px" }} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
@@ -75,7 +76,7 @@ const {cartItems}=cart
                     </Nav.Link>
 
 
-                    <Nav.Link href="/reservrationUser" style={{ color: "rgb(235, 100, 171)", display: "flex",  marginTop: "20px" }}>
+                    <Nav.Link href="/reservcard" style={{ color: "rgb(235, 100, 171)", display: "flex",  marginTop: "20px" }}>
                     {cartrItems.length > 0 && (
                        <span className="badge rounded-pill badge-notification bg-danger">  {cartrItems.length}</span>
               )} 

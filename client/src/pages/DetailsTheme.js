@@ -1,7 +1,7 @@
 import React , { useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {Form, Modal} from "react-bootstrap"
-
+import Calendar from "react-calendar";
 const DetailsTheme = ({match, history}) => {
 
     const details = useSelector(state => state.ThemeReducer.Theme.find(el=> el._id === match.params.themeId))
@@ -10,6 +10,7 @@ const addCartHendler=()=>{
 history.push(`/reservcard/${match.params.themeId}`)
 }
 const [show, setShow] = useState(false);
+const [value, onChange] = useState(new Date());
 
 
     return (
@@ -49,6 +50,8 @@ const [show, setShow] = useState(false);
                     <h4> <span style={{color:'blue'}}>Description : </span>{details.desc}</h4>
                     <h4> <span style={{color:'blue'}}>Nombre de personne : </span>
                         {details.nbrPersonne}</h4>
+                        
+              
                     <form className="d-flex justify-content-left">
                     
     
@@ -80,3 +83,4 @@ const [show, setShow] = useState(false);
 }
 
 export default DetailsTheme
+   

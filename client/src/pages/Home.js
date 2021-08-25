@@ -39,7 +39,7 @@ const Home=()=> {
 
 
         <hr></hr>
-            <DropdownButton className="dropdown"     id="dropdown-basic-button" title={selectedItem}  >
+    {  /*      <DropdownButton className="dropdown"     id="dropdown-basic-button" title={selectedItem}  >
                 <Dropdown.Item 
                 value=""
                 onClick={handleSelectCategory}>
@@ -78,11 +78,11 @@ const Home=()=> {
                     </Dropdown.Item>
                     )
                 )}
-            </DropdownButton>
+                    </DropdownButton>*/}
         
         <Products filter={selectedItem}></Products>
-        <Theme filter={selectedItem1}></Theme>
-
+{       /* <Theme filter={selectedItem1}></Theme>
+*/}
 
         <br></br>
         {/* <Services></Services> */}

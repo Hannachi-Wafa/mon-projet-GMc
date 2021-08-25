@@ -34,19 +34,7 @@ const ProfileA=()=> {
                   <h4> Email</h4>
 
                   <h5 className="card-title">{user.email}</h5>
-                  {user && user.role!==1?(
-
-                  <div>
-                  <a href="#" className="btn btn-primary">mes commandes</a>
-                  <a href="#" className="btn btn-primary">modifier mot de passe</a>
-
-                  </div>):(
-                    <div>
-                    <a href="#" className="btn btn-primary">modifier mot de passe</a>
-  
-                    </div>
-                  )
-                  }
+           
                 </div>
                 
                 

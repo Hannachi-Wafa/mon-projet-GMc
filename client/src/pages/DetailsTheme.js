@@ -2,6 +2,8 @@ import React , { useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {Form, Modal} from "react-bootstrap"
 
+
+
 const DetailsTheme = ({match, history}) => {
 
     const details = useSelector(state => state.ThemeReducer.Theme.find(el=> el._id === match.params.themeId))
@@ -61,6 +63,9 @@ const [show, setShow] = useState(false);
             
                     
                     </form>
+                    <div className="col-md-4">
+                    
+                    </div>
                 </div>
                 {/*Content*/}
                 </div>

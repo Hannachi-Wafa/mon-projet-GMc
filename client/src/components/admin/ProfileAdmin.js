@@ -52,8 +52,8 @@ const ProfileAdmin = () => {
         <br></br>
         <div style={{display:'flex'}}>
         <div> <Reservation></Reservation></div>
-            <Theme></Theme>  
-          
+            
+        
         
 
         </div>

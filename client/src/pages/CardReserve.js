@@ -1,10 +1,18 @@
-import React , { useEffect } from 'react'
+import React , { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addToCartReservation, removeFromCartReservation } from '../actions/CardReservAction'
 import { Form } from "react-bootstrap"
+import DatePicker from "react-datepicker";
+import moment from "moment";
+import axios from 'axios'
+import "react-datepicker/dist/react-datepicker.css";
+import Alert from 'react-bootstrap/Alert'
 
 const CardReserve = ({match, location, history}) => {
+  const [startDate, setStartDate] = useState(new Date());
+  const [success, setSuccess] = useState("")
+  const [error, setError] = useState("")
     const themeIds = match.params.themeId
    // const prx = location.search ? Number(location.search.split('=')[1]) : 1
     const dispatch = useDispatch()
@@ -22,11 +30,32 @@ const CardReserve = ({match, location, history}) => {
     }, [dispatch, themeIds])
 
     const removeFromCartHandler = (id) => {
-        dispatch(removeFromCartReservation (id))
+        dispatch(removeFromCartReservation (id)) 
+        
     }
     const checkoutHandler = () => {
         history.push('/Checkout');
     }
+
+    const handleDateChange=(e)=>{
+      //setStartDate(e.target.value)
+      const d= e.target.value
+      console.log(d)
+      
+ 
+  
+      axios.get(`/reservation/check?date=${d}&theme=${match.params.themeId}`)
+      .then(res=>{
+        setError("")
+        setSuccess(res.data)})
+      .catch(err=>{
+        setSuccess('')
+        setError(err.response.data)
+      }) 
+
+    }
+    
+  
     return (
         <div className="container dark-grey-text mt-5">
         {/*Grid row*/}
@@ -63,14 +92,45 @@ const CardReserve = ({match, location, history}) => {
                                 <Link to={`/theme/theme${item.theme}`}> <h5>{item.title}</h5></Link>
   
                               </div>
+                              
               
                             </div>
                             <div className="d-flex justify-content-between align-items-center">
+                            <br></br>
+
+                            <h5>Date</h5>
+                            <input type="date"  onChange={handleDateChange}></input>
+                            <br></br>
+                            <br></br>
+                            {success && 
+                            <Alert variant="success">
+                            Date valider, suivant ...
+                            
+                          </Alert>}
+                            {error && <Alert variant="danger">
+                            oopps, date non valide 
+                            
+                          </Alert>}
+                            
+                            {/* <DatePicker selected={startDate} minDate={new Date()}
+                            isClearable
+                            dateFormat="yyyy/MM/dd"
+                            placeholderText="Select a date"
+                            
+                            onChange={handleDateChange} /> */}
+                            <br></br>
+                            <br></br>
+                            <p className="mb-0"><span><strong>{item.prix}TND</strong></span></p>
+                            <br></br>
+                            <br></br>
                               <div>
                                 <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.theme)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
                               </div>
-                              <p className="mb-0"><span><strong>{item.prix}TND</strong></span></p>
+                              
                             </div>
+                            
+                            
+
   
   
                           </div>

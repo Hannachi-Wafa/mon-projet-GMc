@@ -31,6 +31,8 @@ const themeSchema = new mongoose.Schema({
         type:mongoose.Types.ObjectId,
         ref:'Category'
     },
+    
+    /* bookings: [{type: mongoose.Types.ObjectId, ref: 'Booking'}] */
 
 })
 

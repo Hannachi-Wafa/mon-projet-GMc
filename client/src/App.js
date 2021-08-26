@@ -16,14 +16,10 @@
 
     import 'bootstrap/dist/css/bootstrap.min.css';
 
-    import ImagesBTN from './pages/ImagesBTN';
     import ThemeMariage from './pages/ThemeMariage';
     import ThemeAnniv from './pages/ThemeAnniv';
     import ThemeBaby from './pages/ThemeBaby';
-    import ThemeModel from './pages/ThemeModel';
-    import Slide from './pages/Slide';
 
-    import SideTopBar from './pages/SideTopBar';
 
     import Navbar1 from './components/Navbar1';
 
@@ -37,16 +33,15 @@ import ProfileA from './pages/ProfileA';
 import Checkout from './pages/Checkout';
 import ReservationUser from './pages/ReservationUser';
 import Footer from './pages/Footer';
-import AboutUs from './pages/AboutUs';
-import NousTrouver from './pages/NousTrouver';
-import Services from './pages/Services'
-import SuivezNous from './pages/SuivezNous';
+
 import CardReserve from './pages/CardReserve';
 
 
 
-import ShippingScreen from './pages/ShippingScreen';
 import Order from './components/admin/Order';
+import Orderres from './components/admin/Orderres';
+import Checkoutres from './pages/checkoutres';
+
 import { useState } from 'react';
 
     function App() {
@@ -77,6 +72,7 @@ import { useState } from 'react';
         <Route exact path='/productsAdmin' component={Products1}></Route>
 
          <Route exact path='/Order' component={Order}></Route> 
+         <Route exact path='/Orderres' component={Orderres}></Route> 
 
         <Route exact path='/pages/ImagesBTN' component={Theme}></Route>
         
@@ -85,6 +81,8 @@ import { useState } from 'react';
         <Route exact path='/pages/ThemeAnniv' component={ThemeAnniv}></Route>
         <Route exact path='/pages/ThemeBaby' component={ThemeBaby}></Route>
         <Route exact path='/Checkout' component={Checkout}></Route>
+        <Route exact path='/Checkoutres' component={Checkoutres}></Route>
+
 
 
         <Route exact path="/products/:prodId" component={DetailsProduct}/>

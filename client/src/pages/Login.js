@@ -35,9 +35,7 @@ const Register = () => {
       };
     return (
       <div className="container dark-grey-text mt-5" >
-        <hr></hr>
-        <br></br>
-        <br></br>
+       
 
         <div className="row" style={{  backgroundRepeat: 'no-repeat',backgroundPosition: 'center',
   backgroundSize: 'cover',
@@ -51,20 +49,20 @@ const Register = () => {
             <form className="bg-white  rounded-5 shadow-5-strong p-5" >
             <div className="text-center">
                 <h3 className="dark-grey-text mb-5">
-                  <h4 style={{color:'DeepPink'}}>CONNECTEZ-VOUS À VOTRE COMPTE</h4>
+                  <h6 style={{color:'DeepPink'}}>CONNECTEZ-VOUS À VOTRE COMPTE</h6>
                 </h3>
               </div>
               {/* Email input */}
               <div className="form-outline mb-4">
               <label className="form-label" htmlFor="form1Example1">Email address</label>
 
-                <input type="email" id="form1Example1" name="email"className="form-control" onChange={handleChange} />
+                <input type="email" id="form1Example1" name="email"className="form-control border" onChange={handleChange} />
               </div>
               {/* Password input */}
               <div className="form-outline mb-4">
               <label className="form-label" htmlFor="form1Example2">Password</label>
 
-                <input type="password" id="form1Example2"  name="password" className="form-control" onChange={handleChange}/>
+                <input type="password" id="form1Example2"  name="password" className="form-control border" onChange={handleChange}/>
               </div>
               {/* 2 column grid layout for inline styling */}
               <div className="row mb-4">
@@ -72,16 +70,13 @@ const Register = () => {
                 <p style={{color: "red"}}> {errors ? errors : ''} </p>
 
                 </div>
-                <div className="col text-center">
-                  {/* Simple link */}
-                  <a href="#!">Forgot password?</a>
-                </div>
+               
               </div>
               <br></br>
               <br></br>
         
               {/* Submit button */}
-              <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>Sign in</button>
+              <button type="submit" className="btn  btn-block" onClick={handleSubmit} style={{backgroundColor:"rgb(164, 229, 228)" , color:"black"}}>Se connecter</button>
             </form>
           </div>
         </div>
@@ -94,26 +89,26 @@ const Register = () => {
             <form className="bg-white  rounded-5 shadow-5-strong p-5" >
             <div className="text-center"  >
                 <h3 className="dark-grey-text mb-5">
-                  <h4 style={{color:'DeepPink'}}>CONNECTEZ-VOUS À VOTRE COMPTE</h4>
+                  <h6 style={{color:'DeepPink'}}>CRÉER VOTRE COMPTE</h6>
                 </h3>
               </div>
                  {/* Email fullname */}
               <div className="form-outline mb-4">
               <label className="form-label" htmlFor="form1Example1">Full name</label>
 
-                <input type="text" id="form1Example1" name="fullname" className="form-control" onChange={handleChange1}/>
+                <input type="text" id="form1Example1" name="fullname" className="form-control border" onChange={handleChange1}/>
               </div>
               {/* Email input */}
               <div className="form-outline mb-4">
               <label className="form-label" htmlFor="form1Example1">Email address</label>
 
-                <input type="email" id="form1Example1" name="email"className="form-control" onChange={handleChange1}/>
+                <input type="email" id="form1Example1" name="email"className="form-control border" onChange={handleChange1}/>
               </div>
               {/* Password input */}
               <div className="form-outline mb-4">
               <label className="form-label" htmlFor="form1Example2">Password</label>
 
-                <input type="password" id="form1Example2" name="password" className="form-control" onChange={handleChange1}/>
+                <input type="password" id="form1Example2" name="password" className="form-control border" onChange={handleChange1}/>
               </div>
               {/* 2 column grid layout for inline styling */}
               <div className="row mb-4">
@@ -123,7 +118,7 @@ const Register = () => {
                
               </div>
               {/* Submit button */}
-              <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit1}> Register </button>
+              <button type="submit" className="btn  btn-block" onClick={handleSubmit1}  style={{backgroundColor:"rgb(164, 229, 228)", color:"black"}}> Register </button>
             </form>
             <br></br>
             <br></br>
@@ -135,8 +130,7 @@ const Register = () => {
         <br></br>
         <br></br>
         <br></br>
-        <br></br>
-        <hr></hr>
+       
         </div>
     )
 }

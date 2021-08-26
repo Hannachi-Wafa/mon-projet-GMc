@@ -30,11 +30,6 @@ export const SidebarData = [
         },
         
     
-        {
-        titleCon: 'Contact',
-        pathCon: '/support',
-        iconCon: <IoIcons.IoMdHelpCircle />,
-        cName: 'nav-text'
-        }
+       
         
     ];

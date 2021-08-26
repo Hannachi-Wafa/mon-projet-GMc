@@ -28,54 +28,46 @@ const ThemeCard = ({Theme}) => {
 
     const dispatch = useDispatch()
     return (
-        <div>
-            <MDBCard style={{ width: '1400px', marginLeft:"3%", height:"350px", marginRight:'-10%' }}>
-        <MDBRow className='g-0' style={{ width: '1400px', height:"350px", marginRight:'-20%' }}>
-            
-            <MDBCol md='6' >
-            <MDBCardImage style={{ height:"350px", maxWidth: '450px' }}  src={Theme.images} alt='...' fluid />
-            </MDBCol>
-            
-            <MDBCol md='5'>
-            <MDBCardBody style={{ width: '1000px', marginLeft:"-40%", height:"350px" }}>
-                <MDBCardTitle > <span style={{color:"blue"}}>Théme :</span>
-                    {Theme.title}</MDBCardTitle>
-                <MDBCardText> <span style={{color:"blue"}}>Description :</span>
-                {Theme.desc}
+        <div className="col-lg-6 col-md-3 mb-2"  >
+
+
+        <div >
+      <div className="view zoom overlay z-depth-2 rounded" style={{width:'550px', height:'350px'}}>
+        <img className="img-fluid w-100" src={Theme.images} alt="Sample" />
+        <a href="#!">
+          <div className="mask"  >
+            <img className="img-fluid w-100" src={Theme.images} />
+            <div className="mask rgba-black-slight" />
+          </div>
+        </a>
+      </div>
+      <div className="text-center pt-4" >
+        <h3 style={{color:'rgb(233, 30, 99)'}}>{Theme.title}</h3>
+        <p className="mb-2 text-muted text-uppercase small">{Theme.category_id.name}</p>
+    
+        
+        <div style={{display:"flex" , justifyContent:"space-around"}}>
+        <h6 className="mb-3">{Theme.prix}TND</h6>
+        
+          </div>
                 
-                </MDBCardText>
-                <MDBCardText> <span style={{color:"blue"}}>Prix :</span> 
-                {Theme.prix}
-                </MDBCardText>
-                <MDBCardText> <span style={{color:"blue"}}>Nombre de personne :</span> 
-                {Theme.nbrPersonne}
-                </MDBCardText>
-                
 
 
 
-                                <div style={{display:"flex", flexDirection:"row"}}>
-                    {/* <Button variant="info">Modifier</Button> */}
+                   {/*              <div style={{display:"flex", flexDirection:"row"}}>
                     <UpdateTheme Theme={Theme}  className="btn btn-primary btn-sm mr-1 mb-3"/><i className="fas pr-2" />
 
                     <Button  onClick={() => dispatch(deleteTheme(Theme._id))}
                     variant="danger" >Supprimer</Button> 
-
-{/* <Alert variant="danger" onClose={() => setShows(false)} dismissible>
-        <Alert.Heading>Oh oups! You supp!</Alert.Heading>
-        <p>
-          supp 
-        </p>
-      </Alert> */}
-                    </div>
-
+                    </div> */}
+                       <div style={{display:"inline-flex"}}>
+               {/*<button  onClick={()=> dispatch(updateproduct(product._id))}  type="button" className="btn btn-primary btn-sm mr-1 mb-3"><i className="fas pr-2" /><Link to={{pathname:`/products/${product._id}`}}>modifier</Link></button>*/}
+<UpdateTheme Theme={Theme}  className="btn btn-primary btn-sm mr-1 mb-3" /><i className="fas pr-2" />
+            <button onClick={() => dispatch(deleteTheme(Theme._id))} type="button" className="text-danger btn btn-light btn-sm mr-2 mb-2"><i className="fas fa-info-circle pr-2" /> suprimer  </button>
+                </div>
                     
                 
 
-            </MDBCardBody>
-            </MDBCol>
-        </MDBRow>
-        </MDBCard>
 
         <br></br>
         <br></br>
@@ -87,6 +79,9 @@ const ThemeCard = ({Theme}) => {
         <br></br>
         <br></br>
         </div>
+        </div>
+        </div>
+
     )
 }
 

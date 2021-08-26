@@ -32,11 +32,15 @@ const CardReserve = ({match, location, history}) => {
         
     }
     const checkoutHandler = () => {
-        history.push('/Checkout');
+        history.push('/Checkoutres');
+        
     }
+    const [date, setDate] = useState('')
+
 
     const handleDateChange=(e)=>{
-      //setStartDate(e.target.value)
+      setDate(e.target.value)
+
       const d= e.target.value
       console.log(d)
       
@@ -100,15 +104,7 @@ const CardReserve = ({match, location, history}) => {
                             <input type="date"  onChange={handleDateChange}></input>
                             <br></br>
                             <br></br>
-                            {success && 
-                            <Alert variant="success">
-                            Date valider, suivant ...
-                            
-                          </Alert>}
-                            {error && <Alert variant="danger">
-                            oopps, date non valide 
-                            
-                          </Alert>}
+                        
                             
                             {/* <DatePicker selected={startDate} minDate={new Date()}
                             isClearable
@@ -124,11 +120,19 @@ const CardReserve = ({match, location, history}) => {
                               <div>
                                 <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.theme)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
                               </div>
-                              
+         
                             </div>
                             
                             
+                            {success && 
+                            <Alert variant="success">
+                            Date valider, suivant ...
 
+                          </Alert>}
+                            {error && <Alert variant="danger">
+                            oopps, date non valide 
+
+                          </Alert>}
   
   
                           </div>

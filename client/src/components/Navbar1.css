@@ -36,7 +36,7 @@
   .nav-menu.active {
     left: 0;
     transition: 350ms;
-    top: 30px;
+    top: 21px;
   }
   
   .nav-text {
@@ -64,7 +64,7 @@
   }
   
   .nav-text a:hover {
-    background-color: #1a83ff;
+    background-color: #f5b1e9;
   }
   
   .nav-menu-items {

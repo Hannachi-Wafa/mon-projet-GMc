@@ -69,7 +69,7 @@ const handleShow = () => setShow(true);
         <div>
             <div style={{display:"flex", flexDirection:"column"}}>
             <Button variant="primary" onClick={handleShow}>
-        ajouter Theme EVENEMENT </Button >
+        Ajouter Theme </Button >
         </div>
         <br></br>
         <br></br>

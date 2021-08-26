@@ -13,22 +13,22 @@ const SuivezNous = () => {
                 que nous aimons pour tous les moments festifs de votre vie, alors profitez, amusez-vous et décorez !
             </p>
             {/* <img  style={{marginLeft:'10%'}} alt='' src='/images/socialMedia.PNG'></img> */}
-            <div style={{display:'flex', flexDirection:'row', marginLeft:'20%'}}>
+            <div style={{display:'flex', flexDirection:'row',justifyContent:"space-around" }}>
             <a href="https://www.facebook.com/">
                     
-                    <img  src="/images/Facebook.PNG" alt=""/>
+                    <img  src="/images/Facebook.PNG" alt="" style={{height:"120px"}}/>
             </a>
             <a href="https://www.instagram.com/">
                     
-                    <img  src="/images/Insta.PNG" alt=""/>
+                    <img  src="/images/Insta.PNG" alt="" style={{height:"120px"}}/>
             </a>
             <a href="https://www.pinterest.fr/">
                     
-                    <img  src="/images/Pintrest.PNG" alt=""/>
+                    <img  src="/images/Pintrest.PNG" alt="" style={{height:"120px"}}/>
             </a>
             <a href="https://www.savethedeco.com/blog">
                     
-                    <img  src="/images/Blog.PNG" alt=""/>
+                    <img  src="/images/Blog.PNG" alt="" style={{height:"120px"}}/>
             </a>
             </div>
         </div>

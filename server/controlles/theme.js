@@ -3,7 +3,7 @@ const theme = require('../models/themeSchema')
 
 exports.gettheme= async(req, res) =>{
         try {
-            const Theme = await theme.find().populate("category_id")
+            const Theme = await theme.find().populate("category_id").populate("bookings")
 
             res.json(Theme)
         } catch (err) {
@@ -12,7 +12,7 @@ exports.gettheme= async(req, res) =>{
     }
     exports.getthemebyid=async(req,res)=>{
         try {
-            const Theme= await theme.findById({_id:req.params.id}).populate('category_id')
+            const Theme= await theme.findById({_id:req.params.id}).populate('category_id').populate("bookings")
             res.status(200).json(Theme)
             } catch (error) {
             res.status(500).json({error:`something went wrong:${error}`}) 
@@ -25,7 +25,7 @@ exports.gettheme= async(req, res) =>{
     
         try {
     
-            const {title,desc,prix,nbrPersonne,category_id} = myBody;
+            const {title,desc,prix,nbrPersonne,category_id,bookings} = myBody;
             let path = req.protocol + "://" + req.hostname + ":" + 5000 + "/uploads/" + req.file.filename
     
             const newtheme = new theme({...myBody,images:path})

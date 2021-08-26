@@ -17,6 +17,7 @@ app.use('/category', require('./routes/category'))
 app.use('/product', require('./routes/product'))
 app.use('/theme', require('./routes/theme'))
 app.use('/order', require('./routes/order'))
+app.use('/orderres', require('./routes/orderReserve'))
 
 
 app.use('/reservation', require('./routes/reservation'))

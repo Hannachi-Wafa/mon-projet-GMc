@@ -12,7 +12,7 @@ export const addToCartReservation=(id)=>async (dispatch,getState)=>{
         type:RESERVATION_ADD_ITEM,
         payload:{
             theme: data._id,
-            //dateReservation: data.dateReservation,
+            //dateReserver: data.dateReserver,
             images:data.images,
             nbrPersonne: data.nbrPersonne,
             prix: data.prix,

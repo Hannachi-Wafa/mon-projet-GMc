@@ -6,7 +6,7 @@ import AddTheme from './AddTheme'
 import Theme from './Theme'
 import { Tab,Tabs} from 'react-bootstrap';
 import Order from './Order'
-import Reservation from './Reservation'
+import Orderres from './Orderres'
 
 
 const ProfileAdmin = () => {
@@ -45,13 +45,8 @@ const ProfileAdmin = () => {
         </div>
     </Tab>
     <Tab eventKey="Reservation" title="Reservation" >
-      {/* <Sonnet /> */}
-      <h3>
-        Les réservations</h3>
-        <br></br>
-        <br></br>
         <div style={{display:'flex'}}>
-        <div> <Reservation></Reservation></div>
+        <div> <Orderres></Orderres></div>
             
         
         

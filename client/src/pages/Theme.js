@@ -27,7 +27,7 @@ const Theme = ({filter}) => {
             <main>
           <div className="container">
             {/*Navbar*/}
-         <nav className="navbar navbar-expand-lg navbar-dark bg-secondary lighten-3 mt-3 mb-5">
+            <nav className="navbar navbar-expand-lg navbar-dark lighten-3 mt-3 mb-5" style={{backgroundColor:"rgb(235, 100, 171)"}}>  
               <span className="navbar-brand">Les Thémes:</span>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" />
@@ -85,43 +85,7 @@ const Theme = ({filter}) => {
                
                 
              
-            {/*Section: Products v.3*/}
-            {/*Pagination*/}
-            <nav className="d-flex justify-content-center wow fadeIn">
-              <ul className="pagination pg-blue">
-                {/*Arrow left*/}
-                <li className="page-item disabled">
-                  <a className="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">«</span>
-                    <span className="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li className="page-item active">
-                  <a className="page-link" href="#">1
-                    <span className="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">2</a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">3</a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">4</a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#">5</a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">»</span>
-                    <span className="sr-only">Next</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            {/*Pagination*/}
+          
           </div>
         </main>
         {/*Main layout*/}

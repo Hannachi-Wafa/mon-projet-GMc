@@ -3,26 +3,26 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addToCart } from '../actions/cartAction'
 import { Form } from "react-bootstrap"
-import { clearOrder, createOrder } from '../actions/orderAction'
+import { clearOrderres, createOrderres } from '../actions/OrdrerReserveAction'
 
 import Modal from "react-modal";
 import Zoom from "react-reveal/Zoom";
+import { addToCartReservation } from '../actions/CardReservAction'
 
-const Checkout = ({ match, location, history }) => {
-  const productId = match.params.prodId
-  const qty = location.search ? Number(location.search.split('=')[1]) : 1
-  const dispatch = useDispatch()
-  const cart = useSelector(state => state.cartReducer)
-  const order = useSelector(state => state.orderReducer)
+const Checkoutres = ({ match, location, history }) => {
+    const themeIds = match.params.themeId
+    // const prx = location.search ? Number(location.search.split('=')[1]) : 1
+     const dispatch = useDispatch()
+     const cartReserve = useSelector(state => state.ReservCardReducer)
+     const order = useSelector(state => state.orderResReducer)
 
-  const { cartItems } = cart
-
-  useEffect(() => {
-    if (productId) {
-      dispatch(addToCart(productId, qty))
-    }
-
-  }, [dispatch, productId, qty])
+     const { cartrItems } = cartReserve
+     useEffect(() => {
+         if(themeIds) {
+         dispatch(addToCartReservation(themeIds))
+         }
+ 
+     }, [dispatch, themeIds])
 
 
   const [input, setInput] = useState({
@@ -41,14 +41,13 @@ const Checkout = ({ match, location, history }) => {
     e.preventDefault();
     const orders = {
       ...input,
-      total: cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2),
-      cartItems:cartItems
+      cartrItems:cartrItems
     }
-    dispatch(createOrder(orders))
+    dispatch(createOrderres(orders))
 
   };
   const closeModal = () => {
-   clearOrder();
+   clearOrderres();
   };
   return (
 
@@ -65,18 +64,17 @@ const Checkout = ({ match, location, history }) => {
           </h4>
 
           <ul className="list-group mb-3">
-            {cartItems.map(item => (
+            {cartrItems.map(item => (
               <li className="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
                   <h6 className="my-0">{item.title}</h6>
-                  <small className="text-muted">Brief description</small>
                 </div>
-                <span className="text-muted">{item.price * item.qty}TND</span>
+                <span className="text-muted">{item.prix}TND</span>
+                <span className="text-muted">{item.nbrPersonne}</span>
+
+
               </li>))}
-            <li className="list-group-item d-flex justify-content-between">
-              <span>Total </span>
-              <strong onChange={handleChange}>{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}TND </strong>
-            </li>
+          
           </ul>
 
         </div>
@@ -141,4 +139,4 @@ const Checkout = ({ match, location, history }) => {
   )
 }
 
-export default Checkout
+export default Checkoutres

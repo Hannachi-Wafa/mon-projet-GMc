@@ -43,12 +43,10 @@ const ThemeCard = ({Theme}) => {
 
 
 
-<div className="col-lg-5 col-md-5 mb-6" style={{marginLeft:"5%"}} >
+<div className="col-lg-6 col-md-3 mb-2"  >
 
-    <br></br>
-    <br></br>
 
-                <div style={{marginLeft:"15%"}} >
+                <div >
               <div className="view zoom overlay z-depth-2 rounded" style={{width:'550px', height:'350px'}}>
                 <img className="img-fluid w-100" src={Theme.images} alt="Sample" />
                 <a href="#!">
@@ -58,7 +56,7 @@ const ThemeCard = ({Theme}) => {
                   </div>
                 </a>
               </div>
-              <div className="text-center pt-4" style={{marginLeft:"30%"}}>
+              <div className="text-center pt-4" >
                 <h3 style={{color:'rgb(233, 30, 99)'}}>{Theme.title}</h3>
                 <p className="mb-2 text-muted text-uppercase small">{Theme.category_id.name}</p>
             
@@ -67,11 +65,11 @@ const ThemeCard = ({Theme}) => {
                 <h6 className="mb-3">{Theme.prix}TND</h6>
                 
                   </div>
-                  <div style={{display:"flex" , justifyContent:"space-around"}}>
-                  <Button variant="info" style={{marginLeft:"7%"}}
+                  <div style={{display:"flex" , justifyContent:"space-around"}} >
+                  <button type="button" className="btn mr-2 mb-2" style={{ backgroundColor: "rgb(235, 100, 171)" ,color:"white"}}
                 onClick={()=> dispatch(getDetails(Theme._id))}>
-                <Link to={{pathname:`/theme/${Theme._id}`}}> Détails
-                 </Link></Button>
+                <Link to={{pathname:`/theme/${Theme._id}`}} style={{color:"white"}}> Détails
+                 </Link></button>
                  
                  
 

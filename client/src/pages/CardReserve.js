@@ -121,15 +121,7 @@ const CardReserve = ({match, location, history}) => {
                             
                             <br></br>
                             <br></br>
-                            {success && 
-                            <Alert variant="success">
-                            Date valider, suivant ...
                             
-                          </Alert>}
-                            {error && <Alert variant="danger">
-                            oopps, date non valide 
-                            
-                          </Alert>}
 
   
   

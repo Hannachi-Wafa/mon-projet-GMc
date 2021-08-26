@@ -1,7 +1,7 @@
 import React , { useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {Form, Modal} from "react-bootstrap"
-import Calendar from "react-calendar";
+/* import Calendar from "react-calendar"; */
 const DetailsTheme = ({match, history}) => {
 
     const details = useSelector(state => state.ThemeReducer.Theme.find(el=> el._id === match.params.themeId))

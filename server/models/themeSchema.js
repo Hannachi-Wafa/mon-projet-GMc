@@ -32,9 +32,9 @@ const themeSchema = new mongoose.Schema({
         ref:'Category'
     },
     user: {type: mongoose.Types.ObjectId,
-         ref: 'user'
+        ref: 'user'
     },
- 
+
     
     /* bookings: [{type: mongoose.Types.ObjectId, ref: 'Booking'}] */
 

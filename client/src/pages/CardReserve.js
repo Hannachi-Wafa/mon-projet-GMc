@@ -98,17 +98,7 @@ const CardReserve = ({match, location, history}) => {
 
                             <h5>Date</h5>
                             <input type="date"  onChange={handleDateChange}></input>
-                            <br></br>
-                            <br></br>
-                            {success && 
-                            <Alert variant="success">
-                            Date valider, suivant ...
                             
-                          </Alert>}
-                            {error && <Alert variant="danger">
-                            oopps, date non valide 
-                            
-                          </Alert>}
                             
                             {/* <DatePicker selected={startDate} minDate={new Date()}
                             isClearable
@@ -122,12 +112,24 @@ const CardReserve = ({match, location, history}) => {
                             <br></br>
                             <br></br>
                               <div>
-                                <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.theme)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
+                                <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" 
+                                onClick={() => removeFromCartHandler(item.theme)}><i className="fas fa-trash-alt mr-1" />
+                                Remove item </a>
                               </div>
                               
                             </div>
                             
+                            <br></br>
+                            <br></br>
+                            {success && 
+                            <Alert variant="success">
+                            Date valider, suivant ...
                             
+                          </Alert>}
+                            {error && <Alert variant="danger">
+                            oopps, date non valide 
+                            
+                          </Alert>}
 
   
   

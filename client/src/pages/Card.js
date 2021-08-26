@@ -82,7 +82,9 @@ const Card = ({ match, location, history }) => {
                           </div>
                           <div className="d-flex justify-content-between align-items-center">
                             <div>
-                              <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.product)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
+                              <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3"
+                               onClick={() => removeFromCartHandler(item.product)}><i className="fas fa-trash-alt mr-1" />
+                              Remove item </a>
                             </div>
                             <p className="mb-0"><span><strong>{item.price * item.qty}TND</strong></span></p>
                           </div>

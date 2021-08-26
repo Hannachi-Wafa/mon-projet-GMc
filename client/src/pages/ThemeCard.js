@@ -48,8 +48,8 @@ const ThemeCard = ({Theme}) => {
     <br></br>
     <br></br>
 
-                <div style={{marginLeft:"15%"}} >
-              <div className="view zoom overlay z-depth-2 rounded" style={{width:'550px', height:'350px'}}>
+                <div>
+              <div className="view zoom overlay z-depth-2 rounded" style={{width:'550px', height:'350px', display: "flex", justifyContent:"space-between"}}  >
                 <img className="img-fluid w-100" src={Theme.images} alt="Sample" />
                 <a href="#!">
                   <div className="mask"  >

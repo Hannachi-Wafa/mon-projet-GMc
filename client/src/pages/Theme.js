@@ -87,7 +87,7 @@ const Theme = ({filter}) => {
              
             {/*Section: Products v.3*/}
             {/*Pagination*/}
-            <nav className="d-flex justify-content-center wow fadeIn">
+            <nav className="d-flex justify-content-center wow fadeIn" >
               <ul className="pagination pg-blue">
                 {/*Arrow left*/}
                 <li className="page-item disabled">

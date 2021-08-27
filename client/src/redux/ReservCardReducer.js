@@ -2,6 +2,7 @@ import { CART_ADD_RESERVE_ITEM,
     CART_REMOVE_RESERVE_ITEM,
     CART_SAVE_PAYMENT_METHOD,
     CART_SAVE_SHIPPING_ADDRESS,
+    CLEAR_CART_RESRVE,
     RESERVATION_ADD_ITEM,
     RESERVATION_REMOVE_ITEM
     } from '../actions/types';
@@ -35,10 +36,19 @@ import { CART_ADD_RESERVE_ITEM,
     
     
             case RESERVATION_REMOVE_ITEM:
+                localStorage.setItem('cartrItem',JSON.stringify(state.cartrItems.filter(x=>x.Theme !==action.payload)))
+
                 return {
                     ...state,
                     cartrItems:state.cartrItems.filter(x=>x.Theme !==action.payload)
                 }
+                /* case CLEAR_CART_RESRVE:
+            localStorage.clear("cartrItems");
+            return { cartrItems: [] }; */
+            case CLEAR_CART_RESRVE:
+
+                return { cartrItems: [] };
+
             default:
                 return state
         }

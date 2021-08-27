@@ -44,6 +44,7 @@ const Checkoutres = ({ match, location, history }) => {
       cartrItems:cartrItems
     }
     dispatch(createOrderres(orders))
+    history.push('/');
 
   };
   const closeModal = () => {
@@ -130,7 +131,7 @@ const Checkoutres = ({ match, location, history }) => {
             <h4 className="mb-3" style={{ textAlign: "center" }}>Paiement à la livraison</h4>
 
             <hr className="mb-4" />
-            <button className="btn btn-primary btn-lg btn-block" type="submit" onClick={handleSubmit}>Continue to checkout</button>
+            <button className="btn btn-primary btn-lg btn-block" type="submit" onClick={handleSubmit}>RESERVER</button>
           </form>
         </div>
       </div>

@@ -28,7 +28,7 @@ const CardReserve = ({match, location, history}) => {
     }, [dispatch, themeIds])
 
     const removeFromCartHandler = (id) => {
-        dispatch(removeFromCartReservation (id)) 
+        dispatch(removeFromCartReservation(id)) 
         
     }
     const checkoutHandler = () => {
@@ -91,7 +91,7 @@ const CardReserve = ({match, location, history}) => {
                           <div>
                             <div className="d-flex justify-content-between">
                               <div>
-                                <Link to={`/theme/theme${item.theme}`}> <h5>{item.title}</h5></Link>
+                                <Link to={`/theme/theme${item.Theme}`}> <h5>{item.title}</h5></Link>
   
                               </div>
                               
@@ -118,7 +118,7 @@ const CardReserve = ({match, location, history}) => {
                             <br></br>
                             <br></br>
                               <div>
-                                <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.theme)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
+                                <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.Theme)}><i className="fas fa-trash-alt mr-1" /> SUPPRIMER</a>
                               </div>
          
                             </div>
@@ -164,7 +164,7 @@ const CardReserve = ({match, location, history}) => {
                     <span><strong>{cartrItems.reduce((acc, item) => acc +  item.prix, 0)}TND </strong></span>
                   </li>
                 </ul>
-                <button type="button" className="btn btn-primary btn-block waves-effect waves-light" disaled={cartrItems.length === 0} onClick={checkoutHandler}>go to checkout</button>
+                <button type="button" className="btn btn-primary btn-block waves-effect waves-light" disabled={cartrItems.length === 0} onClick={checkoutHandler}>FINALISER VOTRE RESERVATION</button>
               </div>
             </div>
   

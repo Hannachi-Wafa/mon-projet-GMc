@@ -82,7 +82,7 @@ const Card = ({ match, location, history }) => {
                           </div>
                           <div className="d-flex justify-content-between align-items-center">
                             <div>
-                              <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.product)}><i className="fas fa-trash-alt mr-1" /> Remove item </a>
+                              <a href="#!" type="button" className="card-link-secondary small text-uppercase mr-3" onClick={() => removeFromCartHandler(item.product)}><i className="fas fa-trash-alt mr-1" />SUPPRIMER </a>
                             </div>
                             <p className="mb-0"><span><strong>{item.price * item.qty}TND</strong></span></p>
                           </div>
@@ -117,7 +117,7 @@ const Card = ({ match, location, history }) => {
                   <span><strong>{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}TND </strong></span>
                 </li>
               </ul>
-              <button type="button" className="btn btn-primary btn-block waves-effect waves-light" disaled={cartItems.length === 0} onClick={checkoutHandler}>go to checkout</button>
+              <button type="button" className="btn btn-primary btn-block waves-effect waves-light" disabled={cartItems.length === 0} onClick={checkoutHandler}>FINALISER VOTRE COMMANDE</button>
             </div>
           </div>
 

@@ -21,7 +21,7 @@ export const createOrder = (data) => async (dispatch) => {
       )
       dispatch( {type: CREATE_ORDER,
           payload: res.data})
-         // localStorage.clear("cartItems");
+         //localStorage.clear("cartItems");
           dispatch({ type: CLEAR_CART });
           console.log(res.data)
   } catch (error) {

@@ -40,22 +40,22 @@ const [value, onChange] = useState(new Date());
                         {details.title}</h2>
 
                     <div>
-                    <h4 > <span style={{color:'blue'}}>Prix : </span>
+                    <h4 > <span style={{color:'pink'}}>Prix : </span>
                     {details.prix}  TND</h4>
                     
                     </div>               
                     
                     
 
-                    <h4> <span style={{color:'blue'}}>Description : </span>{details.desc}</h4>
-                    <h4> <span style={{color:'blue'}}>Nombre de personne : </span>
+                    <h4> <span style={{color:'pink'}}>Description : </span>{details.desc}</h4>
+                    <h4> <span style={{color:'pink'}}>Nombre de personne : </span>
                         {details.nbrPersonne}</h4>
                         
               
                     <form className="d-flex justify-content-left">
-                    
+                   
     
-                    <button  className="btn btn-primary btn-md my-0 p" 
+                    <button  className="btn btn-md my-0 p" style={{backgroundColor:'rgb(239, 88, 139)'}} 
                     type="submit"  onClick={() => setShow(true)}
                      onClick={addCartHendler}> Réserver
                         <i className="fas fa-shopping-cart ml-1" />
